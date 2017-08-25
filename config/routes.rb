@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   # vue d'un cas ,avec edition et validation de la réponse
   get 'doctors/answer'
   # page de confirmation/recap et paiement coté patient
-  get 'cases/validate'
+  get 'patients/validate'
 
-  resources :cases, only: [:new, :create]
+  resources :patients, only: [:new, :create]
 
   # edition du profil utilisateur (docteur)
   get 'profile/edit'

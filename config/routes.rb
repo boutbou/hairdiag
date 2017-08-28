@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :doctors
   root to: 'pages#home'
 
   # Dashboard des doctors / accueil controle

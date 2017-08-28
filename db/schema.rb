@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825145102) do
+ActiveRecord::Schema.define(version: 20170828101810) do
 
   create_table "case_assignments", force: :cascade do |t|
     t.integer  "doctor_id"
@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 20170825145102) do
     t.string   "brushing_hair"
     t.string   "shaving_hair"
     t.string   "scalp_density"
-    t.string   "hait_thickness"
-    t.string   "hait_color"
+    t.string   "hair_thickness"
+    t.string   "hair_color"
     t.string   "hair_type"
     t.string   "vitamines"
     t.string   "minoxidil"

@@ -18,19 +18,34 @@
     <h1>Trouvez une solution à votre chute de cheveux. </h1>
     <h2>Hairdiag est le premier service de diagnostic capillaire en ligne pour vous aider. </h2>
     <%= link_to root_path, class:"cta-start" do %>
-      <button class="btn btn-cta">
+    <div>  <button class="btn btn-cta">
         <p>Commencer le diagnostic</p>
-        <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
-      </button>
+         <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
+      </button></div>
+
 
     <% end %>
   </div>
 
   <div class="footer-lp">
     <div>
-      <p>Comment ça marche ? </p>
+      Comment ça marche ?
     </div>
   </div>
 </div>
 
+<script type="text/javascript">
 
+$(document).ready(function() {
+
+  $(window).scroll(function() {
+
+    if ($(window).scrollTop() > 50) {
+      $('header').addClass('scrolled');
+    } else {
+      $('header').removeClass('scrolled');
+    };
+  });
+});
+
+</script>

@@ -1,0 +1,109 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20170828101810) do
+
+  create_table "case_assignments", force: :cascade do |t|
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_case_assignments_on_doctor_id"
+    t.index ["patient_id"], name: "index_case_assignments_on_patient_id"
+  end
+
+  create_table "diagnostics", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "adress"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "country"
+    t.string   "description"
+    t.integer  "avatar"
+    t.string   "url"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "specialty"
+    t.integer  "RPPS"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "message_templates", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "content"
+    t.integer  "diagnostic_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["diagnostic_id"], name: "index_message_templates_on_diagnostic_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "content"
+    t.integer  "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_messages_on_patient_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "gender"
+    t.string   "email"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "age"
+    t.datetime "loss_start_date"
+    t.string   "relative"
+    t.integer  "weekly_shampoo"
+    t.string   "dandruff"
+    t.string   "greasy_hair"
+    t.string   "refined_hair"
+    t.string   "brushing_hair"
+    t.string   "shaving_hair"
+    t.string   "scalp_density"
+    t.string   "hair_thickness"
+    t.string   "hair_color"
+    t.string   "hair_type"
+    t.string   "vitamines"
+    t.string   "minoxidil"
+    t.integer  "minoxidil_doses"
+    t.string   "finasteride"
+    t.string   "hair_transplant"
+    t.string   "hair_transplant_technic"
+    t.string   "stage"
+    t.string   "traction_test"
+    t.string   "restore_area"
+    t.string   "technical_preference"
+    t.string   "remark"
+    t.integer  "photos"
+    t.integer  "document"
+    t.integer  "doctor_id"
+    t.integer  "status"
+    t.integer  "diagnostic_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["diagnostic_id"], name: "index_patients_on_diagnostic_id"
+    t.index ["doctor_id"], name: "index_patients_on_doctor_id"
+  end
+
+end

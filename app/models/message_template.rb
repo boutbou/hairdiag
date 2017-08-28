@@ -1,4 +1,5 @@
 class MessageTemplate < ApplicationRecord
   belongs_to :diagnostic
-  validates :subject, :content, presence: true
+  validates :subject, presence: true
+  validates :content, presence: true
 end

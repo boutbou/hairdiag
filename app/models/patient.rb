@@ -1,6 +1,36 @@
 class Patient < ApplicationRecord
   has_many :messages
   has_many :case_assignments
-  validates :first_name, :last_name, :gender, :zip_code, :city, :country, :age, :loss_start_date, :relative, :weekly_shampoo, :dandruff, :greasy_hair, :refined_hair, :brushing_hair, :shaving_hair, :scalp_density, :hair_thickness, :hair_color, :hair_type, :vitamines, :minoxidil, :minoxidil_doses, :finasteride, :hair_transplant, :hair_transplant_technic, :stage, :traction_test, :restore_area, :technical_preference, :status, presence: true
-  validates :email, format: { with: /\A.*@.*\.com\z/ }, presence: true
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :gender, presence: true
+  validates :zip_code, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+  validates :age, presence: true
+  validates :loss_start_date, presence: true
+  validates :relative, presence: true
+  validates :weekly_shampoo, presence: true
+  validates :dandruff, presence: true
+  validates :greasy_hair, presence: true
+  validates :refined_hair, presence: true
+  validates :brushing_hair, presence: true
+  validates :shaving_hair, presence: true
+  validates :scalp_density, presence: true
+  validates :hair_thickness, presence: true
+  validates :hair_color, presence: true
+  validates :hair_type, presence: true
+  validates :vitamines, presence: true
+  validates :finasteride, presence: true
+  validates :stage, presence: true
+  validates :traction_test, presence: true
+  validates :restore_area, presence: true
+  validates :technical_preference, presence: true
+  validates :status, presence: true
+  validates :email, format: { with: /\A.*@.*\.[a-z]{2,}\z/ }, presence: true
+  validates :minoxidil, presence: true
+  validates :minoxidil_doses, presence: true, if: :minoxidil?
+  validates :hair_transplant, presence: true
+  validates :hair_transplant_technic, presence: true, if: :hair_transplant?
 end

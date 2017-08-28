@@ -3,3 +3,91 @@
 .home-background {
   height: calc(100vh - 70px);
 }
+
+#logo img {
+  height: 70px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-navigation-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.header-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  overflow:auto;
+  width: 70%;
+}
+
+.home-content h1 {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.home-content h2 {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+.icon-microscope {
+  height: 30px;
+  padding-left: 10px;
+}
+
+.home-content .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-content p {
+  margin: 0
+}
+
+.home-content .cta-start {
+  padding-top: 5%;
+}
+
+.footer-lp {
+  position: absolute;
+  top: calc(100vh - 70px);
+  // height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-lp div {
+  flex: none;
+  max-width: 50%;
+
+}
+
+

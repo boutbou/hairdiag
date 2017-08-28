@@ -1,12 +1,35 @@
 
+
+
 <div class="home-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
-  <div class="home-content" style="width: 80%; padding-top: 100px">
-  <div class="phrases">
-
-    <h2>Trouvez une solution à votre chute de cheveux. </h2>
-
+  <div class="header">
+    <%= link_to root_path, id: "logo" do %>
+    <%= image_tag "logo_white.png" %>
+    <% end %>
+    <div class="header-navigation-right">
+      <%= link_to "Content 1", "#", class: "header-item hoover" %>
+      <%= link_to "Content 2", "#", class: "header-item hoover" %>
+      <%= link_to "Espace pro", "#", class: "header-item hoover" %>
     </div>
 
+  </div>
+  <div class="home-content">
+    <%= image_tag "logo-no-baseline.png" %>
+    <h1>Trouvez une solution à votre chute de cheveux. </h1>
+    <h2>Hairdiag est le premier service de diagnostic capillaire en ligne pour vous aider. </h2>
+    <%= link_to root_path, class:"cta-start" do %>
+      <button class="btn btn-cta">
+        <p>Commencer le diagnostic</p>
+        <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
+      </button>
+
+    <% end %>
+  </div>
+
+  <div class="footer-lp">
+    <div>
+      <p>Comment ça marche ? </p>
+    </div>
   </div>
 </div>
 

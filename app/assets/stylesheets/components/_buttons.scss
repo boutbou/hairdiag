@@ -1,0 +1,16 @@
+.btn-cta {
+  border-radius: 5px;
+  background-color: $blue-cta;
+  border-color: $blue-cta;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.50);
+}
+
+.btn-cta:hover {
+  border-radius: 5px;
+  background-color: $blue-cta;
+  border-color: $blue-cta;
+  // box-shadow: 0 2px 2px 0 rgba(0,0,0,0.50);
+  opacity: 0.9;
+  color: white;
+}
+

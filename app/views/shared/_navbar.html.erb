@@ -1,0 +1,55 @@
+
+
+
+
+<div class="header-sticky" style="background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');>
+
+  <%= link_to root_path, id: "logo" do %>
+  <%= image_tag "logo_white.png" %>
+  <% end %>
+  <div class="header-navigation-right">
+    <%= link_to "Content 1", "#", class: "header-item hoover" %>
+    <%= link_to "Content 2", "#", class: "header-item hoover" %>
+    <%= link_to root_path, class:"cta-start" do %>
+    <div>  <button class="btn btn-cta">
+      Commencer le diagnostic
+
+    </button></div>
+    <% end %>
+  </div>
+</div>
+
+<div class="header-top">
+  <%= link_to root_path, id: "logo" do %>
+  <%= image_tag "logo_white.png" %>
+  <% end %>
+  <div class="header-navigation-right">
+    <%= link_to "Content 1", "#", class: "header-item hoover" %>
+    <%= link_to "Content 2", "#", class: "header-item hoover" %>
+    <%= link_to "Espace pro", "#", class: "header-item hoover" %>
+  </div>
+</div>
+
+
+<script>
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 600) {
+      $('.header-sticky').fadeIn();
+    }
+    else {
+      $('.header-sticky').fadeOut();
+    }
+  },false);
+
+</script>
+
+
+<!-- https://jsfiddle.net/SpYk3/D3DDp/-->
+<!-- <script type="text/javascript">
+
+$(window).on("scroll", function(e) {
+  if ($(window).scrollTop() >= $(".header").height()) $(".header").fadeIn(500);
+  else $(".header").fadeOut(500);
+});
+
+</script> -->

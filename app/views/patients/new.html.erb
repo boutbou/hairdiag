@@ -1,0 +1,23 @@
+<%= simple_form_for @patient, html: {"cf-form" => true} do |f| %>
+  <fieldset>
+    <%= f.input :first_name, input_html: { "cf-questions" => "Quel est ton nom ?"} %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.input :last_name , input_html: { "cf-questions" => "Quel est ton prénom ?"}%>
+  </fieldset>
+
+  <fieldset>
+    <%= f.input :gender, as: :radio_buttons, collection: Patient.genders, input_html: { "cf-questions" => "Es tu une femme ou un homme ?"} %>
+    <%= f.button :submit %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.input :loss_start_date , input_html: { "cf-questions" => "A quand remonte le début de votre perte de cheveux ?"}%>
+  </fieldset>
+
+  <fieldset>
+    <%= f.input :relative, collection: Patient.relatives , input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
+  </fieldset>
+
+<% end %>

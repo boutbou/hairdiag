@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
+skip_before_action :authenticate_doctor!
 
   def home
-
   end
 
   def contact
@@ -9,4 +9,5 @@ class PagesController < ApplicationController
 
   def about
   end
+
 end

@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
   def dashboard
   end
 
-  def historic
+  def history
   end
 
   def answer

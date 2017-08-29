@@ -1,18 +1,6 @@
 
-
-
 <div class="home-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
-  <div class="header">
-    <%= link_to root_path, id: "logo" do %>
-    <%= image_tag "logo_white.png" %>
-    <% end %>
-    <div class="header-navigation-right">
-      <%= link_to "Content 1", "#", class: "header-item hoover" %>
-      <%= link_to "Content 2", "#", class: "header-item hoover" %>
-      <%= link_to "Espace pro", "#", class: "header-item hoover" %>
-    </div>
-
-  </div>
+<%= render "shared/navbar"%>
   <div class="home-content">
     <%= image_tag "logo-no-baseline.png" %>
     <h1>Trouvez une solution à votre chute de cheveux. </h1>
@@ -34,18 +22,50 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<div class="banner-center">
+  <div class="process-icons">
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon_diag.png", class: "icon-green" %>
+    </div>
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon_photo.png", class: "icon-green" %>
+    </div>
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon-answer.png", class: "icon-green" %>
+    </div>
+  </div>
+</div>
 
-$(document).ready(function() {
+<div class="banner-center">
+  <div class="process-icons">
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon_diag.png", class: "icon-green" %>
+    </div>
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon_photo.png", class: "icon-green" %>
+    </div>
+    <div class="process-icon">
+      <h2>Diagnostic.</h2>
+      <p>Un diagnostic intelligent concu par des
+        experts du cuir capillaire </p>
+      <%= image_tag "icon-answer.png", class: "icon-green" %>
+    </div>
+  </div>
+</div>
 
-  $(window).scroll(function() {
 
-    if ($(window).scrollTop() > 50) {
-      $('header').addClass('scrolled');
-    } else {
-      $('header').removeClass('scrolled');
-    };
-  });
-});
-
-</script>

@@ -4,36 +4,7 @@
   height: calc(100vh - 70px);
 }
 
-#logo img {
-  height: 70px;
-  position: relative;
-  top: 5px;
-  left: 5px;
 
-}
-
-.scrolled {
-  background-color: red;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-navigation-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 0 20px;
-}
-
-.header-item {
-  cursor: pointer;
-  padding: 0 20px;
-}
 
 .home-content {
   display: flex;

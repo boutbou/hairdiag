@@ -1,4 +1,8 @@
 class Patient < ApplicationRecord
+  # enum pour les listes de choix dans le formulaire
+  enum gender: [:mecton, :michtone]
+  enum relative: [:aucun, :Pere, :Mere, :Grand_pere, :Grand_mere]
+  
   has_many :messages
   has_many :case_assignments
   has_attachments :photos, minimum: 3, maximum: 4

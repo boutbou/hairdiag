@@ -1,4 +1,4 @@
-/* Main navbar */
+/* Navbar activated when scrolling */
 
 .header-sticky {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -11,6 +11,7 @@
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  order: 1;
 }
 
 .header-sticky img {
@@ -28,6 +29,9 @@
 .scrolled {
   background-color: red;
 }
+
+/* Navbar for the landing page */
+
 
 .header-top {
   display: flex;

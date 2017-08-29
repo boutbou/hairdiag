@@ -1,8 +1,6 @@
 
 
-
-
-<div class="header-sticky" style="background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');>
+<div class="header-sticky" >
 
   <%= link_to root_path, id: "logo" do %>
   <%= image_tag "logo_white.png" %>
@@ -32,24 +30,33 @@
 
 
 <script>
+  $( ".header-sticky" ).hide();
   window.addEventListener("scroll", function() {
-    if (window.scrollY > 600) {
-      $('.header-sticky').fadeIn();
+    if (window.scrollY > 575) {
+      $('.header-sticky').fadeIn(50);
+      $( ".footer-lp" ).hide();
     }
     else {
-      $('.header-sticky').fadeOut();
+      $('.header-sticky').fadeOut(50);
+      $( ".footer-lp" ).show();
     }
   },false);
 
 </script>
 
+<!--
+<script>
+  $(window).on("scroll", function(e) {
+  if ($(window).scrollTop() >= $(".header-sticky").height()) $(".header-sticky").fadeIn(500);
+  else $(".header").fadeOut(500);
+});
+
+</script> -->
+
 
 <!-- https://jsfiddle.net/SpYk3/D3DDp/-->
 <!-- <script type="text/javascript">
 
-$(window).on("scroll", function(e) {
-  if ($(window).scrollTop() >= $(".header").height()) $(".header").fadeIn(500);
-  else $(".header").fadeOut(500);
-});
+
 
 </script> -->

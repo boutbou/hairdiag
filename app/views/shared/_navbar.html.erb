@@ -6,8 +6,10 @@
   <%= image_tag "logo_white.png" %>
   <% end %>
   <div class="header-navigation-right">
-    <%= link_to "Content 1", "#", class: "header-item hoover" %>
-    <%= link_to "Content 2", "#", class: "header-item hoover" %>
+    <div class="header-links-content">
+      <%= link_to "Content 1", "#", class: "header-item-content hoover" %>
+      <%= link_to "Content 2", "#", class: "header-item-content hoover" %>
+    </div>
     <%= link_to root_path, class:"cta-start" do %>
     <div>  <button class="btn btn-cta">
       Commencer le diagnostic
@@ -22,9 +24,11 @@
   <%= image_tag "logo_white.png" %>
   <% end %>
   <div class="header-navigation-right">
-    <%= link_to "Content 1", "#", class: "header-item hoover" %>
-    <%= link_to "Content 2", "#", class: "header-item hoover" %>
-    <%= link_to "Espace pro", "#", class: "header-item hoover" %>
+    <div class="header-links-content">
+      <%= link_to "Content 1", "#", class: "header-item-content hoover" %>
+      <%= link_to "Content 2", "#", class: "header-item-content hoover" %>
+    </div>
+    <%= link_to "Espace pro", "#", class: "header-item-right hoover" %>
   </div>
 </div>
 
@@ -34,11 +38,11 @@
   window.addEventListener("scroll", function() {
     if (window.scrollY > 575) {
       $('.header-sticky').fadeIn(50);
-      $( ".footer-lp" ).hide();
+
     }
     else {
       $('.header-sticky').fadeOut(50);
-      $( ".footer-lp" ).show();
+
     }
   },false);
 

@@ -1,0 +1,61 @@
+.banner-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process {
+  padding: 8% 0;
+
+}
+
+.benefits {
+  padding: 4% 0;
+}
+
+.benefits h1 {
+  text-align: center;
+  font-size: 2em;
+}
+
+// .benefits > .row .col-md-3:first-child {
+//   padding: 4%;
+// }
+
+.process > .row .col-md-3:first-child {
+  margin-left: 4%;
+}
+
+.process-icon {
+  // flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 200px;
+}
+
+// .process-icon {
+//   flex: 0 1 10%;
+// }
+
+.process-icon-chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+
+.process-icon p {
+  text-align: center;
+}
+
+.icon-green {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+}
+

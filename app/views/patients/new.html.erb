@@ -7,55 +7,63 @@
           <%= image_tag "logo_white.png" %>
           <% end %>
         </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <p>
 
-          <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-              <div class="message">
-                <div class="numbers active">
-                  <h3>1</h3>
-                </div>
-                <div class="message-body">
-                  <p>Remplis les cases crâne d'oeuf !</p>
-                </div>
+
+
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="message active">
+              <div class="numbers">
+                <h3>1</h3>
+              </div>
+              <div class="message-body">
+                <p>Prenez le temps de répondre au questions de notre doc-bot </p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-              <div class="message">
-                <div class="numbers">
-                  <h3>2</h3>
-                </div>
-                <div class="message-body">
-                  <p>On veut ta photo !</p>
-                </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="message">
+              <div class="numbers">
+                <h3>2</h3>
+              </div>
+              <div class="message-body">
+                <p> Send pics but not nudes please !</p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-              <div class="message">
-                <div class="numbers">
-                  <h3>3</h3>
-                </div>
-                <div class="message-body">
-                  <p>Are you reeeeeaaaadyyyyy ??</p>
-                </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="message">
+              <div class="numbers">
+                <h3>3</h3>
+              </div>
+              <div class="message-body">
+                <p> Relisez vos réponses et confirmez </p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-              <div class="message">
-                <div class="numbers">
-                  <h3>4</h3>
-                </div>
-                <div class="message-body">
-                  <p>Give us $$$, shitty bold !</p>
-                </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="message">
+              <div class="numbers">
+                <h3>4</h3>
+              </div>
+              <div class="message-body">
+                <p> Envoyez vos informations à un Dermatologue Hairdiag pour un dignostique fiable en moins de 48h</p>
               </div>
             </div>
           </div>
+        </div>
         <div class="center_bottom_page">
           <div class="cta-start btn btn-medium">
             <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
@@ -66,26 +74,135 @@
     </div>
     <div class="col-xs-6 page-part" id="col-form">
       <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
+
       <fieldset>
-        <%= f.input :first_name, input_html: { "cf-questions" => "Quel est ton nom ?"} %>
+        <%= f.input :last_name , input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne s'est jamais rencontré!<br>Quel est votre prénom ?"} %>
       </fieldset>
 
       <fieldset>
-        <%= f.input :last_name , input_html: { "cf-questions" => "Quel est ton prénom ?"}%>
+        <%= f.input :first_name, input_html: { "cf-questions" => "Enchanté {previous-answer}, quel est votre nom ?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :gender, as: :radio_buttons, collection: Patient.genders, input_html: { "cf-questions" => "Es tu une femme ou un homme ?"} %>
+        <%= f.input :gender, as: :radio_buttons, collection: Patient.genders, input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
         <%= f.button :submit %>
       </fieldset>
 
       <fieldset>
-        <%= f.input :loss_start_date , input_html: { "cf-questions" => "A quand remonte le début de votre perte de cheveux ?"}%>
+        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> #{:last_name} #{:first_name}, quelle est votre adresse Email ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :zip_code , input_html: { "cf-questions" => "Il est possible que j'ai besoin de vous diriger vers un dermatologue HairDiag proche de chez vous. <br>Quel est votre code postal ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :city , input_html: { "cf-questions" => "Quel est le nom de cette ville ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :country, collection: Patient.countries, input_html: { "cf-questions" => "Est-ce que {previous-answer} est situé en france ou à l'étranger ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :age, collection: (15..77), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :loss_start_date, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
       </fieldset>
 
       <fieldset>
         <%= f.input :relative, collection: Patient.relatives , input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
       </fieldset>
+
+      <fieldset>
+        <%= f.input :weekly_shampoo, collection: (0..8), input_html: { "cf-questions" => "Combien de shampooings faites-vous par semaine ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :dandruff, collection: ["oui","non"], input_html: { "cf-questions" => "{previous-answer} fois! Je savais que vous preniez soin de votre cuir chevelus à la seconde de notre rencontre :).<br> Avez vous des pellicules ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :greasy_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Ne voyez rien de personne, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "{previous-answer}" == "oui" ? "Ce n'est pas grave, rassurez vous.<br> Et avez vous l’impression que vos cheveux se sont affinés ?" : "Tant mieux.<br> Avez vous l’impression que vos cheveux se sont affinés ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :brushing_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Entendu, faites-vous des tresses / défrisages / brushings ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :shaving_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Faites-vous un rasage régulier de tout ou une partie de votre cuir chevelu ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :scalp_density, collection: ["moyenne","bonne","très bonne"], input_html: { "cf-questions" => "Quelle est la densité à l'arrière de votre cuir chevelu ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :hair_thickness, collection: ["fin","moyen","épais"], input_html: { "cf-questions" => "Comment conciderez vous l'épaisseur de vos cheveux ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :hair_color, collection: ["blancs", "gris", "blonds", "Chatain clair",  "chatain foncé", "noir", "roux"], input_html: { "cf-questions" => "Quelle est la couleur naturelle de vos cheveux ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :hair_type, collection: ["raides", "ondulés", "bouclés", "crépus"],input_html: { "cf-questions" => "Quel est le type de vos cheveux ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :vitamines, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous des vitamines ou des compléments alimentaires ?"}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :minoxidil, collection: ["oui","non"], input_html: { "cf-questions" => "Etes-vous sous Minoxidil ?"}%>
+      </fieldset>
+
+      <% if  "{previous-answer}" == "oui" %>
+      <fieldset>
+        <%= f.input :minoxidil_doses, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+      <% end %>
+
+      <fieldset>
+        <%= f.input :finasteride, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :hair_transplant, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :hair_transplant_technic, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :stage, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :traction_test, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :restore_area, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :technical_preference, input_html: { "cf-questions" => ""}%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
+      </fieldset>
+
+      <%= link_to root_path, class: "header-item" %>
 
       <% end %>
     </div>

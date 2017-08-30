@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(version: 20170830140004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
     t.integer  "attachinariable_id"

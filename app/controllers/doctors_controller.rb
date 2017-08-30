@@ -1,10 +1,6 @@
 class DoctorsController < ApplicationController
 
 
-
-
-
-
  def dashboard
   @patients=Patient.all #pour le moment on affiche tout les patients
  end
@@ -31,6 +27,7 @@ class DoctorsController < ApplicationController
   else
     render "doctors/show_patient"
   end
+end
 
 private
 

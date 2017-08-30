@@ -9,29 +9,40 @@
           <h1>Trouvez une solution à votre chute de cheveux. </h1>
           <h2>Hairdiag est le premier service de diagnostic capillaire en ligne pour vous aider. </h2>
           <%= link_to new_patient_path, class:"cta-start" do %>
-            <div>
-              <button class="btn btn-cta">
-                <p>Commencer le diagnostic</p>
-                <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
-              </button>
-            </div>
+          <div>
+            <button class="btn btn-cta">
+              <p>Commencer le diagnostic</p>
+              <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
+            </button>
+          </div>
           <% end %>
         </div>
       </div>
-        <div class="footer-lp">
-          <div>
-            Comment ça marche ?
-          </div>
+      <div class="footer-lp">
+        <div>
+          Comment ça marche ?
         </div>
+      </div>
 
-        <div class="container process">
-          <div class="row">
-           <!--  <div class="process-icons "> -->
-           <div class="process-icon col-md-3">
+      <div class="container process">
+        <div class="row">
+         <!--  <div class="process-icons "> -->
+         <div class="process-icon col-md-3">
+          <h2>Diagnostic.</h2>
+          <p>Un diagnostic intelligent concu par des
+            experts du cuir capillaire </p>
+            <%= image_tag "icon_diag.png", class: "icon-green" %>
+          </div>
+
+          <div class="process-icon-chevron hidden-xs col-md-1">
+            <%= image_tag "chevron-right.png" %>
+          </div>
+
+          <div class="process-icon col-md-3">
             <h2>Diagnostic.</h2>
             <p>Un diagnostic intelligent concu par des
               experts du cuir capillaire </p>
-              <%= image_tag "icon_diag.png", class: "icon-green" %>
+              <%= image_tag "icon_photo.png", class: "icon-green" %>
             </div>
 
             <div class="process-icon-chevron hidden-xs col-md-1">
@@ -42,33 +53,23 @@
               <h2>Diagnostic.</h2>
               <p>Un diagnostic intelligent concu par des
                 experts du cuir capillaire </p>
-                <%= image_tag "icon_photo.png", class: "icon-green" %>
-            </div>
+                <%= image_tag "icon-answer.png", class: "icon-green" %>
+              </div>
 
-            <div class="process-icon-chevron hidden-xs col-md-1">
-                <%= image_tag "chevron-right.png" %>
             </div>
-
-            <div class="process-icon col-md-3">
-              <h2>Diagnostic.</h2>
-              <p>Un diagnostic intelligent concu par des
-                  experts du cuir capillaire </p>
-              <%= image_tag "icon-answer.png", class: "icon-green" %>
-            </div>
-
           </div>
-        </div>
 
-        <div class="reminder-cta" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
-          <h2>Une solution simple, rapide et efficace. Ne perdez pas plus de temps.</h2>
-          <%= link_to root_path, class:"cta-start" do %>
+          <div class="reminder-cta" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
+            <h2>Une solution simple, rapide et efficace. Ne perdez pas plus de temps.</h2>
+            <%= link_to root_path, class:"cta-start" do %>
             <div>
               <button class="btn btn-cta">
                 <p>Commencer le diagnostic</p>
                 <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
               </button>
             </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
 
         <div class="container benefits">
@@ -78,15 +79,15 @@
            <div class="process-icon col-md-4">
             <h2>Gain de temps.</h2>
             <p>Avec Hair’diag, recevez un diagnostic en moins de 48h. Contre 29 jours en moyenne.
-             </p>
-              <%= image_tag "icon-time.png", class: "icon-green" %>
-            </div>
+            </p>
+            <%= image_tag "icon-time.png", class: "icon-green" %>
+          </div>
 
-            <div class="process-icon col-md-4">
-              <h2>Gain d'argent.</h2>
-              <p>Ne consultez pas de spécialiste si
+          <div class="process-icon col-md-4">
+            <h2>Gain d'argent.</h2>
+            <p>Ne consultez pas de spécialiste si
               vous n’en avez pas besoin. </p>
-                <%= image_tag "icon-save-money.png", class: "icon-green" %>
+              <%= image_tag "icon-save-money.png", class: "icon-green" %>
             </div>
 
 
@@ -136,4 +137,5 @@
       </div>
     </div>
   </div>
+
 

@@ -1,6 +1,10 @@
 class DoctorsController < ApplicationController
 
 
+
+
+
+
  def dashboard
   @patients=Patient.all #pour le moment on affiche tout les patients
  end
@@ -11,8 +15,9 @@ class DoctorsController < ApplicationController
 
   def answer
   end
-  
+
   def assign_patient
+
   end
 
   def show_patient
@@ -20,7 +25,7 @@ class DoctorsController < ApplicationController
 
   def create_answer
   end
-  
+
   private
 
   def doctor_params

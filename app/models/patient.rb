@@ -1,8 +1,10 @@
 class Patient < ApplicationRecord
   # enum pour les listes de choix dans le formulaire
-  enum gender: [:mecton, :michtone]
-  enum relative: [:aucun, :Pere, :Mere, :Grand_pere, :Grand_mere]
-  
+  enum gender: ["Une femme", "Un homme"]
+  enum relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"]
+  enum country: ["France", "Etranger"]
+  enum age: [(15..77)]
+
   has_many :messages
   has_many :case_assignments
   validates :first_name, presence: true

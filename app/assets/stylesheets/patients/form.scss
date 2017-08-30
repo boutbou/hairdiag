@@ -1,0 +1,64 @@
+#form-width {
+  width: 100%;
+}
+
+.message {
+  padding: 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+  color: rgba(255,255,255,0.3);
+}
+
+.numbers {
+  text-align: center;
+  width: 75px;
+  border-radius: 50%;
+  border-color: $blue-cta;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.50);
+  display: inline-block;
+  margin: 5px;
+  h3 {
+    margin: 0;
+    line-height: 75px;
+  }
+}
+
+.active {
+  background-color: $blue-cta;
+  color: rgba(0,0,0,0.8);
+}
+
+.message-body {
+  padding-left: 20px;
+  color: rgba(255,255,255,0.8);
+  display: inline-block;
+  p {
+    margin: 6px 0;
+  }
+}
+
+.center_bottom_page {
+  position: absolute;
+  bottom: 15px;
+  align-items: center;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+
+  .btn {
+    margin: 0 auto;
+  }
+}
+
+.page-part {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.side-background {
+  height: 100vh;
+}

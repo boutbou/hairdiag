@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-
-skip_before_action :authenticate_doctor!
-skip_before_action :authenticate_doctor!, only: :home
+  skip_before_action :authenticate_doctor!, only: [:home, :patients, :contact, :about]
 
   def home
   end

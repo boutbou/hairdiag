@@ -1,10 +1,11 @@
 class PatientsController < ApplicationController
+  
   before_action :set_patient, except: [:new, :create]
   skip_before_action :authenticate_doctor!
 
   def show
   end
-
+  
   def new
     @patient = Patient.new
   end

@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20170830140004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
     t.integer  "attachinariable_id"
@@ -101,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170830140004) do
     t.string   "city"
     t.string   "country"
     t.integer  "age"
-    t.integer  "loss_start_date"
+    t.string   "loss_start_date"
     t.string   "relative"
     t.integer  "weekly_shampoo"
     t.string   "dandruff"
@@ -135,4 +138,10 @@ ActiveRecord::Schema.define(version: 20170830140004) do
     t.index ["doctor_id"], name: "index_patients_on_doctor_id", using: :btree
   end
 
+  add_foreign_key "case_assignments", "doctors"
+  add_foreign_key "case_assignments", "patients"
+  add_foreign_key "message_templates", "diagnostics"
+  add_foreign_key "messages", "patients"
+  add_foreign_key "patients", "diagnostics"
+  add_foreign_key "patients", "doctors"
 end

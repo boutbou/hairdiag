@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829140805) do
+ActiveRecord::Schema.define(version: 20170830092136) do
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170829140805) do
     t.string   "url"
     t.string   "phone_number"
     t.string   "specialty"
-    t.integer  "RPPS"
+    t.string   "RPPS"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

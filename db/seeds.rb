@@ -18,7 +18,7 @@ doctor = Doctor.new(
   url: 'http://doctolib.com',
   phone_number: "0612394124",
   specialty: 'dermatologue spécialiste du cuir chevelu',
-  RPPS: 123123,
+  RPPS: '123123',
   email: 'jeanreno@gmail.com',
   password: 'reno2992'
   )

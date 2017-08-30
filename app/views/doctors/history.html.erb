@@ -1,2 +1,39 @@
-<h1>Doctors#history</h1>
-<p>Find me in app/views/doctors/history.html.erb</p>
+<h1>Here is all your cases</h1>
+
+<!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas -->
+<% @patients.all.each do |patient| %>
+<% if patient.case_assignment.doctor_id = current_doctor  %>
+<%= link_to patient.first_name, patient_path(patient)  %>
+<ul>
+  <li><% patient.first_name + " " + patient.last_name %></li>
+  <li><% patient.email %></li>
+  <li><% patient.gender %></li>
+  <li><% patient.zip_code %></li>
+  <li><% patient.city %></li>
+  <li><% patient.country %></li>
+  <li><% patient.age %></li>
+  <li><% patient.loss_start_date %></li>
+  <li><% patient.relative %></li>
+  <li><% patient.weekly_shampoo %></li>
+  <li><% patient.dandruff %></li>
+  <li><% patient.greasy_hair %></li>
+  <li><% patient.refined_hair %></li>
+  <li><% patient.brushing_hair %></li>
+  <li><% patient.shaving_hair %></li>
+  <li><% patient.scalp_densityalp %></li>
+  <li><% patient.hair_thickness %></li>
+  <li><% patient.hair_color %></li>
+  <li><% patient.hair_type %></li>
+  <li><% patient.vitamines %></li>
+  <li><% patient.finasteride %></li>
+  <li><% patient.stage %></li>
+  <li><% patient.traction_test %></li>
+  <li><% patient.restore_area %></li>
+  <li><% patient.technical_preference %></li>
+  <li><% patient.minoxidil %></li>
+  <li><% patient.minoxidil_doses %></li>
+  <li><% patient.hair_transplant %></li>
+  <li><% patient.hair_transplant_technic %></li>
+  <li><% patient.status %></li>
+</ul>
+<% end %>

@@ -1,8 +1,8 @@
 <h1>Here is all your cases</h1>
 
-<!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas -->
-<% @patients.all.each do |patient| %>
-<% if patient.case_assignment.doctor_id = current_doctor  %>
+<!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas et le numero correspond au statut du patient-->
+<% @patients.each do |patient| %>
+<% if patient.status == 4  %>
 <%= link_to patient.first_name, patient_path(patient)  %>
 <ul>
   <li><% patient.first_name + " " + patient.last_name %></li>
@@ -36,4 +36,5 @@
   <li><% patient.hair_transplant_technic %></li>
   <li><% patient.status %></li>
 </ul>
+<% end %>
 <% end %>

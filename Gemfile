@@ -14,7 +14,6 @@ gem 'devise'
 gem 'figaro'
 
 # Cloudinary- Attachinary
-gem 'cloudinary'
 gem 'coffee-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.5'

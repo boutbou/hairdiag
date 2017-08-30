@@ -11,8 +11,6 @@
           <div class="col-xs-8 col-xs-offset-2">
             <p>
 
-
-
             </p>
           </div>
         </div>
@@ -89,7 +87,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> #{:last_name} #{:first_name}, quelle est votre adresse Email ?"}%>
+        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> Quelle est votre adresse Email ?"}%>
       </fieldset>
 
       <fieldset>
@@ -134,68 +132,6 @@
 
       <fieldset>
         <%= f.input :brushing_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Entendu, faites-vous des tresses / défrisages / brushings ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :shaving_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Faites-vous un rasage régulier de tout ou une partie de votre cuir chevelu ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :scalp_density, collection: ["moyenne","bonne","très bonne"], input_html: { "cf-questions" => "Quelle est la densité à l'arrière de votre cuir chevelu ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :hair_thickness, collection: ["fin","moyen","épais"], input_html: { "cf-questions" => "Comment conciderez vous l'épaisseur de vos cheveux ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :hair_color, collection: ["blancs", "gris", "blonds", "Chatain clair",  "chatain foncé", "noir", "roux"], input_html: { "cf-questions" => "Quelle est la couleur naturelle de vos cheveux ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :hair_type, collection: ["raides", "ondulés", "bouclés", "crépus"],input_html: { "cf-questions" => "Quel est le type de vos cheveux ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :vitamines, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous des vitamines ou des compléments alimentaires ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :minoxidil, collection: ["oui","non"], input_html: { "cf-questions" => "Etes-vous sous Minoxidil ?"}%>
-      </fieldset>
-
-      <% if  "{previous-answer}" == "oui" %>
-      <fieldset>
-        <%= f.input :minoxidil_doses, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-      <% end %>
-
-      <fieldset>
-        <%= f.input :finasteride, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :hair_transplant, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :hair_transplant_technic, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :stage, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :traction_test, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :restore_area, input_html: { "cf-questions" => ""}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :technical_preference, input_html: { "cf-questions" => ""}%>
       </fieldset>
 
       <fieldset>

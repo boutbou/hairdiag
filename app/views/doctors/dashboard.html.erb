@@ -1,1 +1,7 @@
-<h1>Hello Dream TEAM Here is our fabulous dashboard !!</h1>
+<h1>Hello Dream TEAM hsere is our fabulous dashboard !!</h1>
+
+<!-- Bouton "ajouter un patient" -->
+  <%= link_to "Voir un patient", doctors_assign_patient_path, class: "btn btn-info" %>
+
+<h3>Il y a actuellement <%= @patients.count %> patients qui attendent d'être traités</h3>
+<p> Vous n'avez actuellement pas de cas à traiter !</p>

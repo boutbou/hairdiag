@@ -1,10 +1,13 @@
 class DoctorsController < ApplicationController
 
-  def dashboard
-  end
 
-  def history
-  end
+ def dashboard
+  @patients=Patient.all #pour le moment on affiche tout les patients
+ end
+
+ def history
+  @patients
+ end
 
   def answer
   end

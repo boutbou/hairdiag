@@ -14,3 +14,19 @@
   color: white;
 }
 
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  opacity: 0.6;
+}
+
+.btn-medium:hover {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  opacity: 0.4;
+  background-color: #80BBD3;
+}

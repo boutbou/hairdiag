@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
 
 
-  def dashboard
+
 
 
 

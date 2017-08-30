@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Patient.destroy_all
+Doctor.destroy_all
 
 doctor = Doctor.new(
   first_name: 'Jean',
@@ -66,3 +68,7 @@ urls = [
   'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'
 ]
 patient.photo_urls = urls # Multi-upload happens here
+
+
+
+puts "Seeds done !"

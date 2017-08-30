@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-  
+
   has_many :case_assignments
   has_many :patients
   validates :first_name, length: { minimum: 2 }, presence: true
@@ -12,7 +12,7 @@ class Doctor < ApplicationRecord
   validates :phone_number, uniqueness: true, presence: true
   validates :specialty, presence: true
   validates :RPPS, uniqueness: true, presence: true
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

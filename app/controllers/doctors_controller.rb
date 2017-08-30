@@ -1,10 +1,23 @@
 class DoctorsController < ApplicationController
+
   def dashboard
+  end
+
+  def new
+    @doctor = Doctor.new
   end
 
   def history
   end
 
-  def answer
+  def assign_patient
   end
+
+  def show_patient
+  end
+
+  def create_answer
+  end
+
 end
+

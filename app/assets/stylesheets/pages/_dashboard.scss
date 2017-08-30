@@ -1,0 +1,103 @@
+// left navigation //
+
+.dashboard-container {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.side-nav {
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+}
+
+
+
+
+.menu {
+  height: 90%;
+  padding: 8% 0 0 4%;
+}
+
+.menu a {
+  padding-bottom: 4%;
+}
+
+.profile {
+  width: 100%;
+}
+
+.text-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.text-icon p {
+  margin: 0;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.profile-link {
+  padding-bottom: 6%;
+  padding-left: 4%;
+  width: 100%;
+}
+
+
+// main part //
+
+.dashboard-infos {
+  margin: 0 4%;
+}
+
+.dashboard-boiler-plate {
+  border-left: 5px solid $green-main;
+}
+
+.dashboard-boiler-plate p {
+  padding-left: 2%;
+}
+
+.dashboard-boiler-plate h2 {
+  color: $green-main;
+  font-size: 1.5em;
+  padding-left: 2%;
+}
+
+.dashboard-infos .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.dashboard-infos .btn p {
+  margin: 0;
+}
+
+.see-patient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5%;
+  height: 15%;
+  width: -5%;
+}
+
+.see-patient p {
+  text-align: center;
+  width: 90%;
+}
+
+.see-patient strong {
+  color: $green-main;
+  font-size: 1.5em;
+  padding: 0 1%;
+}

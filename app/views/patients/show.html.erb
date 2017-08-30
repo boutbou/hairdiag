@@ -1,0 +1,5 @@
+<!-- Cette show est la show lorsque le patient clique sur le lien lui permettant d'accéder à son cas-->
+
+<% @patient.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>

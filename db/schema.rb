@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830092136) do
+ActiveRecord::Schema.define(version: 20170830140004) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.string   "resource_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
 
   create_table "case_assignments", force: :cascade do |t|
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.integer  "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_case_assignments_on_doctor_id"
-    t.index ["patient_id"], name: "index_case_assignments_on_patient_id"
+    t.index ["doctor_id"], name: "index_case_assignments_on_doctor_id", using: :btree
+    t.index ["patient_id"], name: "index_case_assignments_on_patient_id", using: :btree
   end
 
   create_table "diagnostics", force: :cascade do |t|
@@ -67,8 +70,8 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.index ["email"], name: "index_doctors_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_doctors_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "message_templates", force: :cascade do |t|
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.integer  "diagnostic_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["diagnostic_id"], name: "index_message_templates_on_diagnostic_id"
+    t.index ["diagnostic_id"], name: "index_message_templates_on_diagnostic_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -86,7 +89,7 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.integer  "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_messages_on_patient_id"
+    t.index ["patient_id"], name: "index_messages_on_patient_id", using: :btree
   end
 
   create_table "patients", force: :cascade do |t|
@@ -124,12 +127,12 @@ ActiveRecord::Schema.define(version: 20170830092136) do
     t.integer  "photos"
     t.integer  "document"
     t.integer  "doctor_id"
-    t.integer  "status"
+    t.string   "status"
     t.integer  "diagnostic_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["diagnostic_id"], name: "index_patients_on_diagnostic_id"
-    t.index ["doctor_id"], name: "index_patients_on_doctor_id"
+    t.index ["diagnostic_id"], name: "index_patients_on_diagnostic_id", using: :btree
+    t.index ["doctor_id"], name: "index_patients_on_doctor_id", using: :btree
   end
 
 end

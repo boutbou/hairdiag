@@ -36,7 +36,7 @@ patient = Patient.new(
   country: 'France',
   age: 28,
   loss_start_date: 2015,
-  relative: :Pere,
+  relative: "Père",
   weekly_shampoo: 'aer',
   dandruff: 'aer',
   greasy_hair: 'aerae',

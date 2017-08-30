@@ -1,21 +1,30 @@
 class DoctorsController < ApplicationController
 
-def dashboard
+
+ def dashboard
   @patients=Patient.all #pour le moment on affiche tout les patients
-end
+ end
 
-def history
+ def history
   @patients
-end
+ end
 
-def answer
-end
+  def answer
+  end
+  
+  def assign_patient
+  end
 
-private
+  def show_patient
+  end
 
-def doctor_params
-  params.require(:doctor).permit(:address, :zip_code,
+  def create_answer
+  end
+  
+  private
+
+  def doctor_params
+    params.require(:doctor).permit(:address, :zip_code,
     :city, :country, :description, :phone_number)
-end
-
+  end
 end

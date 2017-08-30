@@ -1,0 +1,12 @@
+// pour modifier le css du form :
+// tout mettre dans .conversational-form puis nom de la classe sans le "."
+// le logo bernie est dans le conversational-form.min.js
+
+.conversational-form {
+  cf-chat-response text>p {
+    background: #60E0A5;
+  }
+  cf-chat-response {
+    color: black;
+  }
+}

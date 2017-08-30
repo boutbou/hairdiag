@@ -17,4 +17,12 @@ class Doctor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+after_create :send_welcome_email
+
+private
+
+  def send_welcome_email
+    DoctorMailer.welcome(self).deliver_now
+  end
 end

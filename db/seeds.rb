@@ -17,7 +17,7 @@ doctor = Doctor.new(
   description: 'Medecin dermato depuis 2 ans',
   url: 'http://doctolib.com',
   phone_number: "0612394124",
-  specialty: 'dermatologue spécialiste du cuir chevelu',
+  specialty: 'dermatologue spécialiste des culs chevelus',
   RPPS: '123123',
   email: 'jeanreno@gmail.com',
   password: 'reno2992'

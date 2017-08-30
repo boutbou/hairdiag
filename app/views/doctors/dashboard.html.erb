@@ -1,5 +1,6 @@
 
 
+
  <div class="dashboard-container">
   <div class="row">
     <div class="col-md-2">
@@ -40,7 +41,7 @@
           <p>En arrivant sur cette page, vous engagez votre responsabilité et celle de votre profession. En cliquant sur le bouton "voir un patient" ci-dessous, vous vous engagez à étudier son cas conformément au contrat que vous avez signé avec nous et à y répondre en moins de 48h.</p>
         </div>
         <div class="see-patient">
-          <%= link_to "#", class:"cta-start" do %>
+          <%= link_to doctors_assign_patient_path, class:"cta-start" do %>
           <div>
             <button class="btn btn-cta">
               <p>Voir un patient</p>
@@ -48,7 +49,7 @@
             </button>
           </div>
           <% end %>
-        <p>Il y actuellement <strong>5</strong> patients qui attendent d'être traités</p>
+        <p>Il y actuellement <strong><%= @patients.count %></strong> patients qui attendent d'être traités</p>
         </div>
 
 
@@ -56,12 +57,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-

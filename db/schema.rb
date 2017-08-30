@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828152418) do
+ActiveRecord::Schema.define(version: 20170830092136) do
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  end
 
   create_table "case_assignments", force: :cascade do |t|
     t.integer  "doctor_id"
@@ -39,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170828152418) do
     t.string   "url"
     t.string   "phone_number"
     t.string   "specialty"
-    t.integer  "RPPS"
+    t.string   "RPPS"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -83,7 +98,7 @@ ActiveRecord::Schema.define(version: 20170828152418) do
     t.string   "city"
     t.string   "country"
     t.integer  "age"
-    t.datetime "loss_start_date"
+    t.integer  "loss_start_date"
     t.string   "relative"
     t.integer  "weekly_shampoo"
     t.string   "dandruff"

@@ -1,4 +1,4 @@
-    class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_doctor!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -10,5 +10,5 @@
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:address, :zip_code,
       :city, :country, :description, :phone_number, :avatar])
-  end
+  end 
 end

@@ -1,6 +1,10 @@
 class DoctorsController < ApplicationController
 
 
+
+
+
+
  def dashboard
   @patients=Patient.all #pour le moment on affiche tout les patients
  end
@@ -9,8 +13,10 @@ class DoctorsController < ApplicationController
   @patients=Patient.all
  end
 
+
  def assign_patient
  end
+
 
  def show_patient
   @patient = Patient.find(params[:id])
@@ -25,9 +31,6 @@ class DoctorsController < ApplicationController
   else
     render "doctors/show_patient"
   end
-
-
- end
 
 private
 

@@ -10,26 +10,32 @@ class DoctorsController < ApplicationController
  end
 
  def history
-  @patients
+  @patients=Patient.all
  end
 
-  def answer
+
+ def assign_patient
+ end
+
+
+ def show_patient
+  @patient = Patient.find(params[:id])
+  @recommendation = Message.new
+ end
+
+ def create_answer
+  @patient = Patient.find(params[:id])
+  @recommendation = Message.new(message_params)
+  if @recommendation.save
+    redirect_to doctor_dashboard_path
+  else
+    render "doctors/show_patient"
   end
 
-  def assign_patient
+private
 
-  end
+ def message_params
+   params.require(:message).permit(:subject, :content)
+ end
 
-  def show_patient
-  end
-
-  def create_answer
-  end
-
-  private
-
-  def doctor_params
-    params.require(:doctor).permit(:address, :zip_code,
-    :city, :country, :description, :phone_number)
-  end
 end

@@ -1,0 +1,62 @@
+<h1>Aide moi ce futur chauve !!</h1>
+
+<!--Recap du dossier patient -->
+
+<h2> Informations du patients</h2>
+<ul>
+  <li><%= @patient.first_name + " " + @patient.last_name %></li>
+  <li><%= @patient.email %></li>
+  <li><%= @patient.gender %></li>
+  <li><%= @patient.zip_code %></li>
+  <li><%= @patient.city %></li>
+  <li><%= @patient.country %></li>
+  <li><%= @patient.age %></li>
+  <li><%= @patient.loss_start_date %></li>
+  <li><%= @patient.relative %></li>
+  <li><%= @patient.weekly_shampoo %></li>
+  <li><%= @patient.dandruff %></li>
+  <li><%= @patient.greasy_hair %></li>
+  <li><%= @patient.refined_hair %></li>
+  <li><%= @patient.brushing_hair %></li>
+  <li><%= @patient.shaving_hair %></li>
+  <li><%= @patient.scalp_density %></li>
+  <li><%= @patient.hair_thickness %></li>
+  <li><%= @patient.hair_color %></li>
+  <li><%= @patient.hair_type %></li>
+  <li><%= @patient.vitamines %></li>
+  <li><%= @patient.finasteride %></li>
+  <li><%= @patient.stage %></li>
+  <li><%= @patient.traction_test %></li>
+  <li><%= @patient.restore_area %></li>
+  <li><%= @patient.technical_preference %></li>
+  <li><%= @patient.minoxidil %></li>
+  <li><%= @patient.minoxidil_doses %></li>
+  <li><%= @patient.hair_transplant %></li>
+  <li><%= @patient.hair_transplant_technic %></li>
+  <li><%= @patient.status %></li>
+</ul>
+
+<!-- photos du patient -->
+<% if @patient.photos? %>
+<% @patient.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, height: 150, width: 150, crop: :fill %>
+<% end %>
+<% else %>
+<%= cl_image_path 'http://resize-football.ladmedia.fr/r/920,/crop/920,512/img/images/media/psg/articles/un-ticket-blanc-barthez-au-psg/laurent-blanc-fabien-barthez/3107375-1-fre-FR/Laurent-Blanc-Fabien-Barthez.jpg' %>
+<% end %>
+
+<!-- Pour le moment je met un simple_form, mais il faudrat travailler cette partie avec les 3 categories -->
+<h2> Recommendations </h2>
+
+<%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :subject, required: false %>
+        <%= f.input :content, required: false %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Envoyer le message" %>
+      </div>
+      <% end %>

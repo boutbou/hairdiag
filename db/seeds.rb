@@ -7,19 +7,34 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+doctor = Doctor.new(
+  first_name: 'Jean',
+  last_name: 'Reno',
+  adress: '23 rue Jouffroy',
+  zip_code: 75017,
+  city: 'Paris',
+  country: 'France',
+  description: 'Medecin dermato depuis 2 ans',
+  url: 'http://doctolib.com',
+  phone_number: "0612394124",
+  specialty: 'dermatologue spécialiste du cuir chevelu',
+  RPPS: 123123,
+  email: 'jeanreno@gmail.com',
+  password: 'reno2992'
+  )
+doctor.save!
 
 patient = Patient.new(
   first_name: 'Benjamin',
   last_name: 'Hagege',
-  gender: 'male',
+  gender: 1,
   zip_code: 75017,
   city: 'Paris',
   email: 'hagegebenjamin@gmail.com',
   country: 'France',
   age: 28,
   loss_start_date: 2015,
-  relative: 'father',
+  relative: :Pere,
   weekly_shampoo: 'aer',
   dandruff: 'aer',
   greasy_hair: 'aerae',
@@ -47,7 +62,7 @@ patient = Patient.new(
 patient.save!
 
 urls = [
-  'http://img.clubic.com/08254724-photo-xbox-console.jpg',
-  'http://compass.xbox.com/assets/a5/d3/a5d3e0e4-38fd-42ab-90f4-e7b5112af4d1.png'
+  'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
+  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'
 ]
 patient.photo_urls = urls # Multi-upload happens here

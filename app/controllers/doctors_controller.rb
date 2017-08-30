@@ -3,6 +3,10 @@ class DoctorsController < ApplicationController
   def dashboard
   end
 
+  def new
+    @doctor = Doctor.new
+  end
+
   def history
   end
 

@@ -1,0 +1,17 @@
+.patients-show h2 {
+  background-color: $green-main;
+  color: white;
+  font-size: 1.1em;
+  padding: 2px 2%;
+}
+
+.patients-details h3 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.fa-minus, .fa-plus {
+  color: $green-main;
+  font-size: 20px;
+}
+

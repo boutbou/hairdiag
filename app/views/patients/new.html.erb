@@ -73,7 +73,7 @@
     <div class="col-xs-6 page-part" id="col-form">
       <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
       <fieldset>
-      <%= f.input :photos, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
+      <%= f.input :photos, as: :attachinary, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
       </fieldset>
 
 
@@ -86,7 +86,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :gender, collection: Patient.genders, input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
+        <%= f.input :gender, collection: ["Une femme", "Un homme"], input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
         <%= f.button :submit %>
       </fieldset>
 
@@ -104,7 +104,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :country, collection: Patient.countries, input_html: { "cf-questions" => "Est-ce que {previous-answer} est situé en france ou à l'étranger ?"}%>
+        <%= f.input :country, collection: ["France", "Etranger"], input_html: { "cf-questions" => "Est-ce que {previous-answer} est situé en france ou à l'étranger ?"}%>
       </fieldset>
 
       <fieldset>
@@ -116,7 +116,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :relative, collection: Patient.relatives , input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
+        <%= f.input :relative, collection: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
       </fieldset>
 
       <fieldset>

@@ -125,10 +125,20 @@
   font-size:14pt;
 }
 
-.form-control:focus {
-  border-color: $green-main;
+.form-control {
+  border: transparent;
 }
 
-.form-control {
-    border-color: transparent;
+.form-control:focus,  {
+  border: 2px solid $green-main;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075), 0 0 0px rgba(255, 0, 0, 0.6);
+}
+
+.recommandation-text-area .btn-cta {
+  color: white;
+  padding: 4% 13%;
+}
+
+.recommandation-text-area .form-actions {
+  float: right;
 }

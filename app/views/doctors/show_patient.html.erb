@@ -151,16 +151,14 @@
           <div class="recommandation-text-area">
             <%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
             <%= f.error_notification %>
-
-            <div class="form-inputs">
-            <%= f.input :subject, required: false %>
-            <%= f.input :content, required: false, as: :text %>
-          </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Envoyer le message" %>
-        </div>
-        <% end %>
+              <div class="form-inputs">
+              <%= f.input :subject, required: false %>
+              <%= f.input :content, required: false, as: :text %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit, "Envoyer le message", class:"btn-cta" %>
+              </div>
+            <% end %>
           </div>
 
         </div>

@@ -72,6 +72,10 @@
     </div>
     <div class="col-xs-6 page-part" id="col-form">
       <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
+      <fieldset>
+      <%= f.input :photos, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
+      </fieldset>
+
 
       <fieldset>
         <%= f.input :last_name , input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne s'est jamais rencontré!<br>Quel est votre prénom ?"} %>
@@ -224,24 +228,28 @@
 
       <fieldset>
         <%= f.input :traction_test, collection: ["0-1 cheveu","2-3 cheveux","> 3 cheveux"], input_html: { "cf-questions" => "Maintenant je vais vous demander de faire un test de tractions:<br>Assurez vous d'avoir un cuir chevelu non lavé pendant 2 jours.<br>Prenez une mèche comprenant environ 10 cheveux entre le pouce et l'index. Exercez une légère traction afin de détacher les cheveux venant facilement.<br>Combien comptez le nombre de cheveux présents ?"}%>
-        </fieldset>
+      </fieldset>
 
-        <fieldset>
-          <%= f.input :restore_area, collection: ["Front","Tonsure (surface au sommet du crâne)","Totalité","Poils du corps (sourcils, barbe)"], input_html: { "cf-questions" => "Projet de restauration capillaire - quelle zone souhaitez-vous restaurer ? (par ordre de priorité si plusieurs zones)"}%>
-        </fieldset>
+      <fieldset>
+        <%= f.input :restore_area, collection: ["Front","Tonsure (surface au sommet du crâne)","Totalité","Poils du corps (sourcils, barbe)"], input_html: { "cf-questions" => "Projet de restauration capillaire - quelle zone souhaitez-vous restaurer ? (par ordre de priorité si plusieurs zones)"}%>
+      </fieldset>
 
-        <fieldset>
-          <%= f.input :technical_preference, collection: ["F.U.E. (Unités folliculaires par extraction)","F.U.T. (Unités folliculaires par transplantation)","F.U.L. (Unités folliculaires à cheveux longs)","Aucune"], input_html: { "cf-questions" => "Poils du corps (sourcils, barbe)"}%>
-        </fieldset>
+      <fieldset>
+        <%= f.input :technical_preference, collection: ["F.U.E. (Unités folliculaires par extraction)","F.U.T. (Unités folliculaires par transplantation)","F.U.L. (Unités folliculaires à cheveux longs)","Aucune"], input_html: { "cf-questions" => "Poils du corps (sourcils, barbe)"}%>
+      </fieldset>
 
-        <fieldset>
-          <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
-        </fieldset>
+      <fieldset>
+        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
+      </fieldset>
 
-        <%= link_to root_path, class: "header-item" %>
+      <fieldset>
+        <%= f.input :photos, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
+      </fieldset>
 
-        <% end %>
-      </div>
+      <%= link_to root_path, class: "header-item" %>
+
+      <% end %>
     </div>
   </div>
+</div>
 

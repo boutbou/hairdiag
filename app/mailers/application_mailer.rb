@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'hello@hairdiag.com'
+  default from: 'contact@hairdiag.com'
   layout 'mailer'
 end

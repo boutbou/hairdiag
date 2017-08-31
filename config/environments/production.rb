@@ -57,6 +57,11 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "hairdiag_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  # Postmark for production
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['08a374ac-140f-4aeb-8279-4ecf8c5b9a75'] }
+  config.action_mailer.default_url_options = { host: "hairdiag.com" }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

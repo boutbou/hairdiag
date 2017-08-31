@@ -14,6 +14,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'devise'
 gem 'figaro'
+gem 'postmark-rails'
 
 # Cloudinary- Attachinary
 gem 'coffee-rails'

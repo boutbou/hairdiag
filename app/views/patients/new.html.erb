@@ -72,10 +72,6 @@
     </div>
     <div class="col-xs-6 page-part" id="col-form">
       <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
-      <fieldset>
-      <%= f.input :photos, as: :attachinary, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
-      </fieldset>
-
 
       <fieldset>
         <%= f.input :last_name , input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne s'est jamais rencontré!<br>Quel est votre prénom ?"} %>
@@ -125,10 +121,6 @@
 
       <fieldset>
         <%= f.input :dandruff, collection: ["oui","non"], input_html: { "cf-questions" => "{previous-answer} fois! Je savais que vous preniez soin de votre cuir chevelus à la seconde de notre rencontre :).<br> Avez vous des pellicules ?"}%>
-      </fieldset>
-
-      <fieldset>
-        <%= f.input :greasy_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Ne voyez rien de personne, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?"}%>
       </fieldset>
 
       <fieldset cf-questions="Ne voyez rien de personnel, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?" >
@@ -218,12 +210,12 @@
       </fieldset>
 
       <fieldset cf-questions="A quel stade pensez vous être ?" >
-        <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/Stade1_yzlrg4" name="patient[stage]" tabindex="1" value="0" cf-conditional-patient[gender]="1" >
-        <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png" name="patient[stage]" tabindex="1" value="1" cf-conditional-patient[gender]="1">
-        <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade3_sgu99f.png" name="patient[stage]" tabindex="1" value="2" cf-conditional-patient[gender]="1">
-        <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade1_femme_ed4vqu.png" name="patient[stage]" tabindex="1" value="0" cf-conditional-patient[gender]="0" >
-        <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade2_femme_gdxaoo.png" name="patient[stage]" tabindex="1" value="1" cf-conditional-patient[gender]="0">
-        <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade3_femme_qqafpl.png" name="patient[stage]" tabindex="1" value="2" cf-conditional-patient[gender]="0">
+        <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/Stade1_yzlrg4" name="patient[stage]" tabindex="1" value="0" cf-conditional-patient[gender]="Un homme" >
+        <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png" name="patient[stage]" tabindex="1" value="1" cf-conditional-patient[gender]="Un homme">
+        <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade3_sgu99f.png" name="patient[stage]" tabindex="1" value="2" cf-conditional-patient[gender]="Un homme">
+        <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade1_femme_ed4vqu.png" name="patient[stage]" tabindex="1" value="0" cf-conditional-patient[gender]="Une femme" >
+        <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade2_femme_gdxaoo.png" name="patient[stage]" tabindex="1" value="1" cf-conditional-patient[gender]="Une femme">
+        <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/stade3_femme_qqafpl.png" name="patient[stage]" tabindex="1" value="2" cf-conditional-patient[gender]="Une femme">
       </fieldset>
 
       <fieldset>
@@ -243,10 +235,10 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :photos, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
+      <%= f.input :photos, as: :attachinary, input_html: { "cf-questions" => "Merci d'ajouter vos photos?"}%>
       </fieldset>
 
-      <%= link_to root_path, class: "header-item" %>
+      <%= link_to patients_path(@patient.id) , class: "header-item" %>
 
       <% end %>
     </div>

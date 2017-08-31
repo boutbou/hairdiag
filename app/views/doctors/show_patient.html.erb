@@ -118,63 +118,63 @@
                 </div>
               </div>
             </div>
+            <div class="patient-photos">
+              <h3> Photos <a data-toggle="collapse" data-target="#patient-pictures">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+              </h3>
+              <div class="row collapse in" id="patient-pictures">
+                <% if @patient.photos? %>
+                  <% @patient.photos.each do |photo| %>
+                  <div class="col-md-4">
+                  <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
+                  </div>
+                  <% end %>
+                <% else %>
+                  <p>Le patient n'a pas chargé d'image</p>
+                <% end %>
+              </div>
+            </div>
           </div>
 
-
-
-        <!-- photos du patient -->
-              <% if @patient.photos? %>
-              <% @patient.photos.each do |photo| %>
-              <%= cl_image_tag photo.path, height: 150, width: 150, crop: :fill %>
-              <% end %>
-              <% else %>
-              <%= cl_image_path 'http://resize-football.ladmedia.fr/r/920,/crop/920,512/img/images/media/psg/articles/un-ticket-blanc-barthez-au-psg/laurent-blanc-fabien-barthez/3107375-1-fre-FR/Laurent-Blanc-Fabien-Barthez.jpg' %>
-              <% end %>
-
+        <h2> RECOMMANDATIONS </h2>
+        <div class="doctor-recommandations">
+          <div class="messages-templates">
+            <a href="#" class="messages-templates-buttons active">Message type 1</a>
+            <a href="#" class="messages-templates-buttons">Message type 2</a>
+            <a href="#" class="messages-templates-buttons">Message type 3</a>
           </div>
+          <div class="dignastic-choices">
+            <a href="#" class="dignastic-choices-buttons active"><i>1</i><p>Prescription</p></a>
+            <a href="#" class="dignastic-choices-buttons"><i>2</i>Proposition de rendez-vous</a>
+            <a href="#" class="dignastic-choices-buttons"><i>3</i>Recommandations</a>
+          </div>
+          <div class="recommandation-text-area">
+            <%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
+            <%= f.error_notification %>
 
-
-              <script>
-                  $('.collapse-icon').click(function() {
-                    $(this).toggleClass('fa-minus').toggleClass('fa-plus');
-                  })
-              </script>
-        <!--Recap du dossier patient -->
-
-
-
-        <!-- Pour le moment je met un simple_form, mais il faudrat travailler cette partie avec les 3 categories -->
-        <h2> Recommendations </h2>
-
-        <%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :subject, required: false %>
-          <%= f.input :content, required: false %>
-        </div>
+            <div class="form-inputs">
+            <%= f.input :subject, required: false %>
+            <%= f.input :content, required: false %>
+          </div>
 
         <div class="form-actions">
           <%= f.button :submit, "Envoyer le message" %>
         </div>
         <% end %>
+          </div>
 
+        </div>
 
 
       </div>
-    </div>
-  </div>
-</div>
+
+
+      <script>
+          $('.collapse-icon').click(function() {
+            $(this).toggleClass('fa-minus').toggleClass('fa-plus');
+          })
+      </script>
 
 
 
-<!--
-<script type="text/javascript">
-  $('.collapse-icon').toggle(function () {
-    $(".collapse-icon").removeClass("fa-minus").addClass("fa-plus");
-}, function () {
-    $(".collapse-icon").removeClass("fa-plus").addClass("fa-minus");
-});
-</script>
 
--->

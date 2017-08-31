@@ -15,3 +15,83 @@
   font-size: 20px;
 }
 
+.patient-photos {
+  padding-bottom: 4%;
+}
+
+.doctor-recommandations {
+  display: grid;
+  grid-template-columns: 250px 800px ;
+  grid-template-rows: 100px 400px ;
+}
+
+.messages-templates {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages-templates-buttons {
+  border: 1px solid #62E1A6;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #4A4A4A;
+  padding: 6px 67px;
+}
+
+.messages-templates .active {
+  background: #62E1A6;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+
+.messages-templates-buttons:hover {
+  border: 3px solid #62E1A6;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #4A4A4A;
+  padding: 6px 67px;
+}
+
+.dignastic-choices {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.dignastic-choices-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4% 0;
+}
+
+.dignastic-choices-buttons i {
+  display: block;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  -moz-border-radius: 50%; /* or 50% */
+  border-radius: 50%; /* or 50% */
+  background-color: $green-main;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  margin-right: 20px;
+}
+
+.dignastic-choices-buttons p {
+  margin: 0
+}
+
+
+.recommandation-text-area {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}

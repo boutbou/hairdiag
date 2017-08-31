@@ -12,9 +12,11 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    @patient.user = current_user
-    @patient.save
-    redirect_to validation_patient_path(@patient)
+    if @patient.save
+      redirect_to validation_patient_path(@patient)
+    else
+      render :new
+    end
   end
 
   def edit

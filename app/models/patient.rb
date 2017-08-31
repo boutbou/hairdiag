@@ -12,11 +12,11 @@ class Patient < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true
-  validates :zip_code, presence: true
+  validates :zip_code, presence: true, numericality: { only_integer: true }
   validates :city, presence: true
   validates :country, presence: true
-  validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 15, less_than_or_equal_to: 28 }
-  validates :loss_start_date, presence: true
+  validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 12, less_than_or_equal_to: 40 }
+  validates :loss_start_date, presence: true, numericality: { only_integer: true }
   validates :relative, presence: true
   validates :weekly_shampoo, presence: true
   validates :dandruff, presence: true

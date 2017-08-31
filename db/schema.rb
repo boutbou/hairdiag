@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831153440) do
+ActiveRecord::Schema.define(version: 20170831155834) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
@@ -121,8 +125,6 @@ ActiveRecord::Schema.define(version: 20170831153440) do
     t.string   "restore_area"
     t.string   "technical_preference"
     t.string   "remark"
-    t.integer  "photos"
-    t.integer  "document"
     t.integer  "doctor_id"
     t.string   "status"
     t.integer  "diagnostic_id"

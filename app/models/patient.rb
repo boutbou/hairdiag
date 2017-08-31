@@ -11,7 +11,7 @@ class Patient < ApplicationRecord
   validates :zip_code, presence: true
   validates :city, presence: true
   validates :country, presence: true
-  validates :age, presence: true
+  validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 15, less_than_or_equal_to: 28 }
   validates :loss_start_date, presence: true
   validates :relative, presence: true
   validates :weekly_shampoo, presence: true

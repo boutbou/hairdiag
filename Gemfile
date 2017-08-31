@@ -7,13 +7,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem "letter_opener", group: :development
 gem 'country_select'
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'devise'
 gem 'figaro'
+gem 'postmark-rails'
 
 # Cloudinary- Attachinary
 gem 'coffee-rails'

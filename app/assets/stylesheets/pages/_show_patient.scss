@@ -23,6 +23,7 @@
   display: grid;
   grid-template-columns: 250px 800px ;
   grid-template-rows: 100px 400px ;
+  grid-column-gap: 30px;
 }
 
 .messages-templates {
@@ -67,9 +68,31 @@
 
 .dignastic-choices-buttons {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   padding: 4% 0;
+  border-bottom: 2px solid $green-main;
+  height: 20%;
+  width: 100%;
+  padding-left: 4px;
+}
+
+.dignastic-choices .active {
+  background-color: #DCDDE1;
+  border-radius: 3px;
+  position: relative;
+}
+
+.dignastic-choices .active:before, .dignastic-choices .active:after {
+    content:" ";
+    position: absolute;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+}
+
+
+.dignastic-choices .active:before {
+    left: 100%;
+    border-left: 11px solid #DCDDE1;
 }
 
 .dignastic-choices-buttons i {
@@ -87,11 +110,25 @@
 }
 
 .dignastic-choices-buttons p {
-  margin: 0
+  margin: 0;
+  color: #4A4A4A;
 }
 
 
 .recommandation-text-area {
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
+}
+
+.message_content .form-control {
+  height: 400px;
+  font-size:14pt;
+}
+
+.form-control:focus {
+  border-color: $green-main;
+}
+
+.form-control {
+    border-color: transparent;
 }

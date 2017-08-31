@@ -145,8 +145,8 @@
           </div>
           <div class="dignastic-choices">
             <a href="#" class="dignastic-choices-buttons active"><i>1</i><p>Prescription</p></a>
-            <a href="#" class="dignastic-choices-buttons"><i>2</i>Proposition de rendez-vous</a>
-            <a href="#" class="dignastic-choices-buttons"><i>3</i>Recommandations</a>
+            <a href="#" class="dignastic-choices-buttons"><i>2</i><p>Proposition de rendez-vous</p></a>
+            <a href="#" class="dignastic-choices-buttons"><i>3</i><p>Recommandations</p></a>
           </div>
           <div class="recommandation-text-area">
             <%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
@@ -154,7 +154,7 @@
 
             <div class="form-inputs">
             <%= f.input :subject, required: false %>
-            <%= f.input :content, required: false %>
+            <%= f.input :content, required: false, as: :text %>
           </div>
 
         <div class="form-actions">
@@ -167,6 +167,8 @@
 
 
       </div>
+
+      <div class="hexagon"></div>
 
 
       <script>

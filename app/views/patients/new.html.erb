@@ -82,7 +82,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :gender, as: :radio_buttons, collection: Patient.genders, input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
+        <%= f.input :gender, collection: Patient.genders, input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
         <%= f.button :submit %>
       </fieldset>
 

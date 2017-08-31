@@ -3,6 +3,7 @@ class Patient < ApplicationRecord
   enum gender: ["Une femme", "Un homme"]
   enum relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"]
   enum country: ["France", "Etranger"]
+  enum status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"]
 
   has_many :messages
   has_many :case_assignments

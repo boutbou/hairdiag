@@ -29,7 +29,7 @@ doctor.save!
 patient = Patient.new(
   first_name: 'Benjamin',
   last_name: 'Hagege',
-  gender: 1,
+  gender: 'Homme',
   zip_code: 75017,
   city: 'Paris',
   email: 'hagegebenjamin@gmail.com',

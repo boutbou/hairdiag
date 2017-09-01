@@ -12,7 +12,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    if @patient.save
+    if @patient.save!
       redirect_to validation_patient_path(@patient)
     else
       render :new
@@ -44,6 +44,6 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :gender, :zip_code, :city, :country, :age, :loss_start_date, :relative, :weekly_shampoo, :dandruff, :greasy_hair, :refined_hair, :brushing_hair, :shaving_hair, :scalp_density, :hair_thickness, :hair_color, :hair_type, :vitamines, :finasteride, :stage, :traction_test, :restore_area, :technical_preference, :status, :email, :minoxidil, :minoxidil_doses, :hair_transplant, :hair_transplant_technic, photos:[])
+    params.require(:patient).permit(:first_name, :last_name, :gender, :zip_code, :city, :country, :age, :loss_start_date, :relative, :weekly_shampoo, :dandruff, :greasy_hair, :refined_hair, :brushing_hair, :shaving_hair, :scalp_density, :hair_thickness, :hair_color, :hair_type, :vitamines, :finasteride, :stage, :traction_test, :restore_area, :technical_preference, :status, :email, :minoxidil, :minoxidil_doses, :hair_transplant, :hair_transplant_technic, :remark, photos:[])
   end
 end

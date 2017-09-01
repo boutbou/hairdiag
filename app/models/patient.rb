@@ -11,7 +11,7 @@ class Patient < ApplicationRecord
   validates :zip_code, presence: true
   validates :city, presence: true
   validates :country, presence: true
-  validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 15, less_than_or_equal_to: 28 }
+  validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 15, less_than_or_equal_to: 40 }
   validates :loss_start_date, presence: true
   validates :relative, presence: true
   validates :weekly_shampoo, presence: true
@@ -30,7 +30,6 @@ class Patient < ApplicationRecord
   validates :traction_test, presence: true
   validates :restore_area, presence: true
   validates :technical_preference, presence: true
-  validates :status, presence: true
   validates :email, format: { with: /\A.*@.*\.[a-z]{2,}\z/ }, presence: true
   validates :minoxidil, presence: true
   validates :minoxidil_doses, presence: true, if: :minoxidil?

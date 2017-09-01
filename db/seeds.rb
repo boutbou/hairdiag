@@ -61,13 +61,13 @@ puts 'Creating 15 fake patients...'
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
   status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"].sample
-  )
 
  patient.save!
 
 urls = [
   'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
-  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'
+  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg',
+  'https://www.consoglobe.com/wp-content/uploads/2015/10/shutterstock-alopecie-chute-des-cheveux-conseils-02.jpg'
 ]
 patient.photo_urls = urls
 

@@ -26,17 +26,19 @@ doctor = Doctor.new(
   )
 doctor.save!
 
-patient = Patient.new(
-  first_name: 'Benjamin',
-  last_name: 'Hagege',
-  gender: 'Homme',
+puts 'Creating 15 fake patients...'
+15.times do
+  patient = Patient.new(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  gender: ["Une femme", "Un homme"].sample,
   zip_code: 75017,
-  city: 'Paris',
-  email: 'hagegebenjamin@gmail.com',
-  country: 'France',
+  city: Faker::Address.city,
+  email: Faker::Internet.email,
+  country: ["France", "Etranger"].sample,
   age: 28,
   loss_start_date: 2015,
-  relative: "Père",
+  relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"].sample,
   weekly_shampoo: 'aer',
   dandruff: 'aer',
   greasy_hair: 'aerae',
@@ -58,18 +60,17 @@ patient = Patient.new(
   restore_area: 'aer',
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
-  status: 'yes',
-  )
+  status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"].sample
 
-patient.save!
+ patient.save!
 
 urls = [
   'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
   'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg',
   'https://www.consoglobe.com/wp-content/uploads/2015/10/shutterstock-alopecie-chute-des-cheveux-conseils-02.jpg'
 ]
-patient.photo_urls = urls # Multi-upload happens here
+patient.photo_urls = urls
 
-
+end
 
 puts "Seeds done !"

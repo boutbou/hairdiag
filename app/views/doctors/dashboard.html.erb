@@ -8,7 +8,7 @@
           <p>En arrivant sur cette page, vous engagez votre responsabilité et celle de votre profession. En cliquant sur le bouton "voir un patient" ci-dessous, vous vous engagez à étudier son cas conformément au contrat que vous avez signé avec nous et à y répondre en moins de 48h.</p>
         </div>
         <div class="see-patient">
-          <%= link_to doctor_assign_patient_path, class:"cta-start" do %>
+          <%= link_to doctor_assign_patient_path, class:"cta-start", method: :post do %>
           <div>
             <button class="btn btn-cta">
               <p>Voir un patient</p>
@@ -16,7 +16,7 @@
             </button>
           </div>
           <% end %>
-        <p>Il y actuellement <strong><%= @patients.count %></strong> patients qui attendent d'être traités</p>
+        <p>Il y actuellement <strong><%= @patients_available.count %></strong> patient(s) qui attend(ent) d'être traité(s)</p>
         </div>
 
 

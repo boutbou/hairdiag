@@ -29,7 +29,7 @@ doctor.save!
 patient = Patient.new(
   first_name: 'Benjamin',
   last_name: 'Hagege',
-  gender: 1,
+  gender: 'Homme',
   zip_code: 75017,
   city: 'Paris',
   email: 'hagegebenjamin@gmail.com',
@@ -58,14 +58,15 @@ patient = Patient.new(
   restore_area: 'aer',
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
-  status: 'yes'
+  status: 'yes',
   )
 
 patient.save!
 
 urls = [
   'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
-  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'
+  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg',
+  'https://www.consoglobe.com/wp-content/uploads/2015/10/shutterstock-alopecie-chute-des-cheveux-conseils-02.jpg'
 ]
 patient.photo_urls = urls # Multi-upload happens here
 

@@ -7,8 +7,21 @@ class DoctorMailer < ApplicationMailer
   #
   def welcome(doctor)
     @doctor = doctor
+    mail(
+      subject: 'Welcome to Hairdiag',
+      to: @doctor.email,
+      track_opens: 'true'
+      )
+  end
 
-    mail(to: @doctor.email, subject: 'Welcome to Hairdiag')
-
+  def new_message(patient, doctor)
+    @patient = patient
+    @doctor = doctor
+    mail(
+      subject: 'You received an answer from your dermatologist',
+      to: @patient.email,
+      from: 'contact@hairdiag.com',
+      track_opens: 'true'
+      )
   end
 end

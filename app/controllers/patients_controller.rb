@@ -20,6 +20,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
+    redirect_to new_patient_path(@patient)
   end
 
   def update

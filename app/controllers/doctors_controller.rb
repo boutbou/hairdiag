@@ -11,7 +11,7 @@ class DoctorsController < ApplicationController
 end
 
  def history
-  @patients=Patient.where(doctor_id: :current_doctor)
+  @patients = Patient.where(doctor_id: current_doctor.id)
  end
 
 
@@ -19,12 +19,12 @@ end
   @patient_selected = Patient.where(status: "payment_successful").to_a.sample
 
   if @patient_selected.nil?
-    flash[:notice] = "Il n'y a pas de cas en attente d'être traité"
+    flash[:alerte] = "Il n'y a pas de cas en attente d'être traité"
     redirect_to doctor_dashboard_path
   else
     @patient_selected.doctor_id = current_doctor.id
     @patient_selected.status = "assigned"
-    @patient_selected.save
+    @patient_selected.save!
     redirect_to doctor_show_patient_path(@patient_selected)
   end
 
@@ -38,10 +38,15 @@ end
  def create_answer
   @patient = Patient.find(params[:id])
   @recommendation = Message.new(message_params)
-  if @recommendation.save
+  @recommendation.patient_id = @patient.id
+  if @recommendation.save!
+    @patient.status = "answered"
+    @patient.save!
     redirect_to doctor_dashboard_path
+    flash[:notice] = "Felicitations, vous venez de traité un patient !"
   else
     render "doctors/show_patient"
+    flash[:alert] = "Aie, il semblerait que vous ayez fait une erreurs dans la redaction de votre recommendation!"
   end
 end
 

@@ -61,6 +61,7 @@ puts 'Creating 15 fake patients...'
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
   status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"].sample
+)
 
  patient.save!
 

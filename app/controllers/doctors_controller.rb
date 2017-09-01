@@ -2,12 +2,13 @@ class DoctorsController < ApplicationController
 
 
  def dashboard
-  @waiting_patient = Patient.where(status: "assigned", doctor_id: :current_doctor)
+  @waiting_patient = Patient.where(status: "assigned", doctor_id: current_doctor.id).limit(1).first
   if @waiting_patient.nil?
-  @patients_available = Patient.where(status: "payment_successful")
+    @patients_available = Patient.where(status: "payment_successful")
   else
-  redirect_to show_patient_path(@waiting_patient)
- end
+    redirect_to doctor_show_patient_path(@waiting_patient)
+  end
+end
 
  def history
   @patients=Patient.where(doctor_id: :current_doctor)

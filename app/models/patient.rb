@@ -1,9 +1,5 @@
 class Patient < ApplicationRecord
   # enum pour les listes de choix dans le formulaire
-  enum gender: ["Une femme", "Un homme"]
-  enum relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"]
-  enum country: ["France", "Etranger"]
-
   has_many :messages
   has_many :case_assignments
   has_attachments :photos, minimum: 3, maximum: 4

@@ -1,20 +1,22 @@
 class PatientsController < ApplicationController
-  
+
   before_action :set_patient, except: [:new, :create]
   skip_before_action :authenticate_doctor!
 
   def show
   end
-  
+
   def new
     @patient = Patient.new
   end
 
   def create
     @patient = Patient.new(patient_params)
-    @patient.user = current_user
-    @patient.save
-    redirect_to validation_patient_path(@patient)
+    if @patient.save
+      redirect_to validation_patient_path(@patient)
+    else
+      render :new
+    end
   end
 
   def edit

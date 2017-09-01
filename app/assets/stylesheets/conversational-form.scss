@@ -4,10 +4,11 @@
 
 .conversational-form {
   font-size: 18px !important;
+  background: #D5D5D5 !important;
   cf-chat-response text>p {
     background: #60E0A5;
   }
   cf-chat-response {
-    color: black;
+    color: white;
   }
 }

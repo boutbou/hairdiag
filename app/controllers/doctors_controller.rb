@@ -2,17 +2,26 @@ class DoctorsController < ApplicationController
 
 
  def dashboard
-  @patients=Patient.all #pour le moment on affiche tout les patients
+  @patients_available = Patient.where(status: "payment_successful")
  end
 
  def history
-  @patients=Patient.all
+  @patients=Patient.where(doctor_id: :current_doctor)
  end
 
 
  def assign_patient
- end
+  @patient_selected = Patient.where(status: "payment_successful").to_a.sample
 
+  if @patient_selected.nil?
+    #flash:"plus de patient"
+  else
+    @patient_selected.doctor_id = current_doctor.id
+    @patient_selected.status = "assigned"
+    @patient_selected.save
+  end
+  redirect_to doctor_show_patient_path(@patient_selected)
+ end
 
  def show_patient
   @patient = Patient.find(params[:id])

@@ -15,6 +15,7 @@ gem 'jquery-fileupload-rails'
 gem 'devise'
 gem 'figaro'
 gem 'postmark-rails'
+gem 'stripe'
 
 # Cloudinary- Attachinary
 gem 'coffee-rails'

@@ -63,6 +63,41 @@ patient = Patient.new(
 
 patient.save!
 
+# creation des prescriptions
+
+prescription = Diagnostic.create(name: "prescription")
+appointement = Diagnostic.create(name: "appointement")
+recommandation = Diagnostic.create(name: "recommandation")
+
+medicament_1 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 1",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 1"
+  )
+
+# creation des messages templates
+
+medicament_1.diagnostic = prescription
+
+medicament_1.save!
+
+medicament_2 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 2",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 2"
+  )
+
+medicament_2.diagnostic = prescription
+
+medicament_2.save!
+
+medicament_3 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 3",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 3"
+  )
+
+medicament_3.diagnostic = prescription
+
+medicament_3.save!
+
 urls = [
   'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
   'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'

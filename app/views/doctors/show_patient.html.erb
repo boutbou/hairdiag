@@ -138,16 +138,28 @@
 
         <h2> RECOMMANDATIONS </h2>
         <div class="doctor-recommandations">
+
           <div class="messages-templates">
-            <a href="#" class="messages-templates-buttons active">Message type 1</a>
-            <a href="#" class="messages-templates-buttons">Message type 2</a>
-            <a href="#" class="messages-templates-buttons">Message type 3</a>
+            <button id="message-button1" class="messages-templates-buttons switch-message-content" data-message-index="0" data-diagnostic-type="Prescription">Prescription 1</button>
+
+            <button id="message-button2" class="messages-templates-buttons switch-message-content" data-message-index="1" data-diagnostic-type="Prescription">Prescription 2</button>
+
+            <button id="message-button3" class="messages-templates-buttons switch-message-content" data-message-index="2" data-diagnostic-type="Prescription">Prescription 3</button>
           </div>
+
+
           <div class="dignastic-choices">
-            <a href="#" class="dignastic-choices-buttons active"><i>1</i><p>Prescription</p></a>
-            <a href="#" class="dignastic-choices-buttons"><i>2</i><p>Proposition de rendez-vous</p></a>
-            <a href="#" class="dignastic-choices-buttons"><i>3</i><p>Recommandations</p></a>
+            <button class="dignastic-choices-buttons switch-message-template"
+            data-diagnostic-type="Prescription"><i>1</i><p>Prescription</p></button>
+
+            <button class="dignastic-choices-buttons switch-message-template"
+            data-diagnostic-type="rdv" data-message-index="1"><i>2</i><p>Proposition de rendez-vous</p></button>
+
+            <button class="dignastic-choices-buttons switch-message-template"
+            data-diagnostic-type="Recommandations" data-message-index="2"><i>3</i><p>Recommandations</p></button>
           </div>
+
+
           <div class="recommandation-text-area">
             <%= simple_form_for(@recommendation, url: doctor_create_answer_path(@patient)) do |f| %>
             <%= f.error_notification %>
@@ -173,7 +185,106 @@
           $('.collapse-icon').click(function() {
             $(this).toggleClass('fa-minus').toggleClass('fa-plus');
           })
+
+          var messageTypes = {
+            "Prescription": [
+              {
+                button: "Prescription 1",
+                subject: "Subject prescr message 1",
+                content: "Bonjour <%= @patient.first_name %>,\n \nVous allez mourir,\n\nCordialement, \n\nMichel Michel",
+              },
+              {
+                button: "Prescription 2",
+                subject: "Subject prescr message 2",
+                content: "Content prescr message 2",
+              },
+              {
+                button: "Prescription 3",
+                subject: "Subject prescr message 3",
+                content: "Content prescr message 3",
+              }
+            ],
+
+            "rdv": [
+              {
+                button: "RDV 1",
+                subject: "Subject rdv message 1",
+                content: "Content rdv message 1",
+              },
+              {
+                button: "RDV 2",
+                subject: "Subject rdv message 2",
+                content: "Content rdv message 2",
+              },
+              {
+                button: "RDV 3",
+                subject: "Subject rdv message 3",
+                content: "Content rdv message 3",
+              }
+            ],
+
+            "Recommandations": [
+              {
+                button: "Reco 1",
+                subject: "Subject reco message 1",
+                content: "Content reco message 1",
+              },
+              {
+                button: "Reco 2",
+                subject: "Subject reco message 2",
+                content: "Content reco message 2",
+              },
+              {
+                button: "Reco 3",
+                subject: "Subject reco message 3",
+                content: "Content reco message 3",
+              }
+            ]
+          }
+
+          $('.switch-message-template').click(function() {
+
+            var button = $(this);
+            var diagnostic = button.data("diagnostic-type");
+
+            var button1 = messageTypes[diagnostic][0].button;
+            var button2 = messageTypes[diagnostic][1].button;
+            var button3 = messageTypes[diagnostic][2].button;
+            var subject = messageTypes[diagnostic][0].subject;
+            var content = messageTypes[diagnostic][0].content;
+
+            $('#message-button1').text(button1);
+            $('#message-button2').text(button2);
+            $('#message-button3').text(button3);
+            $("#message_subject").val(subject);
+            $("#message_content").val(content);
+
+            $('.messages-templates-buttons').data("diagnostic-type", diagnostic);
+            $('.switch-message-template').removeClass('active');
+            $(this).addClass('active');
+            $('#message-button1').addClass('active');
+          });
+
+          $('.switch-message-content').click(function() {
+            var button = $(this);
+            var diagnostic = button.data('diagnostic-type');
+            var message_index = button.data('message-index')
+
+            var subject = messageTypes[diagnostic][parseInt(message_index)].subject;
+            $("#message_subject").val(subject);
+
+            var content = messageTypes[diagnostic][parseInt(message_index)].content;
+            $("#message_content").val(content);
+
+            $('.switch-message-content').removeClass('active');
+            $(this).addClass('active');
+
+          });
+
       </script>
+
+
+
 
 
 

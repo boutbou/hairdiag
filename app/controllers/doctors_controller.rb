@@ -2,7 +2,11 @@ class DoctorsController < ApplicationController
 
 
  def dashboard
+  @waiting_patient = Patient.where(status: "assigned", doctor_id: :current_doctor)
+  if @waiting_patient.nil?
   @patients_available = Patient.where(status: "payment_successful")
+  else
+  redirect_to show_patient_path(@waiting_patient)
  end
 
  def history
@@ -14,13 +18,15 @@ class DoctorsController < ApplicationController
   @patient_selected = Patient.where(status: "payment_successful").to_a.sample
 
   if @patient_selected.nil?
-    #flash:"plus de patient"
+    flash[:notice] = "Il n'y a pas de cas en attente d'être traité"
+    redirect_to doctor_dashboard_path
   else
     @patient_selected.doctor_id = current_doctor.id
     @patient_selected.status = "assigned"
     @patient_selected.save
+    redirect_to doctor_show_patient_path(@patient_selected)
   end
-  redirect_to doctor_show_patient_path(@patient_selected)
+
  end
 
  def show_patient

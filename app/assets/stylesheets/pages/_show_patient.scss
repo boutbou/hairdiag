@@ -19,6 +19,19 @@
   padding-bottom: 4%;
 }
 
+// https://designshack.net/articles/css/joshuajohnson-2/ //
+
+.grow img:hover {
+  height: 300px;
+  width: 300px;
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
 .doctor-recommandations {
   display: grid;
   grid-template-columns: 250px 800px ;

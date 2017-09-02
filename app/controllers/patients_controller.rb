@@ -12,7 +12,8 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    if @patient.save!
+    if @patient.valid?
+      @patient.save
       redirect_to validation_patient_path(@patient)
     else
       render :new
@@ -20,7 +21,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    redirect_to new_patient_path(@patient)
+    set_patient
   end
 
   def update
@@ -31,14 +32,17 @@ class PatientsController < ApplicationController
   def validation
   end
 
-  def payment
-    redirect_to thank_you_patient_path(@patient)
-  end
-
   def thank_you
+    set_patient
+    set_patient_status_to
   end
 
   private
+
+  def set_patient_status_to
+    @patient.status = "payé"
+    @patient.save
+  end
 
   def set_patient
     @patient = Patient.find(params[:id])

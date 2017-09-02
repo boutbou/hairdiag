@@ -6,11 +6,11 @@
       <div class="home-content-wrapper">
         <div class="thank-content">
 
-          <h2>Cher <%= @patient.first_name %>, merci pour votre confiance</h2>
-          <p>Nous vous confirmons votre paiement</p>
-          <p>Un dermatologue certifié vous répondra sous 48h</p>
+          <h2>Cher <%= @patient.first_name %>, merci de valider votre Paiement</h2>
+          <p>L'étude de votre cas sera soumise à un dermathologue Hairdiag</p>
+          <p>sous 48h une fois votre paiement valider.</p>
           <button class="btn btn-cta">
-            <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
+            <%= link_to "Payer", thank_you_patient_path(@patient), class: "header-item" %>
           </button>
         </div>
 

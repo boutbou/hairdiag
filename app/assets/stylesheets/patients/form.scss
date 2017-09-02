@@ -1,8 +1,11 @@
 #form-width {
   width: 100%;
-//  position: fixed;
+  position: fixed;
 }
 
+.centerh {
+  margin-top: 15%;
+}
 .message {
   padding: 20px;
   margin: 0 auto;
@@ -67,6 +70,8 @@
   height: 100vh;
   padding-left: 0px;
   padding-right: 0px;
+  // align-items: center;
+  // justify-content: space-around;
 }
 
 .side-background {

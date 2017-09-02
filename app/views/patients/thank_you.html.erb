@@ -1,25 +1,35 @@
 <div class="container-home">
 
-  <div class="home-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
+  <div class="home-background thanks" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
     <%= render "shared/navbar"%>
-    <div class="general-wrapper">
-      <div class="home-content-wrapper">
-        <div class="thank-content">
+    <div class="general-wrapper ">
+      <div class="home-content-wrapper ">
+        <div class="home-content">
+          <%= image_tag "logo-no-baseline.png" %>
+          <h1>Cher <%= @patient.first_name %>, merci pour votre confiance </h1>
+          <h2>Votre paiement a bien été accepté </h2>
+          <h2>Un dermatologue certifié vous répondra par mail sous 48h </h2>
+          <%= link_to new_patient_path, class:"cta-start" do %>
+          <div>
+            <button class="btn btn-cta">
+            <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
+          </button>
+          </div>
+          <% end %>
+        </div>
+
+
+        <!-- <div class="thank-content">
 
           <h2>Cher <%= @patient.first_name %>, merci pour votre confiance</h2>
-          <p>Nous vous confirmons votre paiement</p>
-          <p>Un dermatologue certifié vous répondra sous 48h</p>
+          <p>Votre paiement a bien été accepté</p>
+          <p>Un dermatologue certifié vous répondra par mail sous 48h</p>
           <button class="btn btn-cta">
             <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
           </button>
-        </div>
+        </div> -->
 
       </div>
-
-      <div class="footer" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
-        <p>Footer made with love at le Wagon Marseille City Beach</p>
-      </div>
-
     </div>
   </div>
 </div>

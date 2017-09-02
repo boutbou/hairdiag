@@ -11,4 +11,27 @@
   cf-chat-response {
     color: white;
   }
+
+  cf-chat-response.user text>p {
+    background: $green-second;
+  }
+
+  cf-chat-response.user text>p {
+    color: white;
+  }
+
+  .cf-button {
+    color: $green-second;
+    border-color: $green-second;
+    background: white;
+    line-height: 1.2;
+  }
+
+  .cf-button:hover {
+    color: $green-second;
+    border: 2px solid $green-second;
+    background: white;
+    line-height: 1.2;
+  }
+
 }

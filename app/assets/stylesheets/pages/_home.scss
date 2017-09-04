@@ -44,7 +44,7 @@
 
 .icon-microscope {
   height: 30px;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 
 .home-content .btn {
@@ -68,6 +68,10 @@
   justify-content: center;
   width: 100%;
   height: 70px;
+  .p-bigger{
+    font-size: 40px;
+    padding-top: 8%;
+  }
 }
 
 .footer-lp div {
@@ -78,7 +82,7 @@
 }
 
 .reminder-cta {
-  height: 190px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,6 +102,17 @@
 .reminder-cta h2 {
   color: #fff;
   font-size: 1.5em;
+}
+
+.benefits h2 {
+  font-size: 40px;
+  color: $green-second;
+  text-align: center;
+  padding-bottom: 4%;
+}
+
+.benefits .process-icon {
+  height: 250px;
 }
 
 .home-banner {
@@ -137,6 +152,4 @@
   font-style: lighter;
 }
 
-.footer {
-  height: 130px;
-}
+

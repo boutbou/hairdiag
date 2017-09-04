@@ -6,8 +6,8 @@
       <div class="home-content-wrapper">
         <div class="home-content">
           <%= image_tag "logo-no-baseline.png" %>
-          <h1>Trouvez une solution à votre chute de cheveux. </h1>
-          <h2>Hairdiag est le premier service de diagnostic capillaire en ligne pour vous aider. </h2>
+          <h1>Trouvez une solution à votre chute de cheveux </h1>
+          <h2>Hairdiag est le premier service de diagnostic capillaire en ligne </h2>
           <%= link_to new_patient_path, class:"cta-start" do %>
           <div>
             <button class="btn btn-cta">
@@ -19,16 +19,16 @@
         </div>
       </div>
       <div class="footer-lp">
-        <div>
+        <div class="content-footer-lp">
           Comment ça marche ?
         </div>
       </div>
+
       <div class="container process">
         <div class="row">
          <!--  <div class="process-icons "> -->
          <div class="process-icon col-md-3">
-          <h3>Questionnaire</h3>
-          <p>Répondez à questionnaire précis concernant votre cuir chevelu </p>
+          <h3 class="two-lines">Répondez à un questionnaire</h3>
             <%= image_tag "icon_diag.png", class: "icon-green" %>
           </div>
 
@@ -37,26 +37,24 @@
           </div>
 
           <div class="process-icon col-md-3">
-            <h3>Photos</h3>
-            <p>Envoyez 3 photos de votre cuir chevelu, de profil et sur les côtés.</p>
+            <h3 class="two-lines">Prenez 3 photos de votre cuir chevelu</h3>
               <%= image_tag "icon_photo.png", class: "icon-green" %>
-            </div>
+          </div>
 
-            <div class="process-icon-chevron hidden-xs col-md-1">
-              <%= image_tag "chevron-right.png" %>
-            </div>
+          <div class="process-icon-chevron hidden-xs col-md-1">
+            <%= image_tag "chevron-right.png" %>
+          </div>
 
-            <div class="process-icon col-md-3">
-              <h3>Avis médical personnalisé</h3>
-              <p>Recevez l'avis d’un dermatologue certifié et spécialiste du cuir chevelu en 48h</p>
-                <%= image_tag "icon-answer.png", class: "icon-green" %>
-              </div>
+          <div class="process-icon col-md-4">
+            <h3 class="three-lines">Recevez l'avis d’un dermatologue spécialiste du cuir chevelu en 48h</h3>
+              <%= image_tag "icon-answer.png", class: "icon-green" %>
+          </div>
 
             </div>
           </div>
 
           <div class="reminder-cta" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
-            <h2>Une solution simple, rapide et efficace. Ne perdez pas plus de temps.</h2>
+            <h2>Une solution anonyme, simple, et rapide pour seulement 29€. </h2>
             <%= link_to root_path, class:"cta-start" do %>
             <div>
               <button class="btn btn-cta">
@@ -69,26 +67,26 @@
         </div>
 
         <div class="container benefits">
-          <h1>Les bénéfices Hair'diag</h1>
+          <h2>Les bénéfices Hair'diag</h2>
           <div class="row">
            <!--  <div class="process-icons "> -->
            <div class="process-icon col-md-4">
-            <h2>Des experts à portée de main</h2>
+            <h3>Des experts à portée de main</h3>
             <p>Les médecins sont diplomés d'études spécialisées en dermatologie, et inscrits au CNOM (Conseil National de l'Ordre des Médecins)
             </p>
             <%= image_tag "icon-time.png", class: "icon-green" %>
           </div>
 
           <div class="process-icon col-md-4">
-            <h2>Gain de temps</h2>
+            <h3>Un gain de temps considérable</h3>
             <p> Pas de prise de RDV, pas de déplacement, pas de salle d'attente. Avec Hair’diag, recevez un diagnostic en moins de 48h. Contre 29 jours en moyenne. </p>
               <%= image_tag "icon-save-money.png", class: "icon-green" %>
             </div>
 
 
             <div class="process-icon col-md-4">
-              <h2>Economie</h2>
-              <p>Une consultation chez un dermatologue coûte en moyenne 80€. Le service HairDiag coûte 30€</p>
+              <h3>100% anonyme</h3>
+              <p>Nous garantissons l'anonymat absolu et la protection de vos données </p>
               <%= image_tag "icon-easy.png", class: "icon-green" %>
             </div>
 
@@ -97,7 +95,7 @@
 
         <div class="home-banner" style="background-image: url('<%= image_url "image-banner.png" %>');" >
           <h1>
-            Accédez à un avis médical où que vous soyez dans le monde
+            Pensé pour vous simplifier la vie
           </h1>
 
         </div>
@@ -105,30 +103,49 @@
         <div class="container team">
           <div class="row">
             <div class="team-member col-md-4">
-              <%= image_tag "photo_team.png" %>
-              <h2>Dr. Miche Miche de Chauverie</h2>
-              <h3>Spécialiste international de la chauverie et des crânes luisants</h3>
+              <%= image_tag "photo-expert1.png" %>
+              <h2>Dr. Elisabeth Jourdan</h2>
+              <h3>Dermatologue</h3>
             </div>
             <div class="team-member col-md-4">
-              <%= image_tag "photo_team.png" %>
-              <h2>Dr. Miche Miche de Chauverie</h2>
-              <h3>Spécialiste international de la chauverie et des crânes luisants</h3>
+              <%= image_tag "photo-expert2.png" %>
+              <h2>Dr. Sebastien Hartel</h2>
+              <h3>Dermatologue</h3>
             </div>
             <div class="team-member col-md-4">
-              <%= image_tag "photo_team.png" %>
-              <h2>Dr. Miche Miche de Chauverie</h2>
-              <h3>Spécialiste international de la chauverie et des crânes luisants</h3>
+              <%= image_tag "photo-expert3.png" %>
+              <h2>Dr. Jean Christophe Maurin</h2>
+              <h3>Dermatologue</h3>
             </div>
 
           </div>
 
         </div>
 
-        <div class="footer" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
-          <p>Footer made with love at le Wagon Marseille City Beach</p>
-        </div>
+        <%= render "shared/footer"%>
 
 
       </div>
     </div>
   </div>
+
+
+  <script>
+    $(window).scroll(function() {
+
+    if ($(this).scrollTop()>100)
+      {
+      $('.content-footer-lp').fadeIn(500, function() {
+        $('.content-footer-lp').addClass('p-bigger');
+      });
+     }
+    else
+     {
+      $('.content-footer-lp').removeClass('p-bigger');
+     }
+ });
+
+</script>
+
+
+

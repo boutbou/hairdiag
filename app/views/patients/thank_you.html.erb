@@ -9,7 +9,7 @@
           <h1>Cher <%= @patient.first_name %>, merci pour votre confiance </h1>
           <h2>Votre paiement a bien été accepté </h2>
           <h2>Un dermatologue certifié vous répondra par mail sous 48h </h2>
-          <%= link_to new_patient_path, class:"cta-start" do %>
+          <%= link_to home_path, class:"cta-start" do %>
           <div>
             <button class="btn btn-cta">
             <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>

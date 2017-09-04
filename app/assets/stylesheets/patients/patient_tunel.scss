@@ -15,19 +15,48 @@
   width: 100%;
   padding-left: 10px;
   overflow: auto;
-  border-left: 2px solid #999999;
-  h1 {
-    color: white;
+  h2 {
+    padding-left: 4%;
+    font-size: 30px;
     text-indent: center;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: bolder;
   }
 }
 
 .validation-infos {
-  color: rgba(255,255,255,0.9);
+  // color: rgba(255,255,255,0.9);
   margin: 4% 4%;
-  border: 2px solid #999999;
+  // border: 2px solid #999999;
   border-radius: 5px;
-  background-color: rgba(0,0,0,0.4);
+  // background-color: rgba(0,0,0,0.4);
+}
+
+.wrapper-valitation-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 25px;
+  .btn {
+    width: 40%;
+    height: 40px;
+  }
+  .btn-medium {
+    padding: 7px;
+  }
+}
+
+.wrapper-valitation-buttons .btn-medium {
+  border-color: $green-main;
+  a {
+    color: $green-main;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .background {
@@ -42,4 +71,8 @@
   width: 70%;
   padding-bottom: 25px;
   height: 50%;
+}
+
+.thanks {
+  height: 100vh;
 }

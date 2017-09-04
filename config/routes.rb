@@ -27,6 +27,12 @@ Rails.application.routes.draw do
   # la show du patient est celle quand il va cliquer sur le lien du cas traité par le DR
   resources :patients, only: [:new, :create, :show, :edit, :update]
 
+  # ajout paiements et orders
+  resources :orders, only: [:show, :create]
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
   # edition du profil docteur
   get 'profile/edit'
   get 'profile/update'

@@ -58,7 +58,8 @@ patient = Patient.new(
   restore_area: 'aer',
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
-  status: 'yes'
+  status: 'yes',
+  price_cents: 2000
   )
 
 patient.save!

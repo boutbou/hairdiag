@@ -5,6 +5,8 @@ class Patient < ApplicationRecord
   has_attachments :photos, minimum: 3, maximum: 4
   has_attachments :documents, maximum: 3
 
+  monetize :price_cents
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true

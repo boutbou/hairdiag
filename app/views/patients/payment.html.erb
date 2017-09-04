@@ -9,8 +9,27 @@
           <h2>Cher <%= @patient.first_name %>, merci de valider votre Paiement</h2>
           <p>L'étude de votre cas sera soumise à un dermathologue Hairdiag</p>
           <p>sous 48h une fois votre paiement valider.</p>
+
+
+          <%= form_tag order_payments_path(@order) do %>
+          <article>
+            <label class="amount">
+              <span>Prix: <%= humanized_money_with_symbol(@order.amount) %></span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="My consult"
+          data-email="<%= @patient.email %>"
+          data-description="Consultation <%= @order.patient_sku %>"
+          data-amount="<%= @order.amount_cents %>"
+          data-currency="<%= @order.amount.currency %>"></script>
+          <% end %>
+
+
           <button class="btn btn-cta">
-            <%= link_to "Payer", thank_you_patient_path(@patient), class: "header-item" %>
+            <%= link_to "Payer" humanized_money_with_symbol(@patient.price), thank_you_patient_path(@patient), class: "header-item" %>
           </button>
         </div>
 

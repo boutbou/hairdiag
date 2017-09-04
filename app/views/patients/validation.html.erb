@@ -55,145 +55,153 @@
 
       <div class="col-xs-6 page-part">
         <div class="row validation-container">
-          <h2>Merci de confirmer vos informations ci dessous</h2>
-          <div class="validation-infos">
-            <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
-              <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-            </h3>
-            <div class="row collapse in" id="info-pratiques">
-              <div class="col-md-4">
-                <%= @patient.first_name + " " + @patient.last_name.to_s %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.email %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.gender %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.age %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.zip_code %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.city %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.country %>
-              </div>
-            </div>
-          </div>
-          <div class="validation-infos">
-            <h3> Context médical <a data-toggle="collapse" data-target="#context-medical">
-              <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-            </h3>
-            <div class="row collapse in" id="context-medical">
-              <div class="col-md-4">
-                <%= @patient.loss_start_date %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.relative %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.weekly_shampoo %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.dandruff %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.greasy_hair %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.refined_hair %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.brushing_hair %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.shaving_hair %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.scalp_density %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.hair_thickness %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.hair_color %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.hair_type %>
-              </div>
-            </div>
-          </div>
-          <div class="validation-infos">
-            <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
-              <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-            </h3>
-            <div class="row collapse in" id="situation-capillaire">
-              <div class="col-md-4">
-                <%= @patient.vitamines %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.finasteride %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.stage %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.traction_test %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.stage %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.restore_area %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.technical_preference %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.minoxidil %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.minoxidil_doses %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.hair_transplant %>
-              </div>
-              <div class="col-md-4">
-                <%= @patient.hair_transplant_technic %>>
-              </div>
-            </div>
-          </div>
-          <div class="patient-photos validation-infos" >
-            <h3> Photos <a data-toggle="collapse" data-target="#patient-pictures">
-              <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-            </h3>
-            <div class="row collapse in" id="patient-pictures">
-              <% if @patient.photos? %>
-              <% @patient.photos.each do |photo| %>
-              <div class="col-md-4 col-md-offset-2">
-                <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
-              </div>
-              <% end %>
-              <% else %>
-              <p>Vous avez oublié vos images </p>
-              <% end %>
-            </div>
-          </div>
-        </div>
+          <div class="col-md-10">
+            <div class="row dashboard-infos patients-show">
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="wrapper-valitation-buttons">
-              <div class="btn btn-medium">
-                <%= link_to "Corriger votre formulaire", edit_patient_path(@patient) , class: "header-item" %>
+              <h1>Merci de prendre le temps de relire et confirmer vos informations</h1>
+              <div class="patients-details">
+                <div>
+                  <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="info-pratiques">
+                    <div class="col-md-4">
+                      <%= "Nom: " + @patient.first_name + " " + @patient.last_name.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Email: " + @patient.email %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Sexe: " + @patient.gender.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Age: #{@patient.age}" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Code postal: " + @patient.zip_code %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Ville: " + @patient.city.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Pays: " + @patient.country.to_s %>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3> Context médical <a data-toggle="collapse" data-target="#context-medical">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="context-medical">
+                    <div class="col-md-4">
+                      <%= "Début de la perte de cheveux: " + @patient.loss_start_date %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Lié au (à la): " + @patient.relative %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Lave ses cheveux #{@patient.weekly_shampoo} fois par semaine" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Pellicules: " + @patient.dandruff.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Cheveux gras: " + @patient.greasy_hair %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Cheveux affinés: " + @patient.refined_hair %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Brushing: " + @patient.brushing_hair.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Rasage du cuir chevelu: " + @patient.shaving_hair.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Densité capillaire à l'arriere du cuir chevelu: " + @patient.scalp_density.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Epaisseur: " + @patient.hair_thickness.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Couleur: " + @patient.hair_color.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Type de cheveux: " + @patient.hair_type.to_s %>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="situation-capillaire">
+                    <div class="col-md-4">
+                      <%= "Vitamines: " + @patient.vitamines.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Finasterides? " + @patient.finasteride.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Stade de la perte: " + @patient.stage.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Resultat du test de traction: " + @patient.traction_test.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Zone de restauration souhaitée: " + @patient.restore_area.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Technique de restauration préférée: " + @patient.technical_preference.to_s %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= "Minoxidil? " + @patient.minoxidil.to_s %>
+                    </div>
+                    <% if @patient.minoxidil == "oui"  %>
+                    <div class="col-md-4">
+                      <%= "Doses de Minoxidil: #{@patient.minoxidil_doses.to_s}%" %>
+                    </div>
+                    <% end %>
+                    <div class="col-md-4">
+                      <%= "Transplantation capillaire? " + @patient.hair_transplant.to_s %>
+                    </div>
+                    <% if @patient.hair_transplant == "oui" %>
+                    <div class="col-md-4">
+                      <%= "Technique de transplantation: " + @patient.hair_transplant_technic.to_s %>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="patient-photos">
+                  <h3> Photos <a data-toggle="collapse" data-target="#patient-pictures">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="patient-pictures">
+                    <% if @patient.photos? %>
+                    <% @patient.photos.each do |photo| %>
+                    <div class="col-md-4 grow">
+                      <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
+                    </div>
+                    <% end %>
+                    <% else %>
+                    <p>Le patient n'a pas chargé d'image</p>
+                    <% end %>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div class="btn btn-medium">
-              <%= link_to "Valider vos informations et payer", payment_patient_path(@patient) , class: "header-item" %>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="wrapper-valitation-buttons">
+                  <div class="btn btn-medium">
+                    <%= link_to "Corriger votre formulaire", edit_patient_path(@patient) , class: "header-item" %>
+                  </div>
+
+                  <div class="btn btn-medium">
+                    <%= link_to "Valider vos informations et payer", payment_patient_path(@patient) , class: "header-item" %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -202,4 +210,3 @@
     </div>
   </div>
 </div>
-

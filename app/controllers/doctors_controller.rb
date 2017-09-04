@@ -31,6 +31,7 @@ end
  end
 
  def show_patient
+  @doctor = current_doctor
   @patient = Patient.find(params[:id])
   @recommendation = Message.new
  end
@@ -43,7 +44,7 @@ end
     @patient.status = "answered"
     @patient.save!
     redirect_to doctor_dashboard_path
-    flash[:notice] = "Felicitations, vous venez de traité un patient !"
+    flash[:notice] = "Felicitations, vous venez de traiter un patient !"
   else
     render "doctors/show_patient"
     flash[:alert] = "Aie, il semblerait que vous ayez fait une erreurs dans la redaction de votre recommendation!"

@@ -13,25 +13,25 @@
               </h3>
               <div class="row collapse in" id="info-pratiques">
                 <div class="col-md-4">
-                  <%= @patient.first_name + " " + @patient.last_name %>
+                  <%= "Nom: " + @patient.first_name + " " + @patient.last_name %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.email %>
+                  <%= "Email: " + @patient.email %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.gender %>
+                  <%= "Sexe: " + @patient.gender %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.age %>
+                <%= "Age: #{@patient.age}" %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.zip_code %>
+                  <%= "Code postal: " + @patient.zip_code %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.city %>
+                  <%= "Ville: " + @patient.city %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.country %>
+                  <%= "Pays: " + @patient.country %>
                 </div>
               </div>
             </div>
@@ -41,40 +41,40 @@
               </h3>
               <div class="row collapse in" id="context-medical">
                 <div class="col-md-4">
-                    <%= @patient.loss_start_date %>
+                    <%= "Début de la perte de cheveux: " + @patient.loss_start_date %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.relative %>
+                    <%= "Lié au (à la): " + @patient.relative %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.weekly_shampoo %>
+                    <%= "Lave ses cheveux #{@patient.weekly_shampoo} fois par semaine" %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.dandruff %>
+                    <%= "Pellicules: " + @patient.dandruff %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.greasy_hair %>
+                    <%= "Cheveux gras: " + @patient.greasy_hair %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.refined_hair %>
+                    <%= "Cheveux affinés: " + @patient.refined_hair %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.brushing_hair %>
+                    <%= "Brushing: " + @patient.brushing_hair %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.shaving_hair %>
+                    <%= "Rasage du cuir chevelu: " + @patient.shaving_hair %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.scalp_density %>
+                    <%= "Densité capillaire à l'arriere du cuir chevelu: " + @patient.scalp_density %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.hair_thickness %>
+                    <%= "Epaisseur: " + @patient.hair_thickness %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.hair_color %>
+                    <%= "Couleur: " + @patient.hair_color %>
                 </div>
                 <div class="col-md-4">
-                    <%= @patient.hair_type %>
+                    <%= "Type de cheveux: " + @patient.hair_type %>
                 </div>
               </div>
             </div>
@@ -84,38 +84,39 @@
               </h3>
               <div class="row collapse in" id="situation-capillaire">
                 <div class="col-md-4">
-                    <%= @patient.vitamines %>
+                    <%= "Vitamines: " + @patient.vitamines %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.finasteride %>
+                  <%= "Finasterides? " + @patient.finasteride %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.stage %>
+                  <%= "Stade de la perte: " + @patient.stage %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.traction_test %>
+                  <%= "Resultat du test de traction: " + @patient.traction_test %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.stage %>
+                  <%= "Zone de restauration souhaitée: " + @patient.restore_area %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.restore_area %>
+                  <%= "Technique de restauration préférée: " + @patient.technical_preference %>
                 </div>
                 <div class="col-md-4">
-                  <%= @patient.technical_preference %>
+                  <%= "Minoxidil? " + @patient.minoxidil %>
                 </div>
+                <% if @patient.minoxidil == "oui"  %>
+                  <div class="col-md-4">
+                  <%= "Doses de Minoxidil: #{@patient.minoxidil_doses}%" %>
+                </div>
+                <% end %>
                 <div class="col-md-4">
-                  <%= @patient.minoxidil %>
+                  <%= "Transplantation capillaire? " + @patient.hair_transplant %>
                 </div>
+                <% if @patient.hair_transplant == "oui" %>
                 <div class="col-md-4">
-                  <%= @patient.minoxidil_doses %>
+                  <%= "Technique de transplantation: " + @patient.hair_transplant_technic %>
                 </div>
-                <div class="col-md-4">
-                  <%= @patient.hair_transplant %>
-                </div>
-                <div class="col-md-4">
-                  <%= @patient.hair_transplant_technic %>>
-                </div>
+                <% end %>
               </div>
             </div>
             <div class="patient-photos">
@@ -190,54 +191,54 @@
             "Prescription": [
               {
                 button: "Prescription 1",
-                subject: "Subject prescr message 1",
-                content: "Bonjour <%= @patient.first_name %>,\n \nVous allez mourir,\n\nCordialement, \n\nMichel Michel",
+                subject: "Traitement classique",
+                content: "Bonjour <%= @patient.first_name %>,\n \nVous nécessitez du traitement classique qui est:\n -3 comprimés de Faipatonchauve pendant 30 jours.\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "Prescription 2",
-                subject: "Subject prescr message 2",
-                content: "Content prescr message 2",
+                subject: "Mélange de produits en libre-service",
+                content: "Bonjour <%= @patient.first_name %>,\n \nIl existe un traitement particuliers pour ce type de perte de cheveux qui prends en compte plusieurs traitements complémentaires à prendre sur 15 jours:\n- Preparles, 3 fois par jour\n- Engraicheuv 2 fois par jour \n- Soipabart 1 comprimé par matin\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "Prescription 3",
-                subject: "Subject prescr message 3",
-                content: "Content prescr message 3",
+                subject: "Médicaments trouvables dans certaines pharamcies spécialisées",
+                content: "Bonjour <%= @patient.first_name %>,\n \nNe vous inquiétez pas pour votre chute de cheveux il existe un traitement très simple: \n- 5mg de Perpatescheuv 3 fois par jour.\nCependant ce médicament est disponible uniquement dans certaines pharmmacies de votre ville comme celle-ci proche de chez vous : 'Pharmacie des Chartreux'\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               }
             ],
 
             "rdv": [
               {
                 button: "RDV 1",
-                subject: "Subject rdv message 1",
-                content: "Content rdv message 1",
+                subject: "RDV necessaire",
+                content: "Bonjour <%= @patient.first_name %>,\n\nIl est necessaire que vous preniez contact avec un spécialiste de votre entourage (ou moi-même) afin d'effectuer des examens approfondis.\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%> \n\nPS: pour prendre Rendez-vous avec moi, veuillez me contacter par mail: <%= current_doctor.email %>",
               },
               {
                 button: "RDV 2",
-                subject: "Subject rdv message 2",
-                content: "Content rdv message 2",
+                subject: "RDV avec un confrère",
+                content: "Bonjour <%= @patient.first_name %>,\n\nIl est necessaire que vous preniez contact avec un spécialiste que je connais afin d'effectuer des examens approfondis.\nVoici son Mail: potoreno@gmail.com\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "RDV 3",
-                subject: "Subject rdv message 3",
-                content: "Content rdv message 3",
+                subject: "RDV avec moi",
+                content: "Bonjour <%= @patient.first_name %>,\n\nIl est necessaire que vous preniez un rendez-vous avec moi afin d'effectuer des examens approfondis.\nVoici mon email: <%= current_doctor.email%>\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               }
             ],
 
             "Recommandations": [
               {
                 button: "Reco 1",
-                subject: "Subject reco message 1",
-                content: "Content reco message 1",
+                subject: "Recommendation comportementale",
+                content: "Bonjour <%= @patient.first_name %>,\n \nBonne nouvelle, nous avons une recommendation qui ne necessite pas de traitement capillaire pour vous:\n1. Agiter la tete de gauche à droite tout les matins 5 fois.\n2.Utiliser le shampoing Superarnak pour laver vos cheveux\n\nCordialement, \n\n<%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "Reco 2",
-                subject: "Subject reco message 2",
-                content: "Content reco message 2",
+                subject: "Plus de peur que de mal !",
+                content: "Bonjour <%= @patient.first_name %>,\n \nBonne nouvelle, vous ne necessitez aucun traitement capillaire, ni aucun consultation, tout est parfaitement normal au niveau capillaire!\n\nCordialement, \n\n<%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "Reco 3",
-                subject: "Subject reco message 3",
-                content: "Content reco message 3",
+                subject: "Rien à faire!",
+                content: "Bonjour <%= @patient.first_name %>,\n \nJ'espère que Barthez vous plait capillairement parlant car vous allez tendre vers lui.\n\nCourage, \n\n<%= current_doctor.first_name + " " +current_doctor.last_name%>",
               }
             ]
           }

@@ -62,7 +62,7 @@
             </h3>
             <div class="row collapse in" id="info-pratiques">
               <div class="col-md-4">
-                <%= @patient.first_name + " " + @patient.last_name %>
+                <%= @patient.first_name + " " + @patient.last_name.to_s %>
               </div>
               <div class="col-md-4">
                 <%= @patient.email %>

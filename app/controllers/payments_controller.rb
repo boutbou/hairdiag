@@ -1,8 +1,8 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
+  before_action :set_patient
+  skip_before_action :authenticate_doctor!
 
   def new
-    @patient = Patient.find(params[:id])
   end
 
   def create
@@ -13,23 +13,22 @@ class PaymentsController < ApplicationController
 
    charge = Stripe::Charge.create(
      customer:     customer.id,   # You should store this customer id and re-use it.
-     amount:       @order.amount_cents,
-     description:  "Payment for patient #{@order.patient_sku} for order #{@order.id}",
-     currency:     @order.amount.currency
+     amount:       @patient.price_cents,
+     description:  "Payment for patient #{@patient.email}",
+     currency:     @patient.price.currency
      )
 
-   @order.update(payment: charge.to_json, state: 'paid')
-   @patient.update(status: 'payment_successful')
-   redirect_to order_path(@order)
+   @patient.update(payment: charge.to_json, paid: true, status: 'payment_successful')
+   redirect_to thank_you_patient_path(@patient)
 
- rescue Stripe::CardError => e
+  rescue Stripe::CardError => e
    flash[:alert] = e.message
-   redirect_to new_order_payment_path(@order)
- end
+   redirect_to validation_patient_path(@patient)
+  end
 
- private
+  private
 
- def set_order
-  @order = Order.where(state: 'pending').find(params[:order_id])
-end
+  def set_patient
+    @patient = Patient.find(params[:patient_id])
+  end
 end

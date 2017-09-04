@@ -23,7 +23,7 @@
           </div>
           <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-              <div class="message active">
+              <div class="message actived">
                 <div class="numbers">
                   <h3>2</h3>
                 </div>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="col-xs-6 page-part">
-      <div class="row validation-container">
+        <div class="row validation-container">
           <h2>Merci de confirmer vos informations ci dessous</h2>
           <div class="validation-infos">
             <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
@@ -191,8 +191,9 @@
               <div class="btn btn-medium">
                 <%= link_to "Corriger votre formulaire", edit_patient_path(@patient) , class: "header-item" %>
               </div>
-              <div class="btn-cta btn">
-                <%= link_to "Valider et aller au paiement", new_payment_path(@patient) , class: "header-item"%>
+
+              <div class="btn btn-medium">
+              <%= link_to "Valider vos informations et payer", payment_patient_path(@patient) , class: "header-item" %>
               </div>
             </div>
           </div>

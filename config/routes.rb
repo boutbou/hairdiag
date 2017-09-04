@@ -19,20 +19,17 @@ Rails.application.routes.draw do
   get 'patients/:id/validation', to: 'patients#validation', as: :validation_patient
 
   #As a patient, I can pay; redirect to payment confirmation controller patients; ajouter : à ID
-  post 'patients/:id/payment', to: 'patients#payment', as: :payment_patient
+  get 'patients/:id/payment', to: 'patients#payment', as: :payment_patient
 
   #message de confirmation et remerciement suite au paiement
   get 'patients/:id/thank-you', to: 'patients#thank_you', as: :thank_you_patient
 
   # la show du patient est celle quand il va cliquer sur le lien du cas traité par le DR
-  resources :patients, only: [:new, :create, :show, :edit, :update]
-
-  # ajout paiements et orders
-  resources :orders, only: [:show, :create]
-
-  resources :orders, only: [:show, :create] do
+  resources :patients, only: [:new, :create, :show, :edit, :update] do
     resources :payments, only: [:new, :create]
   end
+  # ajout paiements et orders
+
   # edition du profil docteur
   get 'profile/edit'
   get 'profile/update'

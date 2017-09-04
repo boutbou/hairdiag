@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904101011) do
+ActiveRecord::Schema.define(version: 20170904150547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,15 +92,6 @@ ActiveRecord::Schema.define(version: 20170904101011) do
     t.index ["patient_id"], name: "index_messages_on_patient_id", using: :btree
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string   "state"
-    t.string   "patient_sku"
-    t.integer  "amount_cents", default: 0, null: false
-    t.json     "payment"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "patients", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -136,9 +127,11 @@ ActiveRecord::Schema.define(version: 20170904101011) do
     t.integer  "doctor_id"
     t.string   "status"
     t.integer  "diagnostic_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "price_cents",             default: 0, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "price_cents",             default: 20, null: false
+    t.boolean  "paid"
+    t.json     "payment"
     t.index ["diagnostic_id"], name: "index_patients_on_diagnostic_id", using: :btree
     t.index ["doctor_id"], name: "index_patients_on_doctor_id", using: :btree
   end

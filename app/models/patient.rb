@@ -2,7 +2,7 @@ class Patient < ApplicationRecord
   # enum pour les listes de choix dans le formulaire
   has_many :messages
   has_many :case_assignments
-  has_attachments :photos, minimum: 3, maximum: 4
+  has_attachments :photos, maximum: 4
   has_attachments :documents, maximum: 3
 
   monetize :price_cents

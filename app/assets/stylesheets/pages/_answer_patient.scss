@@ -2,12 +2,24 @@
   height: 100vh;
 }
 
+.answer-nav {
+  padding-top: 25%;
+}
+
 .answer-container {
-  padding: 4% 4% 0 4%;
+  padding: 2% 4% 0 4%;
 
 }
 
-.answer-header {
+.answer-nav-item {
+  padding-top: 6%;
+}
+
+.header-answer {
+  margin-left: 63px;
+  padding-left: 21px;
+  margin-bottom: 3%;
+  border-left: 4px solid $green-main;
   h2 {
     font-size: 1.2em;
     color: $green-main;

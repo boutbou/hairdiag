@@ -9,14 +9,14 @@
           <%= image_tag "logo_white.png" %>
           <% end %>
         </div>
-        <div>
-          <div class="menu">
+        <div class="answer-nav">
+          <div class="answer-nav-item">
             <%= link_to doctor_dashboard_path, class: "text-icon" do %>
             <%= image_tag "icon-traiter.png" %>
-            <p>Mes recommandations personnalisées</p>
+            <p>Ma recommandation personnalisée</p>
             <% end %>
           </div>
-          <div>
+          <div class="answer-nav-item">
             <%= link_to doctor_history_path, class: "text-icon" do %>
             <%= image_tag "icon-historic.png" %>
             <p>Ma fiche patient</p>
@@ -30,7 +30,7 @@
       <div class="row answer-container">
         <div>
           <div>
-            <div class="answer-header">
+            <div class="header-answer">
               <h2>Patient : Abdoul Michel Michel </h2>
               <p>Cas envoyé le 01/01/1921 </p>
               <p>Cas étudié le 02/01/1921  par le Docteur Jean Michel Michel </p>
@@ -55,11 +55,7 @@
 
                Jean Reno
               </div>
-
             </div>
-          </div>
-          <div>
-            Evaluez le service
           </div>
         </div>
       </div>

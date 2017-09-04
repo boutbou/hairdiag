@@ -48,12 +48,12 @@
 
       <fieldset cf-questions="Etes-vous sous Minoxidil ?" >
         <label for="minoxidil-yes">Oui<input type="radio" name="patient[minoxidil]" id="minoxidil-yes" value="yes" tabindex="-1"
-          <%= @patient.minoxidil? ? 'checked="checked"' : "" %>>
+          <%= @patient.minoxidil == "yes" ? 'checked="checked"' : "" %>>
         </label>
 
         <label for="minoxidil-no">Nope
           <input type="radio" name="patient[minoxidil]" id="minoxidil-no" value="no" tabindex="-1"
-          <%= @patient.minoxidil == false ? 'checked="checked"' : "" %>
+          <%= @patient.minoxidil == "no" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>
@@ -90,6 +90,6 @@
       <%= f.input :photos, as: :attachinary, input_html: { "cf-questions" => "Merci d'ajouter vos photos prises devant derrière et au dessus du crâne."}%>
       </fieldset>
 
-      <%= link_to patients_path(@patient.id) , class: "header-item" %>
+      <%= f.submit %>
 
-      <% end %>
+    <% end %>

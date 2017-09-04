@@ -5,8 +5,8 @@ class Patient < ApplicationRecord
   has_attachments :photos, minimum: 3, maximum: 4
   has_attachments :documents, maximum: 3
 
-  # validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: true
+  # validates :last_name, presence: true
   # validates :gender, presence: true
   validates :zip_code, presence: true
   # validates :city, presence: true
@@ -35,4 +35,9 @@ class Patient < ApplicationRecord
   validates :minoxidil_doses, presence: true, if: :minoxidil?
   validates :hair_transplant, presence: true
   # validates :hair_transplant_technic, presence: true, if: :hair_transplant?
+
+  def minoxidil?
+    minoxidil == "yes"
+  end
+
 end

@@ -32,17 +32,13 @@ class PatientsController < ApplicationController
   def validation
   end
 
+  def payment
+  end
+
   def thank_you
-    set_patient
-    set_patient_status_to
   end
 
   private
-
-  def set_patient_status_to
-    @patient.status = "payment-success"
-    @patient.save
-  end
 
   def set_patient
     @patient = Patient.find(params[:id])

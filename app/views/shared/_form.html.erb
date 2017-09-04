@@ -13,7 +13,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, collection: (15..77), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ?"}%>
+        <%= f.input :age, collection: (15..40), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ?"}%>
       </fieldset>
 
       <fieldset>
@@ -26,23 +26,18 @@
 
       <fieldset cf-questions="Ne voyez rien de personnel, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?" >
         <label for="greasy_hair-yes">Oui<input type="radio" name="patient[greasy_hair]" id="greasy_hair-yes" value="yes" tabindex="-1"
-          <%= @patient.greasy_hair? ? 'checked="checked"' : "" %>>
+          <%= @patient.greasy_hair == "yes" ? 'checked="checked"' : "" %>>
         </label>
 
         <label for="greasy_hair-no">Non
           <input type="radio" name="patient[greasy_hair]" id="greasy_hair-no" value="no" tabindex="-1"
-          <%= @patient.greasy_hair == false ? 'checked="checked"' : "" %>
+          <%= @patient.greasy_hair == "no" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>
 
       <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Ce n'est pas grave, rassurez vous. LOL <br> Et avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "yes"}%>
-      </fieldset>
-
-
-      <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "no"}%>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Ce n'est pas grave, rassurez vous. LOL <br> Et avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "yes"}, input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "no"} %>
       </fieldset>
 
 
@@ -65,12 +60,12 @@
 
       <fieldset cf-questions="Avez-vous déjà eu des greffes capillaires ?" >
         <label for="hair_transplant-yes">Oui<input type="radio" name="patient[hair_transplant]" id="hair_transplant-yes" value="yes" tabindex="-1"
-          <%= @patient.hair_transplant? ? 'checked="checked"' : "" %>>
+          <%= @patient.hair_transplant == "yes" ? 'checked="checked"' : "" %>>
         </label>
 
         <label for="hair_transplant-no">Nope
           <input type="radio" name="patient[hair_transplant]" id="hair_transplant-no" value="no" tabindex="-1"
-          <%= @patient.hair_transplant == false ? 'checked="checked"' : "" %>
+          <%= @patient.hair_transplant == "no" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>

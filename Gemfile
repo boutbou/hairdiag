@@ -16,6 +16,7 @@ gem 'devise'
 gem 'figaro'
 gem 'faker'
 gem 'postmark-rails'
+gem 'money-rails'
 gem 'stripe'
 
 # Cloudinary- Attachinary

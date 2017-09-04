@@ -40,7 +40,7 @@ class PatientsController < ApplicationController
   private
 
   def set_patient_status_to
-    @patient.status = "payment-success"
+    @patient.status = "payment_successful"
     @patient.save
   end
 

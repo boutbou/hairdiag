@@ -2,15 +2,15 @@
 
 
   <div class="container-view">
-    <div class="col-md-2 view-side-bar">
-      <div class="row" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%);">
+    <div class="col-md-2 ">
+      <div class="row view-side-bar" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%);">
         <div>
           <%= link_to root_path, id: "logo" do %>
           <%= image_tag "logo_white.png" %>
           <% end %>
         </div>
-        <div class="menu">
-          <div>
+        <div>
+          <div class="menu">
             <%= link_to doctor_dashboard_path, class: "text-icon" do %>
             <%= image_tag "icon-traiter.png" %>
             <p>Mes recommandations personnalisées</p>
@@ -27,16 +27,39 @@
     </div>
 
     <div class="col-md-10">
-      <div class="row">
+      <div class="row answer-container">
         <div>
           <div>
-            <%= @patient.first_name %>, le docteur  a traité votre cas.
+            <div class="answer-header">
+              <h2>Patient : Abdoul Michel Michel </h2>
+              <p>Cas envoyé le 01/01/1921 </p>
+              <p>Cas étudié le 02/01/1921  par le Docteur Jean Michel Michel </p>
+              <p>Diagnostic : plus un poil sur le caillou </p>
+            </div>
           </div>
-          <div class="message2">
+          <div class="message-answer">
+            <%= image_tag "photo-expert1.png" %>
+            <div class="message-answer-container">
+              <div class="sender">
+              @doctor.name
+              </div>
+              <div class="content">
+                Bonjour Benjamin,<br><br>
 
+              Il existe un traitement particuliers pour ce type de perte de cheveux qui prends en compte plusieurs traitements complémentaires à prendre sur 15 jours:<br>
+              - Preparles, 3 fois par jour<br>
+              - Engraicheuv 2 fois par jour<br>
+              - Soipabart 1 comprimé par matin<br><br>
+
+              Cordialement,<br><br>
+
+               Jean Reno
+              </div>
+
+            </div>
           </div>
-          <div class="message-recommandation">
-
+          <div>
+            Evaluez le service
           </div>
         </div>
       </div>

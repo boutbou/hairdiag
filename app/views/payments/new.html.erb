@@ -1,0 +1,43 @@
+<div class="container-home">
+
+  <div class="home-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
+    <%= render "shared/navbar"%>
+    <div class="general-wrapper">
+      <div class="home-content-wrapper">
+        <div class="thank-content">
+
+          <h2>Cher <%= @patient.first_name %>, merci de valider votre Paiement</h2>
+          <p>L'étude de votre cas sera soumise à un dermathologue Hairdiag</p>
+          <p>sous 48h une fois votre paiement valider.</p>
+
+          <%= form_tag order_payments_path(@order) do %>
+          <article>
+            <label class="amount">
+              <span>Prix: <%= humanized_money_with_symbol(@order.amount) %></span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="My consult"
+          data-email="<%= @patient.email %>"
+          data-description="Consultation <%= @order.patient_sku %>"
+          data-amount="<%= @order.amount_cents %>"
+          data-currency="<%= @order.amount.currency %>"></script>
+          <% end %>
+
+
+          <button class="btn btn-cta">
+            <%= link_to "Payer" humanized_money_with_symbol(@patient.price), thank_you_patient_path(@patient), class: "header-item" %>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="footer" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
+        <p>Footer made with love at le Wagon Marseille City Beach</p>
+      </div>
+
+    </div>
+  </div>
+</div>

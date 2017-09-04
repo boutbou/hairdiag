@@ -1,25 +1,88 @@
-<div class="container-home">
 
-  <div class="home-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
-    <%= render "shared/navbar"%>
-    <div class="general-wrapper">
-      <div class="home-content-wrapper">
-        <div class="thank-content">
-
-          <h2>Cher <%= @patient.first_name %>, merci de valider votre Paiement</h2>
-          <p>L'étude de votre cas sera soumise à un dermathologue Hairdiag</p>
-          <p>sous 48h une fois votre paiement valider.</p>
-          <button class="btn btn-cta">
-            <%= link_to "Payer", thank_you_patient_path(@patient), class: "header-item" %>
-          </button>
+<div class="container" id="form-width">
+  <div class="background" >
+    <div class="row">
+      <div class="col-xs-6 page-part" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>'); ">
+        <div>
+          <%= link_to root_path, id: "logo" do %>
+          <%= image_tag "logo_white.png" %>
+          <% end %>
         </div>
-
+        <div class="centerh">
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message">
+                <div class="numbers">
+                  <h3>1</h3>
+                </div>
+                <div class="message-body">
+                  <p>Prenez le temps de répondre au questions de notre doc-bot </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message">
+                <div class="numbers">
+                  <h3>2</h3>
+                </div>
+                <div class="message-body">
+                  <p> Relisez vos réponses et confirmez </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message actived">
+                <div class="numbers">
+                  <h3>3</h3>
+                </div>
+                <div class="message-body">
+                  <p> Envoyez vos informations à un Dermatologue Hairdiag pour un dignostique fiable en moins de 48h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="footer" style="background: #62E1A6; background-image: url('<%= image_url "background.png" %>');">
-        <p>Footer made with love at le Wagon Marseille City Beach</p>
-      </div>
+      <div class="col-xs-6 page-part" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>'); ">
 
+        <div class="general-wrapper ">
+          <div class="home-content-wrapper ">
+            <div class="home-content">
+              <h1>Cher <%= @patient.first_name %>, nous avons bien enregitré vos informations.</h1>
+              <h2> Afin qu'un dermatologue certifié puisse rapidement établir un pré-diagnostique,</h2>
+              <h2>nous vous invitons maintenant à proceder au paiement.</h2>
+
+              <%= form_tag patient_payments_path(@patient) do %>
+              <article>
+                <h2><label class="amount">
+                  <span>Prix: <%= humanized_money_with_symbol(@patient.price) %></span> </h2>
+                </label>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="My consult"
+              data-email="<%= @patient.email %>"
+              data-description="Consultation <%= @patient.first_name %>"
+              data-amount="<%= @patient.price_cents %>"
+              data-currency="<%= @patient.price.currency %>"></script>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+        <div class="center_bottom_page">
+          <div class="cta-start btn btn-medium">
+            <%= link_to "Retour à l'étape 2", validation_patient_path(@patient) , class: "header-item" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

@@ -32,9 +32,10 @@ class PatientsController < ApplicationController
   def validation
   end
 
+  def payment
+  end
+
   def thank_you
-    set_patient
-    set_patient_status_to
   end
 
   private

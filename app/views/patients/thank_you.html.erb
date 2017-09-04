@@ -9,7 +9,7 @@
           <h1>Cher <%= @patient.first_name %>, merci pour votre confiance </h1>
           <h2>Votre paiement a bien été accepté </h2>
           <h2>Un dermatologue certifié vous répondra par mail sous 48h </h2>
-          <%= link_to home_path, class:"cta-start" do %>
+          <%= link_to root_path, class:"cta-start" do %>
           <div>
             <button class="btn btn-cta">
             <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
@@ -17,17 +17,6 @@
           </div>
           <% end %>
         </div>
-
-
-        <!-- <div class="thank-content">
-
-          <h2>Cher <%= @patient.first_name %>, merci pour votre confiance</h2>
-          <p>Votre paiement a bien été accepté</p>
-          <p>Un dermatologue certifié vous répondra par mail sous 48h</p>
-          <button class="btn btn-cta">
-            <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
-          </button>
-        </div> -->
 
       </div>
     </div>

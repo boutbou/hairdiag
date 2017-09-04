@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831155834) do
+ActiveRecord::Schema.define(version: 20170904150547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,8 +127,11 @@ ActiveRecord::Schema.define(version: 20170831155834) do
     t.integer  "doctor_id"
     t.string   "status"
     t.integer  "diagnostic_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "price_cents",             default: 20, null: false
+    t.boolean  "paid"
+    t.json     "payment"
     t.index ["diagnostic_id"], name: "index_patients_on_diagnostic_id", using: :btree
     t.index ["doctor_id"], name: "index_patients_on_doctor_id", using: :btree
   end

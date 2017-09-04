@@ -1,11 +1,62 @@
 
-<div class="validation-container">
-  <div class="side-background" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>');">
+<div class="container" id="form-width">
+  <div class="background" >
     <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-        <div class="row validation-infos">
-          <h1>Merci de confirmer vos informations ci dessous</h1>
-          <div class="patients-details validation-border">
+      <div class="col-xs-6 page-part" style="background: #62E1A6; background-image: linear-gradient(-180deg, rgba(42,245,152,0.00) 0%, rgba(0,0,0,0.50) 100%), url('<%= image_url "background.png" %>'); ">
+        <div>
+          <%= link_to root_path, id: "logo" do %>
+          <%= image_tag "logo_white.png" %>
+          <% end %>
+        </div>
+        <div class="centerh">
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message">
+                <div class="numbers">
+                  <h3>1</h3>
+                </div>
+                <div class="message-body">
+                  <p>Prenez le temps de répondre au questions de notre doc-bot </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message active">
+                <div class="numbers">
+                  <h3>2</h3>
+                </div>
+                <div class="message-body">
+                  <p> Relisez vos réponses et confirmez </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+              <div class="message">
+                <div class="numbers">
+                  <h3>3</h3>
+                </div>
+                <div class="message-body">
+                  <p> Envoyez vos informations à un Dermatologue Hairdiag pour un dignostique fiable en moins de 48h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="center_bottom_page">
+          <div class="cta-start btn btn-medium">
+            <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 page-part">
+      <div class="row validation-container">
+          <h2>Merci de confirmer vos informations ci dessous</h2>
+          <div class="validation-infos">
             <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
               <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
             </h3>
@@ -133,19 +184,21 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="wrapper-valitation-buttons">
-          <div class="cta-start btn btn-medium">
-            <%= link_to "Corriger votre formulaire", edit_patient_path(@patient) , class: "header-item" %>
-          </div>
-          <div class="cta-start btn btn-medium">
-            <%= link_to "Valider vos informations", payment_patient_path(@patient) , class: "header-item"%>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="wrapper-valitation-buttons">
+              <div class="btn btn-medium">
+                <%= link_to "Corriger votre formulaire", edit_patient_path(@patient) , class: "header-item" %>
+              </div>
+              <div class="btn-cta btn">
+                <%= link_to "Valider et payer", thank_you_patient_path(@patient) , class: "header-item"%>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

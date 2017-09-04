@@ -3,20 +3,35 @@
     <%= render "shared/sidebar-dashboard"%>
     <div class="col-md-10">
       <div class="row dashboard-infos">
+        <div class="dashboard-main-content">
+          <div class="#">
+            <h2>Bonjour <%= current_doctor.first_name  %></h2>
+            <p>Bienvenu sur votre tableau de bord Hairdiag.</p>
+            <ol>
+              <li>Cliquez sur "voir un patient"</li>
+              <li>Prenez le temps d'étudier le cas et d'y répondre</li>
+              <li>Proposez un rendez-vous si besoin à votre patient</li>
+            </ol>
+          </div>
+          <div class="see-patient">
+            <% if @patients_available.count == 0 %>
+            <p>Il n'y a actuellement aucun patient en attente d'être soigné, vous serez alerté quand une demande de traitement vous sera parvenue.</p>
+            <% else %>
+            <%= link_to doctor_assign_patient_path, class:"cta-start", method: :post do %>
+            <div>
+              <button class="btn btn-cta">
+                <p>Voir un patient</p>
+                <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
+              </button>
+            </div>
+            <% end %>
+            <p>Il y actuellement <strong><%= @patients_available.count %></strong> <%= t('patients', count: @patients_available.count) %></p>
+            <% end %>
+          </div>
+        </div>
         <div class="dashboard-boiler-plate">
           <h2>Note:</h2>
           <p>En arrivant sur cette page, vous engagez votre responsabilité et celle de votre profession. En cliquant sur le bouton "voir un patient" ci-dessous, vous vous engagez à étudier son cas conformément au contrat que vous avez signé avec nous et à y répondre en moins de 48h.</p>
-        </div>
-        <div class="see-patient">
-          <%= link_to doctor_assign_patient_path, class:"cta-start" do %>
-          <div>
-            <button class="btn btn-cta">
-              <p>Voir un patient</p>
-              <%= image_tag "icon-microscope.png", class: "icon-microscope" %>
-            </button>
-          </div>
-          <% end %>
-        <p>Il y actuellement <strong><%= @patients.count %></strong> patients qui attendent d'être traités</p>
         </div>
 
 

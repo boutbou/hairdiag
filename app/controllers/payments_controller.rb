@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    @patient = Patient.find(params[:id])
   end
 
   def create
@@ -18,7 +19,7 @@ class PaymentsController < ApplicationController
      )
 
    @order.update(payment: charge.to_json, state: 'paid')
-   @patient.update(status: 'paid')
+   @patient.update(status: 'payment_successful')
    redirect_to order_path(@order)
 
  rescue Stripe::CardError => e

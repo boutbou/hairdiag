@@ -19,6 +19,19 @@
   padding-bottom: 4%;
 }
 
+// https://designshack.net/articles/css/joshuajohnson-2/ //
+
+.grow img:hover {
+  height: 300px;
+  width: 300px;
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
 .doctor-recommandations {
   display: grid;
   grid-template-columns: 250px 800px ;
@@ -39,7 +52,10 @@
   border-radius: 25px;
   font-size: 14px;
   color: #4A4A4A;
-  padding: 6px 67px;
+  padding: 6px 30px;
+  background: none;
+  outline: none;
+  width: 222px;
 }
 
 .messages-templates .active {
@@ -55,7 +71,7 @@
   border-radius: 25px;
   font-size: 14px;
   color: #4A4A4A;
-  padding: 6px 67px;
+  padding: 6px 30px;
 }
 
 .dignastic-choices {
@@ -70,10 +86,13 @@
   display: flex;
   align-items: center;
   padding: 4% 0;
-  border-bottom: 2px solid $green-main;
   height: 20%;
   width: 100%;
   padding-left: 4px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid $green-main;
+  outline: none;
 }
 
 .dignastic-choices .active {
@@ -100,8 +119,8 @@
   height: 35px;
   width: 35px;
   line-height: 35px;
-  -moz-border-radius: 50%; /* or 50% */
-  border-radius: 50%; /* or 50% */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   background-color: $green-main;
   color: white;
   text-align: center;
@@ -112,6 +131,8 @@
 .dignastic-choices-buttons p {
   margin: 0;
   color: #4A4A4A;
+  text-align: left;
+  margin: 0;
 }
 
 

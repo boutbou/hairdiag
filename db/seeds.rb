@@ -26,17 +26,19 @@ doctor = Doctor.new(
   )
 doctor.save!
 
-patient = Patient.new(
-  first_name: 'Benjamin',
-  last_name: 'Hagege',
-  gender: 1,
+puts 'Creating 15 fake patients...'
+15.times do
+  patient = Patient.new(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  gender: ["Une femme", "Un homme"].sample,
   zip_code: 75017,
-  city: 'Paris',
-  email: 'hagegebenjamin@gmail.com',
-  country: 'France',
+  city: Faker::Address.city,
+  email: Faker::Internet.email,
+  country: ["France", "Etranger"].sample,
   age: 28,
   loss_start_date: 2015,
-  relative: "Père",
+  relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"].sample,
   weekly_shampoo: 'aer',
   dandruff: 'aer',
   greasy_hair: 'aerae',
@@ -58,18 +60,54 @@ patient = Patient.new(
   restore_area: 'aer',
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
-  status: 'yes',
   price_cents: 2000
+  status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"].sample
+)
+
+ patient.save!
+
+# creation des prescriptions
+
+prescription = Diagnostic.create(name: "prescription")
+appointement = Diagnostic.create(name: "appointement")
+recommandation = Diagnostic.create(name: "recommandation")
+
+medicament_1 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 1",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 1"
   )
 
-patient.save!
+# creation des messages templates
+
+medicament_1.diagnostic = prescription
+
+medicament_1.save!
+
+medicament_2 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 2",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 2"
+  )
+
+medicament_2.diagnostic = prescription
+
+medicament_2.save!
+
+medicament_3 = MessageTemplate.new(
+  subject: "Veuillez prendre le medicament 3",
+  content: "Bonjour Jean Michel, avant de devenir chauve, veuillez prendre le medicament 3"
+  )
+
+medicament_3.diagnostic = prescription
+
+medicament_3.save!
 
 urls = [
   'http://www.centre-microgreffe.com/wp-content/uploads/alopetie_07.jpg',
-  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg'
+  'http://www.paraforme.fr/lemag/wp-content/uploads/2014/10/alopecie-2.jpg',
+  'https://www.consoglobe.com/wp-content/uploads/2015/10/shutterstock-alopecie-chute-des-cheveux-conseils-02.jpg'
 ]
-patient.photo_urls = urls # Multi-upload happens here
+patient.photo_urls = urls
 
-
+end
 
 puts "Seeds done !"

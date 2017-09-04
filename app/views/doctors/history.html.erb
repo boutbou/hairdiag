@@ -2,39 +2,44 @@
 
 <!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas et le numero correspond au statut du patient-->
 <% @patients.each do |patient| %>
-<% if patient.status == 4  %>
-<%= link_to patient.first_name, patient_path(patient)  %>
+<% if @patients.nil? %>
+<p>Vous n'avez pas encore traité de patient!</p>
+<% else %>
 <ul>
-  <li><% patient.first_name + " " + patient.last_name %></li>
-  <li><% patient.email %></li>
-  <li><% patient.gender %></li>
-  <li><% patient.zip_code %></li>
-  <li><% patient.city %></li>
-  <li><% patient.country %></li>
-  <li><% patient.age %></li>
-  <li><% patient.loss_start_date %></li>
-  <li><% patient.relative %></li>
-  <li><% patient.weekly_shampoo %></li>
-  <li><% patient.dandruff %></li>
-  <li><% patient.greasy_hair %></li>
-  <li><% patient.refined_hair %></li>
-  <li><% patient.brushing_hair %></li>
-  <li><% patient.shaving_hair %></li>
-  <li><% patient.scalp_densityalp %></li>
-  <li><% patient.hair_thickness %></li>
-  <li><% patient.hair_color %></li>
-  <li><% patient.hair_type %></li>
-  <li><% patient.vitamines %></li>
-  <li><% patient.finasteride %></li>
-  <li><% patient.stage %></li>
-  <li><% patient.traction_test %></li>
-  <li><% patient.restore_area %></li>
-  <li><% patient.technical_preference %></li>
-  <li><% patient.minoxidil %></li>
-  <li><% patient.minoxidil_doses %></li>
-  <li><% patient.hair_transplant %></li>
-  <li><% patient.hair_transplant_technic %></li>
-  <li><% patient.status %></li>
+  <li><%= link_to patient.first_name, patient_path(patient)  %>
+    <p><%= "Nom: " +  patient.first_name + " " + patient.last_name %></p>
+    <p>Email: <%=   patient.email %></p>
+    <p>Genre: <%=   patient.gender %></p>
+    <p>Code postal: <%=   patient.zip_code %></p>
+    <p>Ville: <%=   patient.city %></p>
+    <p>Pays: <%=   patient.country %></p>
+    <p>Age: <%=   patient.age %></p>
+    <p>Debut de la perte de cheveux: <%=   patient.loss_start_date %></p>
+    <p>Lié au (à la): <%=   patient.relative %></p>
+    <p>Lave ses cheveux <%=   patient.weekly_shampoo %> fois par semaine</p>
+    <p> Pellicules: <%=   patient.dandruff %></p>
+    <p>Cheveux gras: <%=   patient.greasy_hair %></p>
+    <p>Cheveux affinés:  <%=   patient.refined_hair %></p>
+    <p>Brushing: <%=   patient.brushing_hair %></p>
+    <p>Rasage du cuir chevelu:  <%=   patient.shaving_hair %></p>
+    <p>Densité à l'arriere du cuir chevelu:  <%=   patient.scalp_density %></p>
+    <p>Epaisseur: <%=   patient.hair_thickness %></p>
+    <p>Couleur: <%=   patient.hair_color %></p>
+    <p>Type: <%=   patient.hair_type %></p>
+    <p>Vitamines: <%=   patient.vitamines %></p>
+    <p>Finasterides:  <%=   patient.finasteride %></p>
+    <p>Stade de perte: <%=   patient.stage %></p>
+    <p>Resultat test de traction:  <%=   patient.traction_test %></p>
+    <p>Zone de restauration souhaitée: <%=   patient.restore_area %></p>
+    <p>Technique préférée: <%=   patient.technical_preference %></p>
+    <p>Minoxidil: <%=   patient.minoxidil %></p>
+    <p>Doses de Minoxidil: <%=   patient.minoxidil_doses %></p>
+    <p>Transplantation capillaire ? <%=   patient.hair_transplant %></p>
+    <p>Technique de transplantation: <%=   patient.hair_transplant_technic %></p>
+    <p>Stade de réponse: <%=   patient.status %></li>
 </ul>
 <% end %>
 <% end %>
+<%= link_to "Retourner au Dashboard" , doctor_dashboard_path %>
+
+

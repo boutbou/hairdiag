@@ -11,6 +11,13 @@
   }
 }
 
+#confirmation-message {
+  background: none;
+  color: black;
+  font-size: 1.5em;
+  border-left: 4px solid $green-main;
+}
+
 .payment {
   color: rgba(0,0,0,0.6) !important;
   text-align: center;
@@ -45,9 +52,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 25px;
+  padding: 25px 0;
+  width: 100%;
   .btn {
-    width: 40%;
+    width: 45%;
     height: 40px;
   }
   .btn-medium {
@@ -55,15 +63,32 @@
   }
 }
 
-.wrapper-valitation-buttons .btn-medium {
-  border-color: $green-main;
-  a {
-    color: $green-main;
+.wrapper-valitation-buttons  {
+  .btn {
+    width: 207px;
   }
-  a:hover {
-    color: white;
+  .btn-medium {
+    border-color: $green-main;
+    color: $green-main;
+    background: none;
+  }
+  .btn-cta {
+    padding: 0;
+    p {
+      padding-left: 41px;
+    }
+  }
+  p {
+    margin: auto
   }
 }
+
+.wrapper-valitation-buttons .btn-medium:hover {
+    color: white;
+    background-color: $green-main;
+}
+
+
 
 .background {
   width: 100%;

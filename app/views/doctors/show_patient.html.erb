@@ -54,15 +54,15 @@
                     <% if @patient.refined_hair.to_s =="Yes" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
-                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></i></p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                     <% end %>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   Membre de sa famille ayant le même problème
                   <% if @patient.relative.to_s == "Père" || @patient.relative.to_s == "Grand-père" %>
-                   <p> <%= "Son #{@patient.relative.to_s.downcase}" %></p>
+                   <p> <%= "son #{@patient.relative.to_s.downcase}" %></p>
                   <% elsif @patient.relative.to_s == "Mère" || @patient.relative.to_s == "Grand-mère" %>
-                    <p> <%= "Sa #{@patient.relative.to_s.downcase}" %></p>
+                    <p> <%= "sa #{@patient.relative.to_s.downcase}" %></p>
                   <% else %>
                     <p>Aucun</p>
                   <% end %>
@@ -75,7 +75,7 @@
                     <% if @patient.dandruff.to_s == "Yes" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
-                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></i></p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                     <% end %>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
@@ -83,7 +83,7 @@
                     <% if @patient.greasy_hair.to_s == "Yes" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
-                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></i></p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                     <% end %>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
@@ -91,7 +91,7 @@
                   <% if @patient.brushing_hair.to_s == "Yes" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
-                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></i></p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                   <% end %>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
@@ -99,7 +99,7 @@
                   <% if @patient.shaving_hair.to_s == "Yes" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
-                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></i></p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                   <% end %>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
@@ -109,43 +109,58 @@
               </div>
             </div>
             <div>
-              <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
+          <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
               <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
               </h3>
               <div class="row collapse in" id="situation-capillaire">
-                <div class="col-md-4">
-                    <%= "Vitamines: " + @patient.vitamines.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                    Prend des vitamines
+                    <% if @patient.vitamines.to_s == "Yes" %>
+                       <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                    <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                    <% end %>
                 </div>
-                <div class="col-md-4">
-                  <%= "Finasterides? " + @patient.finasteride.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Prends de la finasteride
+                  <% if @patient.finasteride.to_s == "Yes" %>
+                    <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                  <% else %>
+                    <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                  <% end %>
                 </div>
-                <div class="col-md-4">
-                  <%= "Stade de la perte: " + @patient.stage.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Stade de la perte de cheveux <p><%= @patient.stage.to_s %></p>
                 </div>
-                <div class="col-md-4">
-                  <%= "Resultat du test de traction: " + @patient.traction_test.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Résultat du test de traction <p><%= @patient.traction_test.to_s %></p>
                 </div>
-                <div class="col-md-4">
-                  <%= "Zone de restauration souhaitée: " + @patient.restore_area.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Zone de restauration souhaitée <p><%= @patient.restore_area.to_s %></p>
                 </div>
-                <div class="col-md-4">
-                  <%= "Technique de restauration préférée: " + @patient.technical_preference.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Technique de restauration préférée <p><%=  @patient.technical_preference.to_s %></p>
                 </div>
-                <div class="col-md-4">
-                  <%= "Minoxidil? " + @patient.minoxidil.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  Prend de la Minoxidil
+                  <% if @patient.minoxidil == "oui"  %>
+                    <p>oui (<%="#{@patient.minoxidil_doses} doses"%>)</p>
+                  <% else %>
+                    <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                  <% end %>
                 </div>
-                <% if @patient.minoxidil == "oui"  %>
-                  <div class="col-md-4">
-                  <%= "Doses de Minoxidil: #{@patient.minoxidil_doses}%" %>
-                </div>
-                <% end %>
-                <div class="col-md-4">
-                  <%= "Transplantation capillaire? " + @patient.hair_transplant.to_s %>
+                <div class="col-md-6 context-medical-input-tf">
+                  A déjà effectué une greffe capillaire
+                  <% if @patient.hair_transplant.to_s == "Yes" %>
+                    <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                  <% else %>
+                    <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                  <% end %>
                 </div>
                 <% if @patient.hair_transplant == "oui" %>
-                <div class="col-md-4">
-                  <%= "Technique de transplantation: " + @patient.hair_transplant_technic.to_s %>
-                </div>
+                  <div class="col-md-6 context-medical-input-tf">
+                    Technique de transplantation souhaitée <p><%= @patient.hair_transplant_technic.to_s %></p>
+                  </div>
                 <% end %>
               </div>
             </div>
@@ -158,6 +173,12 @@
                   <% @patient.photos.each do |photo| %>
                   <div class="col-md-4 grow">
                   <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
+                  <div class="caption">
+                    <div class="blur"></div>
+                    <div class="caption-text">
+                      <h2>Vue 1</h2>
+                    </div>
+                  </div>
                   </div>
                   <% end %>
                 <% else %>

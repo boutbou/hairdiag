@@ -14,6 +14,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
+    prefill_patient
     if @patient.valid?
       @patient.save
       redirect_to validation_patient_path(@patient)
@@ -67,5 +68,37 @@ class PatientsController < ApplicationController
       :status, :email, :minoxidil, :minoxidil_doses,
       :hair_transplant, :hair_transplant_technic,
       :remark, photos:[])
+  end
+
+  def prefill_patient
+    @patient.first_name = "Benjamin" if @patient.first_name.blank?
+    @patient.last_name = "Dupont" if @patient.last_name.blank?
+    @patient.email = "contact@hairdiag.com" if @patient.email.blank?
+    @patient.zip_code = "13008" if @patient.zip_code.blank?
+    @patient.city = "Marseille" if @patient.city.blank?
+    @patient.country = "France" if @patient.country.blank?
+    @patient.age = 33 if @patient.age.blank?
+    @patient.loss_start_date = "2015" if @patient.loss_start_date.blank?
+    @patient.relative = "Père" if @patient.relative.blank?
+    @patient.weekly_shampoo = 4 if @patient.weekly_shampoo.blank?
+    @patient.dandruff = "oui" if @patient.dandruff.blank?
+    @patient.greasy_hair = "oui" if @patient.greasy_hair.blank?
+    @patient.refined_hair = "oui" if @patient.refined_hair.blank?
+    @patient.brushing_hair = "oui" if @patient.brushing_hair.blank?
+    @patient.shaving_hair = "non" if @patient.shaving_hair.blank?
+    @patient.scalp_density = "moyenne" if @patient.scalp_density.blank?
+    @patient.hair_thickness = "moyen" if @patient.hair_thickness.blank?
+    @patient.hair_color = "gris" if @patient.hair_color.blank?
+    @patient.hair_type = "raide" if @patient.hair_type.blank?
+    @patient.vitamines = "non" if @patient.vitamines.blank?
+    @patient.minoxidil = "non" if @patient.minoxidil.blank?
+    @patient.finasteride = "non" if @patient.finasteride.blank?
+    @patient.hair_transplant = "non" if @patient.hair_transplant.blank?
+    @patient.traction_test = "2-3 cheveux" if @patient.traction_test.blank?
+    @patient.restore_area = "Front" if @patient.restore_area.blank?
+    @patient.technical_preference = "F.U.E. (Unités folliculaires par extraction)" if @patient.technical_preference.blank?
+    @patient.remark = "Aucune" if @patient.remark.blank?
+    @patient.photos = [File.open("http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png")]
+    @patient.stage = File.open("http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png")
   end
 end

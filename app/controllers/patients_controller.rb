@@ -40,6 +40,11 @@ class PatientsController < ApplicationController
 
   private
 
+  def set_patient_status_to
+    @patient.status = "payment_successful"
+    @patient.save
+  end
+
   def set_patient
     @patient = Patient.find(params[:id])
   end

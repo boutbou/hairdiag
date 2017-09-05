@@ -81,11 +81,17 @@
   p {
     margin: auto
   }
+  a {
+    color: $green-main;
+  }
 }
 
 .wrapper-valitation-buttons .btn-medium:hover {
     color: white;
     background-color: $green-main;
+    a {
+      color: white;
+    }
 }
 
 
@@ -106,4 +112,14 @@
 
 .thanks {
   height: 100vh;
+  h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+  }
 }

@@ -14,11 +14,11 @@ class DoctorMailer < ApplicationMailer
       )
   end
 
-  def new_message(patient, doctor)
-    @patient = patient
-    @doctor = doctor
+  def new_message(patient_id)
+    @patient = Patient.find(patient_id)
+    @doctor = @patient.doctor
     mail(
-      subject: 'You received an answer from your dermatologist',
+      subject: "Vous avez reçu une réponse d'un dermatologue",
       to: @patient.email,
       from: 'contact@hairdiag.com',
       track_opens: 'true'

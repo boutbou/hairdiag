@@ -1,7 +1,9 @@
 class Patient < ApplicationRecord
   # enum pour les listes de choix dans le formulaire
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :case_assignments
+  belongs_to :doctor, optional: true
+
   has_attachments :photos, maximum: 4
   has_attachments :documents, maximum: 3
 
@@ -39,7 +41,12 @@ class Patient < ApplicationRecord
   # validates :hair_transplant_technic, presence: true, if: :hair_transplant?
 
   def minoxidil?
-    minoxidil == "yes"
+    minoxidil == "oui"
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 
 end

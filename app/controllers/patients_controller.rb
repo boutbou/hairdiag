@@ -4,6 +4,8 @@ class PatientsController < ApplicationController
   skip_before_action :authenticate_doctor!
 
   def show
+    @doctor = Doctor.where(id: @patient.doctor_id).limit(1).first
+    @message = Message.where(patient_id: @patient.id).limit(1).first
   end
 
   def new

@@ -31,29 +31,20 @@
         <div>
           <div>
             <div class="header-answer">
-              <h2>Patient : Abdoul Michel Michel </h2>
-              <p>Cas envoyé le 01/01/1921 </p>
-              <p>Cas étudié le 02/01/1921  par le Docteur Jean Michel Michel </p>
-              <p>Diagnostic : plus un poil sur le caillou </p>
+              <h2>Patient : <%= @patient.first_name + " " + @patient.last_name %> </h2>
+              <p>Cas envoyé le <%=@patient.created_at.strftime("%d-%m-%Y à %Hh%M") %>. </p>
+              <p>Cas étudié le <%= @message.created_at.strftime("%d-%m-%Y à %Hh%M") %> par le <%= @doctor.first_name + " " + @doctor.last_name %> </p>
+              <p>Diagnostic : <%= @message.subject %> </p>
             </div>
           </div>
           <div class="message-answer">
             <%= image_tag "photo-expert1.png" %>
             <div class="message-answer-container">
               <div class="sender">
-              @doctor.name
+              <%= @doctor.first_name %>
               </div>
               <div class="content">
-                Bonjour Benjamin,<br><br>
-
-              Il existe un traitement particuliers pour ce type de perte de cheveux qui prends en compte plusieurs traitements complémentaires à prendre sur 15 jours:<br>
-              - Preparles, 3 fois par jour<br>
-              - Engraicheuv 2 fois par jour<br>
-              - Soipabart 1 comprimé par matin<br><br>
-
-              Cordialement,<br><br>
-
-               Jean Reno
+                <%= @message.content %>
               </div>
             </div>
           </div>

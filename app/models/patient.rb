@@ -39,7 +39,7 @@ class Patient < ApplicationRecord
   # validates :hair_transplant_technic, presence: true, if: :hair_transplant?
 
   def minoxidil?
-    minoxidil == "yes"
+    minoxidil == "oui"
   end
 
 end

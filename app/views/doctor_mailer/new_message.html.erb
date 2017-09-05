@@ -1,5 +1,7 @@
-<p>Hi <%= @patient.first_name %>,</p>
+<p>Bonjour <%= @patient.first_name @patient.last_name %>,</p>
 
-<p>You received an answer from @doctor.last_name</p>
+<p>Vous venez de recevoir une réponse du Dr @doctor.first_name @doctor.last_name</p>
 
-<p>To access it, please click the link below: </p>
+<p>Pour y accéder, merci de cliquer sur le lien ci-dessous: </p>
+
+<%= link_to 'Diagnostic', @patient_path %>

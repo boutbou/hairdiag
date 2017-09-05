@@ -19,6 +19,7 @@ gem 'postmark-rails'
 gem 'money-rails'
 gem 'stripe'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 # Cloudinary- Attachinary
 gem 'coffee-rails'

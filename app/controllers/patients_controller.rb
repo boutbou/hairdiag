@@ -98,7 +98,7 @@ class PatientsController < ApplicationController
     @patient.restore_area = "Front" if @patient.restore_area.blank?
     @patient.technical_preference = "F.U.E. (Unités folliculaires par extraction)" if @patient.technical_preference.blank?
     @patient.remark = "Aucune" if @patient.remark.blank?
-    # @patient.photos = [File.open("http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png", 'w')]
+    @patient.photos = [File.open("https://pbs.twimg.com/profile_images/2627460720/zinedine_zidane_20official.jpg", 'w')] if @patient.photos.blank?
     # @patient.stage = File.open("http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png")
   end
 end

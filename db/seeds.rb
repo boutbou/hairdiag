@@ -60,7 +60,7 @@ puts 'Creating 15 fake patients...'
   restore_area: 'aer',
   technical_preference: 'fue',
   remark: 'merci de me trouver une solution',
-  price_cents: 2000
+  price_cents: 2000,
   status: ["started", "ended", "payment_failed", "payment_successful", "assigned", "answered", "opened"].sample
 )
 

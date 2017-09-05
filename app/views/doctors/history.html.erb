@@ -1,45 +1,44 @@
-<h1>Here is all your cases</h1>
 
-<!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas et le numero correspond au statut du patient-->
-<% @patients.each do |patient| %>
-<% if @patients.nil? %>
-<p>Vous n'avez pas encore traité de patient!</p>
-<% else %>
-<ul>
-  <li><%= link_to patient.first_name, patient_path(patient)  %>
-    <p><%= "Nom: " +  patient.first_name + " " + patient.last_name %></p>
-    <p>Email: <%=   patient.email %></p>
-    <p>Genre: <%=   patient.gender %></p>
-    <p>Code postal: <%=   patient.zip_code %></p>
-    <p>Ville: <%=   patient.city %></p>
-    <p>Pays: <%=   patient.country %></p>
-    <p>Age: <%=   patient.age %></p>
-    <p>Debut de la perte de cheveux: <%=   patient.loss_start_date %></p>
-    <p>Lié au (à la): <%=   patient.relative %></p>
-    <p>Lave ses cheveux <%=   patient.weekly_shampoo %> fois par semaine</p>
-    <p>Pellicules: <%=   patient.dandruff %></p>
-    <p>Cheveux gras: <%=   patient.greasy_hair %></p>
-    <p>Cheveux affinés:  <%=   patient.refined_hair %></p>
-    <p>Brushing: <%=   patient.brushing_hair %></p>
-    <p>Rasage du cuir chevelu:  <%=   patient.shaving_hair %></p>
-    <p>Densité à l'arriere du cuir chevelu:  <%=   patient.scalp_density %></p>
-    <p>Epaisseur: <%=   patient.hair_thickness %></p>
-    <p>Couleur: <%=   patient.hair_color %></p>
-    <p>Type: <%=   patient.hair_type %></p>
-    <p>Vitamines: <%=   patient.vitamines %></p>
-    <p>Finasterides:  <%=   patient.finasteride %></p>
-    <p>Stade de perte: <%=   patient.stage %></p>
-    <p>Resultat test de traction:  <%=   patient.traction_test %></p>
-    <p>Zone de restauration souhaitée: <%=   patient.restore_area %></p>
-    <p>Technique préférée: <%=   patient.technical_preference %></p>
-    <p>Minoxidil: <%=   patient.minoxidil %></p>
-    <p>Doses de Minoxidil: <%=   patient.minoxidil_doses %></p>
-    <p>Transplantation capillaire ? <%=   patient.hair_transplant %></p>
-    <p>Technique de transplantation: <%=   patient.hair_transplant_technic %></p>
-    <p>Stade de réponse: <%=   patient.status %></li>
-</ul>
-<% end %>
-<% end %>
-<%= link_to "Retourner au Dashboard" , doctor_dashboard_path %>
+<div class="dashboard-container">
+  <div class="row">
+    <%= render "shared/sidebar-dashboard"%>
+    <div class="col-md-10">
+      <div class="row dashboard-infos">
+        <div class="dashboard-main-content">
+          <div class="#">
+            <h1>Here is all your cases</h1>
 
+            <!-- Ici je met toutes les donnees du patient, par cas, a reduire en fonction de ce que l'on veut dans le cas et le numero correspond au statut du patient-->
+            <% @patients.each do |patient| %>
+            <% if @patients.nil? %>
+            <p>Vous n'avez pas encore traité de patient!</p>
+            <% else %>
+            <% if patient.doctor_id == current_doctor.id %>
+            <div class="case">
+              <%= image_tag patient.photos.first.path , class: "avatar-large" %>
+              <div class="case-name">
+                <%=  %>
+                <%= link_to patient.first_name + patient.last_name.to_s, doctor_show_patient_path(patient), class: "h4" %>
+              </div>
+              <div class="case-body">
+                <p><strong> <%= patient.city %></strong></p>
+                <p>
+                  Pris en charge le <%= patient.created_at  %>
+                  <%= patient.stage %>
+                </p>
+              </div>
+              <div class="case-status">
+                <p class="status pending"><%= patient.status %></p>
+              </div>
+            </div>
+            <% end %>
+            <% end %>
+            <% end %>
+            <%= link_to "Retourner au Dashboard" , doctor_dashboard_path, class: "h4" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

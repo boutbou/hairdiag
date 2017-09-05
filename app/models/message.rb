@@ -8,7 +8,7 @@ class Message < ApplicationRecord
   private
 
   def send_answer_email
-    DoctorMailer.new_message(self.patient, self.patient.doctor_id).deliver_now
+    DoctorMailer.new_message(patient_id).deliver_now
   end
 
 end

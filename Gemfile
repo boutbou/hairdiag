@@ -18,6 +18,7 @@ gem 'faker'
 gem 'postmark-rails'
 gem 'money-rails'
 gem 'stripe'
+gem 'rails-i18n'
 
 # Cloudinary- Attachinary
 gem 'coffee-rails'

@@ -20,9 +20,14 @@ class Doctor < ApplicationRecord
 
   after_create :send_welcome_email
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def send_welcome_email
     DoctorMailer.welcome(self).deliver_now
   end
+
 end

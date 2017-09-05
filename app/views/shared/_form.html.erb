@@ -13,7 +13,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, collection: (15..40), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ?"}%>
+        <%= f.input :age, collection: (15..40), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ? ", "cf-scrollAccerlation" => "0"}%>
       </fieldset>
 
       <fieldset>
@@ -25,47 +25,47 @@
       </fieldset>
 
       <fieldset cf-questions="Ne voyez rien de personnel, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?" >
-        <label for="greasy_hair-yes">Oui<input type="radio" name="patient[greasy_hair]" id="greasy_hair-yes" value="yes" tabindex="-1"
-          <%= @patient.greasy_hair == "yes" ? 'checked="checked"' : "" %>>
+        <label for="greasy_hair-oui">Oui<input type="radio" name="patient[greasy_hair]" id="greasy_hair-oui" value="oui" tabindex="-1"
+          <%= @patient.greasy_hair == "oui" ? 'checked="checked"' : "" %>>
         </label>
 
-        <label for="greasy_hair-no">Non
-          <input type="radio" name="patient[greasy_hair]" id="greasy_hair-no" value="no" tabindex="-1"
-          <%= @patient.greasy_hair == "no" ? 'checked="checked"' : "" %>
+        <label for="greasy_hair-non">Non
+          <input type="radio" name="patient[greasy_hair]" id="greasy_hair-non" value="non" tabindex="-1"
+          <%= @patient.greasy_hair == "non" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>
 
       <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Ce n'est pas grave, rassurez vous. LOL <br> Et avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "yes"}, input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "no"} %>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "non"} %>
       </fieldset>
 
 
       <fieldset cf-questions="Etes-vous sous Minoxidil ?" >
-        <label for="minoxidil-yes">Oui<input type="radio" name="patient[minoxidil]" id="minoxidil-yes" value="yes" tabindex="-1"
-          <%= @patient.minoxidil == "yes" ? 'checked="checked"' : "" %>>
+        <label for="minoxidil-oui">Oui<input type="radio" name="patient[minoxidil]" id="minoxidil-oui" value="oui" tabindex="-1"
+          <%= @patient.minoxidil == "oui" ? 'checked="checked"' : "" %>>
         </label>
 
-        <label for="minoxidil-no">Nope
-          <input type="radio" name="patient[minoxidil]" id="minoxidil-no" value="no" tabindex="-1"
-          <%= @patient.minoxidil == "no" ? 'checked="checked"' : "" %>
+        <label for="minoxidil-non">Nope
+          <input type="radio" name="patient[minoxidil]" id="minoxidil-non" value="non" tabindex="-1"
+          <%= @patient.minoxidil == "non" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>
 
       <fieldset>
-        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dosage ?", "cf-conditional-patient[minoxidil]" => "yes"}%>
+        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dosage ?", "cf-conditional-patient[minoxidil]" => "oui"}%>
       </fieldset>
 
 
       <fieldset cf-questions="Avez-vous déjà eu des greffes capillaires ?" >
-        <label for="hair_transplant-yes">Oui<input type="radio" name="patient[hair_transplant]" id="hair_transplant-yes" value="yes" tabindex="-1"
-          <%= @patient.hair_transplant == "yes" ? 'checked="checked"' : "" %>>
+        <label for="hair_transplant-oui">Oui<input type="radio" name="patient[hair_transplant]" id="hair_transplant-oui" value="oui" tabindex="-1"
+          <%= @patient.hair_transplant == "oui" ? 'checked="checked"' : "" %>>
         </label>
 
-        <label for="hair_transplant-no">Nope
-          <input type="radio" name="patient[hair_transplant]" id="hair_transplant-no" value="no" tabindex="-1"
-          <%= @patient.hair_transplant == "no" ? 'checked="checked"' : "" %>
+        <label for="hair_transplant-non">Non
+          <input type="radio" name="patient[hair_transplant]" id="hair_transplant-non" value="non" tabindex="-1"
+          <%= @patient.hair_transplant == "non" ? 'checked="checked"' : "" %>
           >
         </label>
       </fieldset>
@@ -78,13 +78,13 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
+      <%= f.input :photos, as: :file, input_html: { "multiple" => true, "cf-questions" => "Merci d'ajouter vos photos prises devant derrière et au dessus du crâne. <br> <img src=\"http://res.cloudinary.com/benji89/image/upload/v1504615511/Capture_d_%C3%A9cran_2017-08-07_%C3%A0_16.21.01_sariqh.jpg\"> </img>" }%>
       </fieldset>
 
       <fieldset>
-      <%= f.input :photos, as: :file, input_html: { "cf-questions" => "Merci d'ajouter vos photos prises devant derrière et au dessus du crâne."}%>
+        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
       </fieldset>
 
       <%= f.submit %>
-
     <% end %>
+

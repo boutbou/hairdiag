@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                     A l'impression que ses cheveux se sont affinés :
-                    <% if @patient.refined_hair.to_s =="Yes" %>
+                    <% if @patient.refined_hair.to_s =="Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                     Pellicules
-                    <% if @patient.dandruff.to_s == "Yes" %>
+                    <% if @patient.dandruff.to_s == "Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                     Cheveux gras
-                    <% if @patient.greasy_hair.to_s == "Yes" %>
+                    <% if @patient.greasy_hair.to_s == "Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   Fait des tresses / défrisages / brushings
-                  <% if @patient.brushing_hair.to_s == "Yes" %>
+                  <% if @patient.brushing_hair.to_s == "Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   Se rase régulièrement tout ou une partie du cuir chevelu
-                  <% if @patient.shaving_hair.to_s == "Yes" %>
+                  <% if @patient.shaving_hair.to_s == "Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -115,7 +115,7 @@
               <div class="row collapse in" id="situation-capillaire">
                 <div class="col-md-6 context-medical-input-tf">
                     Prend des vitamines
-                    <% if @patient.vitamines.to_s == "Yes" %>
+                    <% if @patient.vitamines.to_s == "Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
                       <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   Prends de la finasteride
-                  <% if @patient.finasteride.to_s == "Yes" %>
+                  <% if @patient.finasteride.to_s == "Oui" %>
                     <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
                     <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -139,11 +139,11 @@
                   Zone de restauration souhaitée <p><%= @patient.restore_area.to_s %></p>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
-                  Technique de restauration préférée <p><%=  @patient.technical_preference.to_s %></p>
+                  Technique de restauration préférée <p>F.U.E</p>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   Prend de la Minoxidil
-                  <% if @patient.minoxidil == "oui"  %>
+                  <% if @patient.minoxidil == "Oui"  %>
                     <p>oui (<%="#{@patient.minoxidil_doses} doses"%>)</p>
                   <% else %>
                     <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
                   A déjà effectué une greffe capillaire
-                  <% if @patient.hair_transplant.to_s == "Yes" %>
+                  <% if @patient.hair_transplant.to_s == "Oui" %>
                     <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                   <% else %>
                     <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>

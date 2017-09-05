@@ -38,7 +38,7 @@ puts 'Creating 15 fake patients...'
   country: ["France", "Etranger"].sample,
   age: 28,
   loss_start_date: 2015,
-  relative: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"].sample,
+  relative: ["aucun", "Père", "Mère", "Grand-mère", "Grand-père"].sample,
   weekly_shampoo: 'aer',
   dandruff: 'aer',
   greasy_hair: 'aerae',

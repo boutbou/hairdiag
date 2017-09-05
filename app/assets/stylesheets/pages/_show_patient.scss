@@ -163,3 +163,58 @@
 .recommandation-text-area .form-actions {
   float: right;
 }
+
+
+
+// cas patient - details du tableau //
+
+.info-pratiques-input {
+  margin-bottom: 2%;
+  padding-bottom: 3px;
+  position: relative;
+  p {
+    font-size: 0.8em;
+    color: grey;
+    font-style: italic;
+    margin: 0 0 1.5px;
+    padding-left: 0;
+  }
+}
+
+.info-pratiques-input:before {
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 1px;
+  width   : 60%;
+  border-bottom: 1px solid $green-main;
+}
+
+.context-medical-input-tf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+
+  p {
+    border: 2px solid $green-main;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 0;
+    margin-left: 15px;
+    width: 100px;
+  }
+  p:hover {
+    border: 4px solid $green-main;
+  }
+
+  i {
+    color: $green-main;
+    padding-left: 25px;
+  }
+  .false-red {
+    color: red;
+  }
+}
+

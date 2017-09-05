@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   # enum pour les listes de choix dans le formulaire
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :case_assignments
   has_attachments :photos, maximum: 4
   has_attachments :documents, maximum: 3

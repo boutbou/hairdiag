@@ -8,6 +8,7 @@
 
 Patient.destroy_all
 Doctor.destroy_all
+Message.destroy_all
 
 doctor = Doctor.new(
   first_name: 'Jean',

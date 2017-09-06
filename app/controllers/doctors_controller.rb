@@ -16,7 +16,7 @@ end
 
 
  def assign_patient
-  @patient_selected = Patient.where(status: "payment_successful").to_a.sample
+  @patient_selected = Patient.where(status: "payment_successful").to_a.last
 
   if @patient_selected.nil?
     flash[:alerte] = "Il n'y a pas de cas en attente d'être traité"

@@ -45,13 +45,7 @@
               </div>
               <div class="content">
                 <!--%= @message.content %-->
-                Bonjour Tim, <br><br>
-                Il existe un traitement particuliers pour ce type de perte de cheveux qui prends en compte plusieurs traitements complémentaires à prendre sur 15 jours :<br>
-                - Preparles, 3 fois par jour<br>
-                - Engraicheuv 2 fois par jour<br>
-                - Soipabart 1 comprimé par matin<br><br>
-                 Cordialement,
-                 <br><br>Jean Reno
+                <%= simple_format(@message.content)  %>
               </div>
             </div>
           </div>

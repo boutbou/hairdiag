@@ -1,53 +1,53 @@
 <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
 
       <fieldset>
-        <%= f.input :last_name , input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne se soit jamais rencontré!<br>Quel est votre nom ?"} %>
+        <%= f.input :last_name , input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne se soit jamais rencontré!<br>Quel est votre nom?"} %>
       </fieldset>
 
       <fieldset>
-        <%= f.input :first_name, input_html: { "cf-questions" => "Enchanté {previous-answer}, quel est votre prénom ?"}%>
+        <%= f.input :first_name, input_html: { "cf-questions" => "Enchanté {previous-answer}, quel est votre prénom?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :gender, collection: ["Une femme", "Un homme"], input_html: { "cf-questions" => "Etes vous une femme ou un homme ?"} %>
+        <%= f.input :gender, collection: ["Une femme", "Un homme"], input_html: { "cf-questions" => "Êtes-vous une femme ou un homme?"} %>
         <%= f.button :submit %>
       </fieldset>
 
       <fieldset>
-        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> Quelle est votre adresse Email ?"}%>
+        <%= f.input :email , input_html: { "cf-questions" => "À la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> Quelle est votre adresse Email?"}%>
       </fieldset>
 
 
       <fieldset>
-        <%= f.input :zip_code , input_html: { "cf-questions" => "Il est possible que j'ai besoin de vous diriger vers un dermatologue HairDiag proche de chez vous. <br>Quel est votre code postal ?"}%>
+        <%= f.input :zip_code , input_html: { "cf-questions" => "Il est possible que j'ai besoin de vous diriger vers un dermatologue Hair'Diag proche de chez vous. <br>Quel est votre code postal?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :city , input_html: { "cf-questions" => "Quel est le nom de cette ville ?"}%>
+        <%= f.input :city , input_html: { "cf-questions" => "Quel est le nom de cette ville?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :country, collection: ["France", "Etranger"], input_html: { "cf-questions" => "Est-ce que {previous-answer} est situé en france ou à l'étranger ?"}%>
+        <%= f.input :country, collection: ["France", "Etranger"], input_html: { "cf-questions" => "Est-ce que {previous-answer} est situé en France ou à l'étranger?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ?"}%>
+        <%= f.input :age, input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :loss_start_date,as: :select, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
+        <%= f.input :loss_start_date,as: :select, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :relative, collection: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
+        <%= f.input :relative, collection: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :weekly_shampoo, collection: (0..8), input_html: { "cf-questions" => "Combien de shampooings faites-vous par semaine ?"}%>
+        <%= f.input :weekly_shampoo, collection: (0..8), input_html: { "cf-questions" => "Combien de shampooings faites-vous par semaine?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :dandruff, collection: ["oui","non"], input_html: { "cf-questions" => "{previous-answer} fois! Je savais que vous preniez soin de votre cuir chevelus à la seconde de notre rencontre :).<br> Avez vous des pellicules ?"}%>
+        <%= f.input :dandruff, collection: ["oui","non"], input_html: { "cf-questions" => "{previous-answer} fois! Je savais que vous preniez soin de votre cuir chevelu à la seconde de notre rencontre :).<br> Avez vous des pellicules?"}%>
       </fieldset>
 
       <fieldset cf-questions="Ne voyez rien de personnel, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?" >
@@ -71,27 +71,27 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :shaving_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Faites-vous un rasage régulier de tout ou une partie de votre cuir chevelu ?"}%>
+        <%= f.input :shaving_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Faites-vous un rasage régulier de tout ou une partie de votre cuir chevelu?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :scalp_density, collection: ["moyenne","bonne","très bonne"], input_html: { "cf-questions" => "Quelle est la densité à l'arrière de votre cuir chevelu ?"}%>
+        <%= f.input :scalp_density, collection: ["moyenne","bonne","très bonne"], input_html: { "cf-questions" => "Quelle est la densité à l'arrière de votre cuir chevelu?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :hair_thickness, collection: ["fin","moyen","épais"], input_html: { "cf-questions" => "Comment conciderez vous l'épaisseur de vos cheveux ?"}%>
+        <%= f.input :hair_thickness, collection: ["fin","moyen","épais"], input_html: { "cf-questions" => "Comment conciderez vous l'épaisseur de vos cheveux?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :hair_color, collection: ["blancs", "gris", "blonds", "Chatain clair",  "chatain foncé", "noir", "roux"], input_html: { "cf-questions" => "Quelle est la couleur naturelle de vos cheveux ?"}%>
+        <%= f.input :hair_color, collection: ["blancs", "gris", "blonds", "Chatain clair",  "chatain foncé", "noir", "roux"], input_html: { "cf-questions" => "Quelle est la couleur naturelle de vos cheveux?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :hair_type, collection: ["raides", "ondulés", "bouclés", "crépus"],input_html: { "cf-questions" => "Quel est le type de vos cheveux ?"}%>
+        <%= f.input :hair_type, collection: ["raides", "ondulés", "bouclés", "crépus"],input_html: { "cf-questions" => "Quel est le type de vos cheveux?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :vitamines, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous des vitamines ou des compléments alimentaires ?"}%>
+        <%= f.input :vitamines, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous des vitamines ou des compléments alimentaires?"}%>
       </fieldset>
 
       <fieldset cf-questions="Etes-vous sous Minoxidil ?" >
@@ -107,12 +107,12 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dosage ?", "cf-conditional-patient[minoxidil]" =>"yes"}%>
+        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dosage?", "cf-conditional-patient[minoxidil]" =>"yes"}%>
       </fieldset>
 
 
       <fieldset>
-        <%= f.input :finasteride, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous de la finasteride ?"}%>
+        <%= f.input :finasteride, collection: ["oui","non"], input_html: { "cf-questions" => "Prenez vous du finastéride?"}%>
       </fieldset>
 
       <fieldset cf-questions="Avez-vous déjà eu des greffes capillaires ?" >
@@ -128,7 +128,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :hair_transplant_technic, collection: ["F.U.E. (Unités folliculaires par extraction)","F.U.T. (Unités folliculaires par transplantation)","F.U.L. (Unités folliculaires à cheveux longs)","Aucune des trois","Ne sais pas"], input_html: { "cf-questions" => "C'est intéressant, quelle technique de transplantation a-t-elle été employée ?", "cf-conditional-patient[hair_transplant]" =>"yes"}%>
+        <%= f.input :hair_transplant_technic, collection: ["F.U.E. (Unités folliculaires par extraction)","F.U.T. (Unités folliculaires par transplantation)","F.U.L. (Unités folliculaires à cheveux longs)","Aucune des trois","Ne sais pas"], input_html: { "cf-questions" => "C'est intéressant, quelle technique de transplantation a été employée ?", "cf-conditional-patient[hair_transplant]" =>"yes"}%>
       </fieldset>
 
       <fieldset cf-questions="A quel stade pensez vous être ?" >
@@ -141,11 +141,11 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :traction_test, collection: ["0-1 cheveu","2-3 cheveux","> 3 cheveux"], input_html: { "cf-questions" => "Maintenant je vais vous demander de faire un test de tractions:<br>Assurez vous d'avoir un cuir chevelu non lavé pendant 2 jours.<br>Prenez une mèche comprenant environ 10 cheveux entre le pouce et l'index. Exercez une légère traction afin de détacher les cheveux venant facilement.<br>Combien comptez le nombre de cheveux présents ?"}%>
+        <%= f.input :traction_test, collection: ["0-1 cheveu","2-3 cheveux","> 3 cheveux"], input_html: { "cf-questions" => "Maintenant je vais vous demander de faire un test de tractions:<br>Assurez vous d'avoir un cuir chevelu non lavé pendant 2 jours.<br>Prenez une mèche comprenant environ 10 cheveux entre le pouce et l'index. Exercez une légère traction afin de détacher les cheveux venant facilement.<br>Combien de cheveux se sont extraits?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :restore_area, collection: ["Front","Tonsure (surface au sommet du crâne)","Totalité","Poils du corps (sourcils, barbe)"], input_html: { "cf-questions" => "Projet de restauration capillaire - quelle zone souhaitez-vous restaurer ? (par ordre de priorité si plusieurs zones)"}%>
+        <%= f.input :restore_area, collection: ["Front","Tonsure (surface au sommet du crâne)","Totalité","Poils du corps (sourcils, barbe)"], input_html: { "cf-questions" => "Projet de restauration capillaire - quelle zone souhaitez-vous restaurer? (par ordre de priorité si plusieurs zones)"}%>
       </fieldset>
 
       <fieldset>
@@ -153,7 +153,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
+        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique Hair'Diag, avez vous des remarques complémentaires ?"}%>
       </fieldset>
 
       <fieldset>

@@ -59,7 +59,7 @@
               <%= form_tag patient_payments_path(@patient) do %>
               <article>
                 <h2><label class="amount">
-                  <span>Prix: <%= humanized_money_with_symbol(@patient.price) %></span> </h2>
+                  <span>Prix : <%= humanized_money_with_symbol(@patient.price) %></span> </h2>
                 </label>
               </article>
 
@@ -69,7 +69,10 @@
               data-email="<%= @patient.email %>"
               data-description="Consultation <%= @patient.first_name %>"
               data-amount="<%= @patient.price_cents %>"
-              data-currency="<%= @patient.price.currency %>"></script>
+              data-currency="<%= @patient.price.currency %>"
+              data-label="Payer maintenant"
+              data-locale="auto">
+              </script>
               <% end %>
               </h3>
             </div>

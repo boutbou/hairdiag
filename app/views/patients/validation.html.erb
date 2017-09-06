@@ -51,202 +51,202 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-xs-6 page-part">
-          <div class="row validation-container">
-            <div class="col-md-10">
-              <div class="row dashboard-infos patients-show">
+      <div class="col-xs-6 page-part">
+        <div class="row validation-container">
+          <div class="col-md-10">
+            <div class="row dashboard-infos patients-show">
 
-                <h2 id="confirmation-message">Merci de prendre le temps de relire et confirmer vos informations </h2>
-                <div class="patients-details">
-                  <div>
-                    <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
-                      <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-                    </h3>
-                    <div class="row collapse in" id="info-pratiques">
-                      <div class="col-md-6 info-pratiques-input">
-                        <p>Patient</p>
-                        <span><%= "#{@patient.first_name.to_s} #{@patient.last_name.to_s}"%></span>
-                      </div>
-                      <div class="col-md-6 info-pratiques-input">
-                        <p>Email</p>
-                        <%= "#{@patient.email.to_s}"  %>
-                      </div>
-                      <div class="col-md-6 info-pratiques-input">
-                        <p>Genre</p>
-                        <%= "#{@patient.gender.to_s == "Un homme" ?
-                        "Homme".downcase : "Femme".downcase}" %>
-                      </div>
-                      <div class="col-md-6 info-pratiques-input">
-                        <p>Age</p>
-                        <%= "#{@patient.age} ans" %>
-                      </div>
-                      <div class="col-md-6 info-pratiques-input">
-                        <p>Localité</p>
-                        <%= "#{@patient.city.to_s}, #{@patient.zip_code.to_s} (#{@patient.country.to_s}) "  %>
-                      </div>
+              <h2 id="confirmation-message">Merci de prendre le temps de relire et confirmer vos informations </h2>
+              <div class="patients-details">
+                <div>
+                  <h3>Informations pratiques <a data-toggle="collapse" data-target="#info-pratiques">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="info-pratiques">
+                    <div class="col-md-6 info-pratiques-input">
+                      <p>Patient</p>
+                      <span><%= "#{@patient.first_name.to_s} #{@patient.last_name.to_s}"%></span>
+                    </div>
+                    <div class="col-md-6 info-pratiques-input">
+                      <p>Email</p>
+                      <%= "#{@patient.email.to_s}"  %>
+                    </div>
+                    <div class="col-md-6 info-pratiques-input">
+                      <p>Genre</p>
+                      <%= "#{@patient.gender.to_s == "Un homme" ?
+                      "Homme".downcase : "Femme".downcase}" %>
+                    </div>
+                    <div class="col-md-6 info-pratiques-input">
+                      <p>Age</p>
+                      <%= "#{@patient.age} ans" %>
+                    </div>
+                    <div class="col-md-6 info-pratiques-input">
+                      <p>Localité</p>
+                      <%= "#{@patient.city.to_s}, #{@patient.zip_code.to_s} (#{@patient.country.to_s}) "  %>
                     </div>
                   </div>
-                  <div>
-                    <h3> Context médical <a data-toggle="collapse" data-target="#context-medical">
-                      <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-                    </h3>
-                    <div class="row collapse in" id="context-medical">
-                      <div class="col-md-12 context-medical-input-tf">
-                        Couleur de cheveux <p> <%= @patient.hair_color.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Type de cheveux <p><%= @patient.hair_type.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Epaisseur des cheveux <p><%= @patient.hair_thickness.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        A l'impression que ses cheveux se sont affinés :
-                        <% if @patient.refined_hair.to_s =="Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Membre de sa famille ayant le même problème
-                        <% if @patient.relative.to_s == "Père" || @patient.relative.to_s == "Grand-père" %>
-                        <p> <%= "son #{@patient.relative.to_s.downcase}" %></p>
-                        <% elsif @patient.relative.to_s == "Mère" || @patient.relative.to_s == "Grand-mère" %>
-                        <p> <%= "sa #{@patient.relative.to_s.downcase}" %></p>
-                        <% else %>
-                        <p>Aucun</p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Nombre de lavage de cheveux par semaine <p> <%= "#{pluralize(@patient.weekly_shampoo, "lavage")}"%></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Pellicules
-                        <% if @patient.dandruff.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Cheveux gras
-                        <% if @patient.greasy_hair.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Fait des tresses / défrisages / brushings
-                        <% if @patient.brushing_hair.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Se rase régulièrement tout ou une partie du cuir chevelu
-                        <% if @patient.shaving_hair.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Estime la densité à l'arrière de son cuir chevelu à
-                        <p> <%= "#{@patient.scalp_density.to_s.downcase}" %></p>
-                      </div>
+                </div>
+                <div>
+                  <h3> Context médical <a data-toggle="collapse" data-target="#context-medical">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="context-medical">
+                    <div class="col-md-12 context-medical-input-tf">
+                      Couleur de cheveux <p> <%= @patient.hair_color.to_s %></p>
                     </div>
-                  </div>
-                  <div>
-                    <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
-                      <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-                    </h3>
-                    <div class="row collapse in" id="situation-capillaire">
-                      <div class="col-md-12 context-medical-input-tf">
-                        Prend des vitamines
-                        <% if @patient.vitamines.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Prends de la finasteride
-                        <% if @patient.finasteride.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Stade de la perte de cheveux <p><%= @patient.stage.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Résultat du test de traction <p><%= @patient.traction_test.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Zone de restauration souhaitée <p><%= @patient.restore_area.to_s %></p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Technique de restauration préférée <p>F.U.E</p>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Prend de la Minoxidil
-                        <% if @patient.minoxidil == "Oui"  %>
-                        <p>oui (<%="#{@patient.minoxidil_doses} doses"%>)</p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <div class="col-md-12 context-medical-input-tf">
-                        A déjà effectué une greffe capillaire
-                        <% if @patient.hair_transplant.to_s == "Oui" %>
-                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
-                        <% else %>
-                        <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
-                        <% end %>
-                      </div>
-                      <% if @patient.hair_transplant == "oui" %>
-                      <div class="col-md-12 context-medical-input-tf">
-                        Technique de transplantation souhaitée <p><%= @patient.hair_transplant_technic.to_s %></p>
-                      </div>
-                      <% end %>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Type de cheveux <p><%= @patient.hair_type.to_s %></p>
                     </div>
-                  </div>
-                  <div class="patient-photos">
-                    <h3> Photos <a data-toggle="collapse" data-target="#patient-pictures">
-                      <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
-                    </h3>
-                    <div class="row collapse in" id="patient-pictures">
-                      <% if @patient.photos? %>
-                      <% @patient.photos.each do |photo| %>
-                      <div class="col-md-4 grow">
-                        <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
-                      </div>
-                      <% end %>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Epaisseur des cheveux <p><%= @patient.hair_thickness.to_s %></p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      A l'impression que ses cheveux se sont affinés :
+                      <% if @patient.refined_hair.to_s =="Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                       <% else %>
-                      <p>Vous n'avez pas chargé de photo</p>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                       <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Membre de sa famille ayant le même problème
+                      <% if @patient.relative.to_s == "Père" || @patient.relative.to_s == "Grand-père" %>
+                      <p> <%= "son #{@patient.relative.to_s.downcase}" %></p>
+                      <% elsif @patient.relative.to_s == "Mère" || @patient.relative.to_s == "Grand-mère" %>
+                      <p> <%= "sa #{@patient.relative.to_s.downcase}" %></p>
+                      <% else %>
+                      <p>Aucun</p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Nombre de lavage de cheveux par semaine <p> <%= "#{pluralize(@patient.weekly_shampoo, "lavage")}"%></p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Pellicules
+                      <% if @patient.dandruff.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Cheveux gras
+                      <% if @patient.greasy_hair.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Fait des tresses / défrisages / brushings
+                      <% if @patient.brushing_hair.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Se rase régulièrement tout ou une partie du cuir chevelu
+                      <% if @patient.shaving_hair.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Estime la densité à l'arrière de son cuir chevelu à
+                      <p> <%= "#{@patient.scalp_density.to_s.downcase}" %></p>
                     </div>
                   </div>
-                  <div>
-                    <div class="wrapper-valitation-buttons">
-                      <%= link_to edit_patient_path(@patient), class: "" do %>
-                      <button class="btn btn-medium">
-                        <p>Corriger le formulaire</p>
-                      </button>
+                </div>
+                <div>
+                  <h3> Situation capillaire <a data-toggle="collapse" data-target="#situation-capillaire">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="situation-capillaire">
+                    <div class="col-md-12 context-medical-input-tf">
+                      Prend des vitamines
+                      <% if @patient.vitamines.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
                       <% end %>
-
-                      <%= link_to payment_patient_path(@patient), class: "" do %>
-                      <button class="btn btn-cta">
-                        <p>Valider et payer</p>
-                      </button>
-                      <% end %>
-
                     </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Prends de la finasteride
+                      <% if @patient.finasteride.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Stade de la perte de cheveux <p><%= @patient.stage.to_s %></p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Résultat du test de traction <p><%= @patient.traction_test.to_s %></p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Zone de restauration souhaitée <p><%= @patient.restore_area.to_s %></p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Technique de restauration préférée <p>F.U.E</p>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Prend de la Minoxidil
+                      <% if @patient.minoxidil == "Oui"  %>
+                      <p>oui (<%="#{@patient.minoxidil_doses} doses"%>)</p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="col-md-12 context-medical-input-tf">
+                      A déjà effectué une greffe capillaire
+                      <% if @patient.hair_transplant.to_s == "Oui" %>
+                      <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                      <% else %>
+                      <p>non <i class="fa fa-times false-red" aria-hidden="true"></i></p>
+                      <% end %>
+                    </div>
+                    <% if @patient.hair_transplant == "oui" %>
+                    <div class="col-md-12 context-medical-input-tf">
+                      Technique de transplantation souhaitée <p><%= @patient.hair_transplant_technic.to_s %></p>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="patient-photos">
+                  <h3> Photos <a data-toggle="collapse" data-target="#patient-pictures">
+                    <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
+                  </h3>
+                  <div class="row collapse in" id="patient-pictures">
+                    <% if @patient.photos? %>
+                    <% @patient.photos.each do |photo| %>
+                    <div class="col-md-4 grow">
+                      <%= cl_image_tag photo.path, height: 200, width: 200, crop: :fill %>
+                    </div>
+                    <% end %>
+                    <% else %>
+                    <p>Vous n'avez pas chargé de photo</p>
+                    <% end %>
+                  </div>
+                </div>
+                <div>
+                  <div class="wrapper-valitation-buttons">
+                    <%= link_to edit_patient_path(@patient), class: "" do %>
+                    <button class="btn btn-medium">
+                      <p>Corriger le formulaire</p>
+                    </button>
+                    <% end %>
+
+                    <%= link_to payment_patient_path(@patient), class: "" do %>
+                    <button class="btn btn-cta">
+                      <p>Valider et payer</p>
+                    </button>
+                    <% end %>
+
                   </div>
                 </div>
               </div>
@@ -256,3 +256,4 @@
       </div>
     </div>
   </div>
+</div>

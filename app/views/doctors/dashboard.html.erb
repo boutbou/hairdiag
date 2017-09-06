@@ -6,39 +6,16 @@
         <div class="dashboard-main-content">
           <div class="#">
             <h2>Bonjour <%= current_doctor.first_name  %>,</h2>
-            <h3>Bienvenue sur votre tableau de bord Hair'Diag.</h3>
-          </div>
-          <div class="container process-2">
-        <div class="row">
-         <!--  <div class="process-icons "> -->
-         <div class="process-icon col-md-3">
-          <h3 class="two-lines">Cliquez sur "voir un patient"</h3>
-            <%= image_tag "icon-easy.png", class: "icon-green" %>
-          </div>
-
-          <div class="process-icon-chevron hidden-xs col-md-1">
-            <%= image_tag "chevron-right.png" %>
-          </div>
-
-          <div class="process-icon col-md-3">
-            <h3 class="two-lines">Prenez le temps d'étudier le cas</h3>
-              <%= image_tag "icon-answer.png", class: "icon-green" %>
-          </div>
-
-          <div class="process-icon-chevron hidden-xs col-md-1">
-            <%= image_tag "chevron-right.png" %>
-          </div>
-
-          <div class="process-icon col-md-4">
-            <h3 class="two-lines">Apportez-y une réponse adaptée</h3>
-              <%= image_tag "icon_diag.png", class: "icon-green" %>
-          </div>
-
-            </div>
+            <p>Bienvenue sur votre tableau de bord Hair'Diag.</p>
+            <ol>
+              <li>Cliquez sur "voir un patient"</li>
+              <li>Prenez le temps d'étudier le cas</li>
+              <li>Apportez-y une reponse adaptée</li>
+            </ol>
           </div>
           <div class="see-patient">
             <% if @patients_available.count == 0 %>
-            <h3>Il n'y a actuellement aucun patient en attente d'être soigné, vous serez alerté quand une demande de traitement vous sera parvenue.</h3>
+            <p>Il n'y a actuellement aucun patient en attente d'être soigné, vous serez alerté quand une demande de traitement vous sera parvenue.</p>
             <% else %>
             <%= link_to doctor_assign_patient_path, class:"cta-start", method: :post do %>
             <div>

@@ -71,8 +71,9 @@ class PatientsController < ApplicationController
   end
 
   def prefill_patient
-    @patient.first_name = "Benjamin" if @patient.first_name.blank?
-    @patient.last_name = "Dupont" if @patient.last_name.blank?
+    @patient.first_name = "Jean-Claude" if @patient.first_name.blank?
+    @patient.last_name = "Dusse" if @patient.last_name.blank?
+    @patient.gender = "Un homme" if @patient.gender.blank?
     @patient.email = "contact@hairdiag.com" if @patient.email.blank?
     @patient.zip_code = "13008" if @patient.zip_code.blank?
     @patient.city = "Marseille" if @patient.city.blank?

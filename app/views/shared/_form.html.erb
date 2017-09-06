@@ -1,30 +1,26 @@
 <%= simple_form_for @patient, html: {id: "patient-form"} do |f| %>
 
       <fieldset>
-        <%= f.input :first_name, input_html: { "cf-questions" => "Bonjour! Il me semble que l'on ne se soit jamais rencontré!<br>Quel est votre prénom ?"}%>
+        <%= f.input :first_name, input_html: { "cf-questions" => "Bonjour et bienvenue sur Hair'Diag. <br>Quel est votre prénom ?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostique par email.<br> Quelle est votre adresse Email ?"}%>
+        <%= f.input :zip_code , input_html: { "cf-questions" => "Il est possible que j'ai besoin de vous diriger vers un dermatologue Hair'Diag proche de chez vous. <br>Quel est votre code postal ?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :zip_code , input_html: { "cf-questions" => "Il est possible que j'ai besoin de vous diriger vers un dermatologue HairDiag proche de chez vous. <br>Quel est votre code postal ?"}%>
+        <%= f.input :age, input_html: { "cf-questions" => "Quel âge avez vous?", "cf-scrollAccerlation" => "0"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ? ", "cf-scrollAccerlation" => "0"}%>
+        <%= f.input :loss_start_date, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel âge! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :loss_start_date, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
+        <%= f.input :relative, collection: ["Aucun", "Père", "Mère", "Grand-père", "Grand-mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
       </fieldset>
 
-      <fieldset>
-        <%= f.input :relative, collection: ["aucun", "Père", "Mère", "Grand Père", "Grand Mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
-      </fieldset>
-
-      <fieldset cf-questions="Ne voyez rien de personnel, je pose cette question à toutes les personnes que je rencontre:<br>Diriez vous que vous avez vous les cheveux gras ?" >
+      <fieldset cf-questions="Avez vous les cheveux gras?" >
         <label for="greasy_hair-oui">Oui<input type="radio" name="patient[greasy_hair]" id="greasy_hair-oui" value="oui" tabindex="-1"
           <%= @patient.greasy_hair == "oui" ? 'checked="checked"' : "" %>>
         </label>
@@ -37,11 +33,10 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?"} %>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Avez vous l’impression que vos cheveux se sont affinés ?"} %>
       </fieldset>
 
-
-      <fieldset cf-questions="Etes-vous sous Minoxidil ?" >
+      <fieldset cf-questions="Etes-vous sous Minoxidil?" >
         <label for="minoxidil-oui">Oui<input type="radio" name="patient[minoxidil]" id="minoxidil-oui" value="oui" tabindex="-1"
           <%= @patient.minoxidil == "oui" ? 'checked="checked"' : "" %>>
         </label>
@@ -54,11 +49,11 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dosage ?", "cf-conditional-patient[minoxidil]" => "oui"}%>
+        <%= f.input :minoxidil_doses, collection: [["2%",2],["5%",5]], input_html: { "cf-questions" => "A quel dose ?", "cf-conditional-patient[minoxidil]" => "oui"}%>
       </fieldset>
 
 
-      <fieldset cf-questions="Avez-vous déjà eu des greffes capillaires ?" >
+      <fieldset cf-questions="Avez-vous déjà effectué des greffes capillaires ?" >
         <label for="hair_transplant-oui">Oui<input type="radio" name="patient[hair_transplant]" id="hair_transplant-oui" value="oui" tabindex="-1"
           <%= @patient.hair_transplant == "oui" ? 'checked="checked"' : "" %>>
         </label>
@@ -71,18 +66,22 @@
       </fieldset>
 
 
-      <fieldset cf-questions="A quel stade pensez vous être ?" >
+      <fieldset cf-questions="Lequel de ces stades correspond le mieux à votre cas ?" >
         <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/Stade1_yzlrg4" name="patient[stage]" tabindex="1" value="0" >
         <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png" name="patient[stage]" tabindex="1" value="1" >
         <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade3_sgu99f.png" name="patient[stage]" tabindex="1" value="2" >
       </fieldset>
 
-      <fieldset>
-      <%= f.input :photos, as: :file, input_html: { "multiple" => true, "cf-questions" => "Merci d'ajouter vos photos prises devant derrière et au dessus du crâne. <br> <img src=\"http://res.cloudinary.com/benji89/image/upload/v1504615511/Capture_d_%C3%A9cran_2017-08-07_%C3%A0_16.21.01_sariqh.jpg\"> </img>" }%>
+       <fieldset>
+        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostic par email.<br> Quelle est votre adresse email ?"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations necessaires au daignostique HairDiag, avez vous des remarques complémentaires ?"}%>
+      <%= f.input :photos, as: :file, input_html: { "multiple" => true, "cf-questions" => "Merci d'ajouter 3 photos de votre cuir chevelu, prises de face, sur le dessus du crâne et sur un côté. <br> <img src=\"http://res.cloudinary.com/benji89/image/upload/v1504615511/Capture_d_%C3%A9cran_2017-08-07_%C3%A0_16.21.01_sariqh.jpg\"> </img>" }%>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :remark, input_html: { "cf-questions" => "Merci, j'ai toutes les informations nécessaires au diagnostic Hair'Diag, avez vous des remarques complémentaires ?"}%>
       </fieldset>
 
       <%= f.submit %>

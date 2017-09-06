@@ -161,8 +161,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-rails (0.3.6)
-      pry (>= 0.10.4)
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
@@ -286,7 +284,7 @@ DEPENDENCIES
   money-rails
   pg
   postmark-rails
-  pry-rails
+  pry
   puma (~> 3.0)
   rails (~> 5.0.5)
   rails-i18n

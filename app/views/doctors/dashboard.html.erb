@@ -5,12 +5,12 @@
       <div class="row dashboard-infos">
         <div class="dashboard-main-content">
           <div class="#">
-            <h2>Bonjour <%= current_doctor.first_name  %></h2>
-            <p>Bienvenu sur votre tableau de bord Hairdiag.</p>
+            <h2>Bonjour <%= current_doctor.first_name  %>,</h2>
+            <p>Bienvenue sur votre tableau de bord Hair'Diag.</p>
             <ol>
               <li>Cliquez sur "voir un patient"</li>
-              <li>Prenez le temps d'étudier le cas et d'y répondre</li>
-              <li>Proposez un rendez-vous si besoin à votre patient</li>
+              <li>Prenez le temps d'étudier le cas</li>
+              <li>Apportez-y une reponse adaptée</li>
             </ol>
           </div>
           <div class="see-patient">
@@ -25,7 +25,7 @@
               </button>
             </div>
             <% end %>
-            <p>Il y actuellement <strong><%= @patients_available.count %></strong> <%= t('patients', count: @patients_available.count) %></p>
+            <p>Il y a actuellement <strong><%= @patients_available.count %></strong> <%= t('patients', count: @patients_available.count) %>.</p>
             <% end %>
           </div>
         </div>

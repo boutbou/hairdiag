@@ -31,10 +31,10 @@
         <div>
           <div>
             <div class="header-answer">
-              <h2>Patient : <%= @patient.first_name.to_s + " " + @patient.last_name.to_s %> </h2>
+              <h2>Patient: <%= @patient.first_name.to_s + " " + @patient.last_name.to_s %> </h2>
               <p>Cas envoyé le <%=@patient.created_at.strftime("%d-%m-%Y à %Hh%M") %>. </p>
-              <p>Cas étudié le <%= @message.created_at.strftime("%d-%m-%Y à %Hh%M") %> par le <%= @doctor.first_name + " " + @doctor.last_name.to_s %> </p>
-              <p>Diagnostic : <%= @message.subject.to_s.downcase %> </p>
+              <p>Cas étudié le <%= @message.created_at.strftime("%d-%m-%Y à %Hh%M") %> par le Dr. <%= @doctor.first_name + " " + @doctor.last_name.to_s %> </p>
+              <p>Diagnostic: <%= @message.subject.to_s.downcase %> </p>
             </div>
           </div>
           <div class="message-answer">
@@ -45,13 +45,7 @@
               </div>
               <div class="content">
                 <!--%= @message.content %-->
-                Bonjour Tim, <br><br>
-                Il existe un traitement particuliers pour ce type de perte de cheveux qui prends en compte plusieurs traitements complémentaires à prendre sur 15 jours :<br>
-                - Preparles, 3 fois par jour<br>
-                - Engraicheuv 2 fois par jour<br>
-                - Soipabart 1 comprimé par matin<br><br>
-                 Cordialement,
-                 <br><br>Jean Reno
+                <%= simple_format(@message.content)  %>
               </div>
             </div>
           </div>

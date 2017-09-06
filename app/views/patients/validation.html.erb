@@ -9,14 +9,14 @@
           <% end %>
         </div>
         <div class="centerh">
-          <div class="row">
+          <div class="row first_row">
             <div class="col-xs-8 col-xs-offset-2">
               <div class="message">
                 <div class="numbers">
                   <h3>1</h3>
                 </div>
                 <div class="message-body">
-                  <p>Prenez le temps de répondre au questions de notre doc-bot </p>
+                  <p>Répondez aux questions de notre doc-bot Hair'Diag Pour que vos réponses soient analysées par un demartologue.</p>
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                   <h3>2</h3>
                 </div>
                 <div class="message-body">
-                  <p> Relisez vos réponses et confirmez </p>
+                  <p> Relisez vos réponses et confirmez. </p>
                 </div>
               </div>
             </div>
@@ -40,15 +40,15 @@
                   <h3>3</h3>
                 </div>
                 <div class="message-body">
-                  <p> Envoyez vos informations à un Dermatologue Hairdiag pour un dignostique fiable en moins de 48h</p>
+                  <p> Payez et envoyez vos informations à un Dermatologue Hairdiag.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="center_bottom_page">
-          <div class="cta-start btn btn-medium">
-            <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
+          <div class="center_bottom_page">
+            <div class="cta-start btn btn-medium">
+              <%= link_to "Retour à l'accueil", root_path, class: "header-item" %>
+            </div>
           </div>
         </div>
       </div>
@@ -236,15 +236,15 @@
                 <div>
                   <div class="wrapper-valitation-buttons">
                     <%= link_to edit_patient_path(@patient), class: "" do %>
-                      <button class="btn btn-medium">
-                        <p>Corriger le formulaire</p>
-                      </button>
+                    <button class="btn btn-medium">
+                      <p>Corriger le formulaire</p>
+                    </button>
                     <% end %>
 
                     <%= link_to payment_patient_path(@patient), class: "" do %>
-                      <button class="btn btn-cta">
-                        <p>Valider et payer</p>
-                      </button>
+                    <button class="btn btn-cta">
+                      <p>Valider et payer</p>
+                    </button>
                     <% end %>
 
                   </div>

@@ -36,7 +36,7 @@
               </div>
             </div>
             <div>
-              <h3> Context médical <a data-toggle="collapse" data-target="#context-medical">
+              <h3> Contexte médical <a data-toggle="collapse" data-target="#context-medical">
               <i class="fa fa-minus collapse-icon"aria-hidden="true"></i></a>
               </h3>
               <div class="row collapse in" id="context-medical">
@@ -50,7 +50,8 @@
                   Epaisseur des cheveux <p><%= @patient.hair_thickness.to_s %></p>
                 </div>
                 <div class="col-md-6 context-medical-input-tf">
-                    A l'impression que ses cheveux se sont affinés :
+                    A l'impression que ses cheveux se sont affinés:
+
                     <% if @patient.refined_hair.to_s =="Oui" %>
                        <p>oui <i class="fa fa-check-square-o" aria-hidden="true"></i></p>
                     <% else %>
@@ -253,7 +254,7 @@
               {
                 button: "Prescription 3",
                 subject: "Médicaments trouvables dans certaines pharamcies spécialisées",
-                content: "Bonjour <%= @patient.first_name %>,\n \nNe vous inquiétez pas pour votre chute de cheveux il existe un traitement très simple: \n- 5mg de Perpatescheuv 3 fois par jour.\nCependant ce médicament est disponible uniquement dans certaines pharmmacies de votre ville comme celle-ci proche de chez vous : 'Pharmacie des Chartreux'\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
+                content: "Bonjour <%= @patient.first_name %>,\n \nNe vous inquiétez pas pour votre chute de cheveux il existe un traitement très simple: \n- 5mg de Perpatescheuv 3 fois par jour.\nCependant ce médicament est disponible uniquement dans certaines pharmacies de votre ville comme celle-ci proche de chez vous : 'Pharmacie des Chartreux'\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%>",
               }
             ],
 
@@ -261,7 +262,7 @@
               {
                 button: "RDV 1",
                 subject: "RDV necessaire",
-                content: "Bonjour <%= @patient.first_name %>,\n\nIl est necessaire que vous preniez contact avec un spécialiste de votre entourage (ou moi-même) afin d'effectuer des examens approfondis.\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%> \n\nPS: pour prendre Rendez-vous avec moi, veuillez me contacter par mail: <%= current_doctor.email %>",
+                content: "Bonjour <%= @patient.first_name %>,\n\nIl est necessaire que vous preniez contact avec un spécialiste de votre entourage (ou moi-même) afin d'effectuer des examens approfondis.\n\nCordialement, \n\n <%= current_doctor.first_name + " " +current_doctor.last_name%> \n\nPS: pour prendre un rendez-vous avec moi, veuillez me contacter par mail: <%= current_doctor.email %>",
               },
               {
                 button: "RDV 2",
@@ -279,7 +280,7 @@
               {
                 button: "Reco 1",
                 subject: "Recommendation comportementale",
-                content: "Bonjour <%= @patient.first_name %>,\n \nBonne nouvelle, nous avons une recommendation qui ne necessite pas de traitement capillaire pour vous:\n1. Agiter la tete de gauche à droite tout les matins 5 fois.\n2.Utiliser le shampoing Superarnak pour laver vos cheveux\n\nCordialement, \n\n<%= current_doctor.first_name + " " +current_doctor.last_name%>",
+                content: "Bonjour <%= @patient.first_name %>,\n \nBonne nouvelle, nous avons une recommendation qui ne necessite pas de traitement capillaire pour vous:\n1. Agiter la tete de gauche à droite tous les matins 5 fois.\n2.Utiliser le shampoing Superarnak pour laver vos cheveux\n\nCordialement, \n\n<%= current_doctor.first_name + " " +current_doctor.last_name%>",
               },
               {
                 button: "Reco 2",

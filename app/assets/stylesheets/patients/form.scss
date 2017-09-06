@@ -3,6 +3,12 @@
   position: fixed;
 }
 
+#form-loading {
+  display: none;
+  margin: 50vh auto;
+  color: $green;
+}
+
 .centerh {
   margin-top: 15%;
 }

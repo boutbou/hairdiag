@@ -9,18 +9,18 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, input_html: { "cf-questions" => "Quel âge avez vous?", "cf-scrollAccerlation" => "0"}%>
+        <%= f.input :age, input_html: { "cf-questions" => "Quel âge avez vous ?", "cf-scrollAccerlation" => "0"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :loss_start_date, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel âge! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
+        <%= f.input :loss_start_date, input_html: { "cf-questions" => "{previous-answer} ans ! Quel bel âge ! <br>A quelle année remonte votre première chute de cheveux ?"}%>
       </fieldset>
 
       <fieldset>
         <%= f.input :relative, collection: ["Aucun", "Père", "Mère", "Grand-père", "Grand-mère"], input_html: { "cf-questions" => " Quel membre de votre famille semble avoir le même problème ?"}%>
       </fieldset>
 
-      <fieldset cf-questions="Avez vous les cheveux gras?" >
+      <fieldset cf-questions="Avez-vous les cheveux gras ?" >
         <label for="greasy_hair-oui">Oui<input type="radio" name="patient[greasy_hair]" id="greasy_hair-oui" value="oui" tabindex="-1"
           <%= @patient.greasy_hair == "oui" ? 'checked="checked"' : "" %>>
         </label>
@@ -33,10 +33,10 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Avez vous l’impression que vos cheveux se sont affinés ?"} %>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Avez-vous l’impression que vos cheveux se sont affinés ?"} %>
       </fieldset>
 
-      <fieldset cf-questions="Etes-vous sous Minoxidil?" >
+      <fieldset cf-questions="Êtes-vous sous Minoxidil ?" >
         <label for="minoxidil-oui">Oui<input type="radio" name="patient[minoxidil]" id="minoxidil-oui" value="oui" tabindex="-1"
           <%= @patient.minoxidil == "oui" ? 'checked="checked"' : "" %>>
         </label>
@@ -67,13 +67,13 @@
 
 
       <fieldset cf-questions="Lequel de ces stades correspond le mieux à votre cas ?" >
-        <input cf-label="stade1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/Stade1_yzlrg4" name="patient[stage]" tabindex="1" value="0" >
-        <input cf-label="stade2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png" name="patient[stage]" tabindex="1" value="1" >
-        <input cf-label="stade3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade3_sgu99f.png" name="patient[stage]" tabindex="1" value="2" >
+        <input cf-label="stade 1" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/Stade1_yzlrg4" name="patient[stage]" tabindex="1" value="0" >
+        <input cf-label="stade 2" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade2_jiqcsr.png" name="patient[stage]" tabindex="1" value="1" >
+        <input cf-label="stade 3" type="radio" cf-image="http://res.cloudinary.com/dgbt9zicg/image/upload/v1504186425/Stade3_sgu99f.png" name="patient[stage]" tabindex="1" value="2" >
       </fieldset>
 
        <fieldset>
-        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostic par email.<br> Quelle est votre adresse email ?"}%>
+        <%= f.input :email , input_html: { "cf-questions" => "A la fin de ce questionnaire je vous enverrai votre diagnostic par email.<br>Quelle est votre adresse email ?"}%>
       </fieldset>
 
       <fieldset>

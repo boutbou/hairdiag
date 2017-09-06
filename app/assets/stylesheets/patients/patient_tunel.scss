@@ -1,15 +1,4 @@
-.wrapper-validation-buttons {
-  padding: 20px;
-  margin: 0 auto;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  color: rgba(255,255,255,0.3);
 
-  .btn {
-    margin: 0 auto;
-  }
-}
 
 #confirmation-message {
   background: none;
@@ -48,6 +37,8 @@
   // background-color: rgba(0,0,0,0.4);
 }
 
+
+
 .wrapper-valitation-buttons {
   display: flex;
   align-items: center;
@@ -63,6 +54,18 @@
   }
 }
 
+.wrapper-validation-buttons {
+  padding: 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  // color: rgba(255,255,255,0.3);
+  .btn {
+    margin: 0 auto;
+  }
+}
+
 .wrapper-valitation-buttons  {
   .btn {
     width: 207px;
@@ -71,19 +74,24 @@
     border-color: $green-main;
     color: $green-main;
     background: none;
+    a {
+    color: $green-main;
+    }
   }
   .btn-cta {
     padding: 0;
+    color: white;
     p {
       padding-left: 41px;
+    }
+    a {
+    color: white;
     }
   }
   p {
     margin: auto
   }
-  a {
-    color: $green-main;
-  }
+
 }
 
 .wrapper-valitation-buttons .btn-medium:hover {

@@ -13,11 +13,11 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :age, collection: (15..40), input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ? ", "cf-scrollAccerlation" => "0"}%>
+        <%= f.input :age, input_html: { "cf-questions" => "Ok, maintenant que ces formalitées d'usage sont passées, dites moi en plus sur vous. <br>Quel age avez vous ? ", "cf-scrollAccerlation" => "0"}%>
       </fieldset>
 
       <fieldset>
-        <%= f.input :loss_start_date,as: :select, collection: (1970..2017), input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
+        <%= f.input :loss_start_date,as: :select, input_html: { "cf-questions" => "{previous-answer} ans! Quel bel age! <br>A quelle année remonte votre premiere chute de cheveux ?"}%>
       </fieldset>
 
       <fieldset>
@@ -37,7 +37,7 @@
       </fieldset>
 
       <fieldset>
-        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?","cf-conditional-patient[greasy_hair]" => "non"} %>
+        <%= f.input :refined_hair, collection: ["oui","non"], input_html: { "cf-questions" => "Tant mieux car c'est un peu degeu ...<br> Avez vous l’impression que vos cheveux se sont affinés ?"} %>
       </fieldset>
 
 
@@ -46,7 +46,7 @@
           <%= @patient.minoxidil == "oui" ? 'checked="checked"' : "" %>>
         </label>
 
-        <label for="minoxidil-non">Nope
+        <label for="minoxidil-non">Non
           <input type="radio" name="patient[minoxidil]" id="minoxidil-non" value="non" tabindex="-1"
           <%= @patient.minoxidil == "non" ? 'checked="checked"' : "" %>
           >
